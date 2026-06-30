@@ -1,0 +1,159 @@
+/* ============================================
+   THE RUNWAY ARCHITECT — Animations
+   SOTD Cinematic Motion System
+
+   RULE: CSS handles STATIC states only.
+   GSAP handles ALL entrance/scroll animations.
+   Never set opacity:0 or translateY in CSS
+   when GSAP from() controls those properties.
+   ============================================ */
+
+/* --- PAGE TRANSITION OVERLAY --- */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    z-index: 9998;
+    clip-path: inset(0 0 100% 0);
+    pointer-events: none;
+}
+
+/* --- GRAIN ANIMATION --- */
+@keyframes grainShift {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, 5%); }
+    30% { transform: translate(7%, -25%); }
+    40% { transform: translate(-5%, 25%); }
+    50% { transform: translate(-15%, 10%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 15%); }
+    80% { transform: translate(3%, 35%); }
+    90% { transform: translate(-10%, 10%); }
+}
+
+.preloader__grain {
+    animation: grainShift 0.5s steps(10) infinite;
+}
+
+/* --- SCROLL LINE ANIMATION --- */
+@keyframes scrollLine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* --- HOVER EFFECTS --- */
+.gallery-index__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(245, 240, 235, 0.03);
+    transition: width 0.6s var(--ease-out-expo);
+    z-index: -1;
+}
+
+.gallery-index__item:hover::before {
+    width: 100%;
+}
+
+/* --- NAV DOT PULSE --- */
+@keyframes dotPulse {
+    0%, 100% {
+        box-shadow: 0 0 6px var(--bone);
+    }
+    50% {
+        box-shadow: 0 0 16px var(--bone), 0 0 24px rgba(245, 240, 235, 0.25);
+    }
+}
+
+.side-nav__item.active .side-nav__dot {
+    animation: dotPulse 2.5s ease-in-out infinite;
+}
+
+/* --- PAGE LOAD STATE --- */
+body.loaded .side-nav,
+body.loaded .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.7s var(--ease-out-expo) 0.4s, visibility 0.7s;
+}
+
+body.loaded .footer {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.7s var(--ease-out-expo) 0.6s, visibility 0.7s;
+}
+
+/* --- CUSTOM CURSOR --- */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot__inner {
+    width: 8px;
+    height: 8px;
+    background: var(--bone);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(245, 240, 235, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+.cursor-follower.is-hover {
+    border-color: var(--bone);
+    mix-blend-mode: difference;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .side-nav {
+        transform: translateY(100%);
+        transition: transform 0.5s var(--ease-out-expo);
+    }
+
+    .mobile-nav {
+        transform: translateY(100%);
+        transition: transform 0.5s var(--ease-out-expo);
+    }
+
+    body.loaded .mobile-nav {
+        transform: translateY(0);
+    }
+}
+
+/* --- REDUCED MOTION --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .scroll-line::after { animation: none; }
+    .side-nav__item.active .side-nav__dot { animation: none; }
+    .preloader__grain { animation: none; }
+}

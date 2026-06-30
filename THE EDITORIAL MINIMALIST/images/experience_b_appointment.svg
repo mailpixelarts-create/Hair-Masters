@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600" width="2400" height="1600">
+  <defs>
+    <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D0C8B8"/>
+      <stop offset="100%" stop-color="#B8B0A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1600" fill="url(#bgB)"/>
+  <!-- Mirror frame occupying left 2/3 -->
+  <rect x="200" y="200" width="1200" height="1000" rx="8" fill="#C8C0B0" opacity="0.5"/>
+  <rect x="200" y="200" width="1200" height="1000" rx="8" fill="none" stroke="#A09888" stroke-width="4"/>
+  <!-- Client reflection in mirror -->
+  <ellipse cx="800" cy="600" rx="160" ry="200" fill="#EDDCC8"/>
+  <!-- Hair in reflection -->
+  <ellipse cx="800" cy="450" rx="170" ry="140" fill="#3A2A1A"/>
+  <!-- Black cape -->
+  <path d="M640 700 Q800 900 960 700 L900 1200 L700 1200 Z" fill="#1A1A1A"/>
+  <!-- Face features - eyes closed/relaxed -->
+  <path d="M750 580 Q770 570 790 580" fill="none" stroke="#8A7A6A" stroke-width="2"/>
+  <path d="M810 580 Q830 570 850 580" fill="none" stroke="#8A7A6A" stroke-width="2"/>
+  <path d="M780 620 Q800 610 820 620" fill="none" stroke="#C0A888" stroke-width="2"/>
+  <!-- Hands entering from right -->
+  <path d="M1800 500 Q1600 550 1500 600" fill="none" stroke="#E8D5C0" stroke-width="40" stroke-linecap="round"/>
+  <path d="M1800 700 Q1600 650 1500 650" fill="none" stroke="#E8D5C0" stroke-width="35" stroke-linecap="round"/>
+  <!-- Comb in hand -->
+  <line x1="1500" y1="600" x2="1400" y2="580" stroke="#2A2A2A" stroke-width="5"/>
+  <!-- Sectioning hair -->
+  <path d="M1400 580 Q1300 550 1200 500" fill="none" stroke="#4A3A2A" stroke-width="3"/>
+  <!-- Text -->
+  <text x="1200" y="1500" font-family="Georgia, serif" font-size="28" fill="#7A7A7A" text-anchor="middle" letter-spacing="6">EXPERIENCE B — THE APPOINTMENT</text>
+</svg>

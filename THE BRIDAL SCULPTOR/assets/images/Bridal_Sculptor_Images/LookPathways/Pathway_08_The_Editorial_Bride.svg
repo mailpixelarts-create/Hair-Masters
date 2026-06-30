@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1067" width="800" height="1067">
+  <defs>
+    <linearGradient id="bg08" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A2420"/>
+      <stop offset="100%" stop-color="#3D3530"/>
+    </linearGradient>
+    <linearGradient id="accent08" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#D4C5B2" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1067" fill="url(#bg08)"/>
+  <ellipse cx="400" cy="460" rx="200" ry="260" fill="url(#accent08)"/>
+  <line x1="150" y1="280" x2="650" y2="280" stroke="#C9A96E" stroke-width="0.5" opacity="0.3"/>
+  <line x1="350" y1="180" x2="350" y2="740" stroke="#C9A96E" stroke-width="0.5" opacity="0.2"/>
+  <polygon points="400,200 460,340 400,320 340,340" fill="none" stroke="#C9A96E" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="460" r="80" fill="none" stroke="#C9A96E" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="400" cy="460" r="140" fill="none" stroke="#D4C5B2" stroke-width="0.3" opacity="0.2"/>
+  <text x="400" y="870" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="300" fill="#FAF8F5" letter-spacing="0.05em">08</text>
+  <text x="400" y="910" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="18" font-weight="300" fill="#D4C5B2" letter-spacing="0.1em">The Editorial Bride</text>
+  <text x="400" y="950" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="10" font-weight="300" fill="#8A817C" letter-spacing="0.3em" text-transform="uppercase">PLACEHOLDER — Awaiting Production Image</text>
+</svg>

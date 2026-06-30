@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE COLOR FUTURIST — 40 Image Assets</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --bg: #0a0a0a;
+            --card: #111111;
+            --accent: #d4af37;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+            background: var(--bg);
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #222;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+        
+        .tagline {
+            color: #d4af37;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: #d4af37;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 70px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -.3px;
+        }
+        
+        .section-header .count {
+            background: #222;
+            color: #888;
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform .2s ease, box-shadow .2s ease;
+            border: 1px solid #222;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        
+        .image-wrapper {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        .image-wrapper.square {
+            aspect-ratio: 1 / 1;
+        }
+        
+        .image-wrapper.landscape {
+            aspect-ratio: 16 / 10;
+        }
+        
+        .image-wrapper.mobile {
+            aspect-ratio: 9 / 16;
+        }
+        
+        .image-wrapper img, .image-wrapper svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 14px 12px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            font-size: 0.8rem;
+        }
+        
+        .prompt-num {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #d4af37;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 9px;
+            border-radius: 4px;
+            letter-spacing: .5px;
+        }
+        
+        .status {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 0.65rem;
+            padding: 1px 7px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        
+        .status.real {
+            background: #2a3f2a;
+            color: #7fc97f;
+        }
+        
+        .status.placeholder {
+            background: #2c2a2a;
+            color: #d4af37;
+        }
+        
+        .card-body {
+            padding: 14px 14px 16px;
+        }
+        
+        .card-title {
+            font-size: 0.94rem;
+            font-weight: 600;
+            margin: 0 0 3px;
+            line-height: 1.25;
+        }
+        
+        .card-subtitle {
+            font-size: 0.78rem;
+            color: #999;
+            margin: 0;
+        }
+        
+        .meta {
+            font-size: 0.68rem;
+            color: #666;
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .meta span {
+            background: #1a1a1a;
+            padding: 1px 6px;
+            border-radius: 3px;
+        }
+        
+        .footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            font-size: 0.85rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+        }
+        
+        .legend-dot.real { background: #7fc97f; }
+        .legend-dot.placeholder { background: #d4af37; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Color Futurist</h1>
+            <p class="tagline">40 Image Generation Prompts</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">40</div>
+                    <div class="stat-label">AI Generated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Placeholders</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">40</div>
+                    <div class="stat-label">Total Assets</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-dot real"></div>
+                <span>Real AI image</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot placeholder"></div>
+                <span>SVG placeholder</span>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Hero</h2>
+                <span class="count">2</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper">
+                        <img src="hero/01.jpg" alt="Prompt 01 — HERO BACKGROUND">
+                        <div class="prompt-num">01</div>
+                        <div class="status real">REAL</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">HERO BACKGROUND</p>
+                        <p class="card-subtitle">Honey-blonde flowing hair</p>
+                        <div class="meta">
+                            <span>4:5</span><span>4000×5000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper">
+                        <img src="hero/02.jpg" alt="Prompt 02 — HERO EDITORIAL OVERLAY">
+                        <div class="prompt-num">02</div>
+                        <div class="status real">REAL</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">HERO EDITORIAL OVERLAY</p>
+                        <p class="card-subtitle">Fingers through platinum blonde</p>
+                        <div class="meta">
+                            <span>4:5</span><span>4000×5000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PHILOSOPHY -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Philosophy / Science</h2>
+                <span class="count">3</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper square">
+                        <img src="philosophy/03.jpg" alt="Prompt 03">
+                        <div class="prompt-num">03</div>
+                        <div class="status real">REAL</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">MOLECULAR ANALYSIS</p>
+                        <div class="meta"><span>1:1</span><span>4000×4000</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper square">
+                        <img src="philosophy/04.jpg" alt="Prompt 04">
+                        <div class="prompt-num">04</div>
+                        <div class="status real">REAL</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">FORMULA DERIVATION</p>
+                        <div class="meta"><span>1:1</span><span>4000×4000</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper">
+                        <img src="philosophy/05.jpg" alt="Prompt 05">
+                        <div class="prompt-num">05</div>
+                        <div class="status real">REAL</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">SPECTRAL VERIFICATION</p>
+                        <div class="meta"><span>4:5</span><span>4000×5000</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- GALLERY -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Gallery — 12 Color Showcases</h2>
+                <span class="count">12</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/06.jpg" alt="06"><div class="prompt-num">06</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">HONEY COMB</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/07.jpg" alt="07"><div class="prompt-num">07</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">ESPRESSO SHADOW</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/08.jpg" alt="08"><div class="prompt-num">08</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">DUSTY ROSE</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/09.jpg" alt="09"><div class="prompt-num">09</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">MIDNIGHT VIOLET</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/10.jpg" alt="10"><div class="prompt-num">10</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">COPPER INFUSION</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/11.jpg" alt="11"><div class="prompt-num">11</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">PLATINUM PROTOCOL</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/12.jpg" alt="12"><div class="prompt-num">12</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">BURGUNDY DEPTH</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/13.jpg" alt="13"><div class="prompt-num">13</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">WHEAT GOLD</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/14.jpg" alt="14"><div class="prompt-num">14</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">COPPER GLOW</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/15.jpg" alt="15"><div class="prompt-num">15</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">NEON ROSE</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/16.jpg" alt="16"><div class="prompt-num">16</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">DARK ESPRESSO</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="gallery/17.jpg" alt="17"><div class="prompt-num">17</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">IVORY PLATINUM</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROCESS -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Process</h2>
+                <span class="count">5</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper"><img src="process/18.jpg" alt="18"><div class="prompt-num">18</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">SCAN</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="process/19.jpg" alt="19"><div class="prompt-num">19</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">COMPUTE</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="process/20.jpg" alt="20"><div class="prompt-num">20</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">FORMULATE</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="process/21.jpg" alt="21"><div class="prompt-num">21</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">APPLY</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="process/22.jpg" alt="22"><div class="prompt-num">22</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">VERIFY</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BEFORE / AFTER -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Before / After</h2>
+                <span class="count">4</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper"><img src="before-after/23.jpg" alt="23"><div class="prompt-num">23</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">BEFORE — Pair 01</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="before-after/24.jpg" alt="24"><div class="prompt-num">24</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">AFTER — Pair 01</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="before-after/25.jpg" alt="25"><div class="prompt-num">25</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">BEFORE — Pair 02</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="before-after/26.jpg" alt="26"><div class="prompt-num">26</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">AFTER — Pair 02</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DETAIL -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Detail</h2>
+                <span class="count">6</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper square"><img src="detail/27.jpg" alt="27"><div class="prompt-num">27</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">TEXTURE CLOSE-UP</p><div class="meta"><span>1:1</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="detail/28.jpg" alt="28"><div class="prompt-num">28</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">THE COLORIST'S HANDS</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper square"><img src="detail/29.jpg" alt="29"><div class="prompt-num">29</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">TOOLS OF THE TRADE</p><div class="meta"><span>1:1</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper square"><img src="detail/30.jpg" alt="30"><div class="prompt-num">30</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">PIGMENT IN MOTION</p><div class="meta"><span>1:1</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper square"><img src="detail/31.jpg" alt="31"><div class="prompt-num">31</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">CUTICLE DETAIL</p><div class="meta"><span>1:1</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="detail/32.jpg" alt="32"><div class="prompt-num">32</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">THE FINISH</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ATMOSPHERE -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Atmosphere</h2>
+                <span class="count">4</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper landscape"><img src="atmosphere/33.jpg" alt="33"><div class="prompt-num">33</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">THE STUDIO</p><div class="meta"><span>16:10</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="atmosphere/34.jpg" alt="34"><div class="prompt-num">34</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">LIGHT AND SHADOW</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper square"><img src="atmosphere/35.jpg" alt="35"><div class="prompt-num">35</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">PRODUCT VIGNETTE</p><div class="meta"><span>1:1</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="atmosphere/36.jpg" alt="36"><div class="prompt-num">36</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">THE RITUAL</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Call to Action</h2>
+                <span class="count">2</span>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper"><img src="cta/37.jpg" alt="37"><div class="prompt-num">37</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">THE INVITATION</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper"><img src="cta/38.jpg" alt="38"><div class="prompt-num">38</div><div class="status real">REAL</div></div>
+                    <div class="card-body"><p class="card-title">BOOKING MOMENT</p><div class="meta"><span>4:5</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER + MOBILE -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Footer &amp; Mobile</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="image-wrapper square"><img src="footer/39.svg" alt="39"><div class="prompt-num">39</div><div class="status placeholder">SVG</div></div>
+                    <div class="card-body"><p class="card-title">BRAND SIGNATURE</p><div class="meta"><span>1:1</span><span>4000×4000</span></div></div>
+                </div>
+                <div class="card">
+                    <div class="image-wrapper mobile"><img src="mobile/40.svg" alt="40"><div class="prompt-num">40</div><div class="status placeholder">SVG</div></div>
+                    <div class="card-body"><p class="card-title">MOBILE HERO</p><div class="meta"><span>9:16</span><span>2400×4267</span></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>All prompts from <strong>TCF-40-IMAGE-GENERATION-PROMPTS.md</strong> • Generated on 2026-06-29</p>
+            <p><strong>40/40 real AI images</strong> — PROJECT COMPLETE • <strong>The Color Futurist</strong></p>
+        </div>
+    </div>
+</body>
+</html>

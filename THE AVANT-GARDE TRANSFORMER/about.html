@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — The Avant Garde | The Avant-Garde Transformer</title>
+  <meta name="description" content="Hair as architecture. Sculptural, conceptual, transformative. The Avant Garde — The Avant-Garde Transformer.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Preloader inline styles (prevent FOUC) -->
+  <style>
+    .preloader { position: fixed; inset: 0; background: #080808; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .preloader__count { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 300; color: #e8e4df; line-height: 1; }
+    .preloader__label { font-family: 'DM Sans', Helvetica Neue, sans-serif; font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(232,228,223,0.25); margin-top: 1rem; }
+    .preloader__wipe { position: fixed; inset: 0; background: #080808; z-index: 9998; transform-origin: bottom; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+       ============================================ -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__count">000</div>
+    <div class="preloader__label">Entering the transformation</div>
+  </div>
+  <div class="preloader__wipe" aria-hidden="true"></div>
+
+  <!-- ============================================
+       CUSTOM CURSOR
+       ============================================ -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HERO — CINEMATIC TRANSFORMATION GATE
+       ============================================ -->
+  <header class="header act--threshold" style="position: relative; height: 100vh; width: 100%; overflow: hidden; background: #080808;">
+    <!-- Primary silhouette image — dominates viewport -->
+    <div class="threshold__canvas" style="position: absolute; inset: 0;">
+      <img
+        src="assets/images/hero_03.png"
+        alt="The Silhouette Reveal — hair form emerging from darkness"
+        class="threshold__image threshold__image--primary"
+        loading="eager"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      >
+      <!-- Secondary detail crop — floating depth plane -->
+      <div class="threshold__detail" style="position: absolute; bottom: 10%; right: 5%; width: 25vw; max-width: 300px; z-index: 2;">
+        <img
+          src="assets/images/detail_08.png"
+          alt="Material Study — hair as fiber, surface tension"
+          class="threshold__image threshold__image--detail"
+          loading="eager"
+          style="width: 100%; height: auto; display: block;"
+        >
+      </div>
+      <div class="threshold__veil" aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.3) 50%, rgba(8,8,8,0.1) 100%);"></div>
+    </div>
+    
+    <!-- Navigation — positioned over hero -->
+    <nav class="nav" role="navigation" aria-label="Main navigation" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; padding: 2rem 5%;">
+      <a href="index.html" class="nav__logo">The Avant Garde</a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="work.html" class="nav__link">Work</a>
+        <a href="index.html#booking" class="nav__cta">Book a Transformation</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+      </button>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="nav__mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="work.html" class="nav__link">Work</a>
+      <a href="index.html#booking" class="nav__cta">Book a Transformation</a>
+    </div>
+    
+    <!-- Typography — minimal, severe, asymmetrical (right-aligned) -->
+    <div class="threshold__content" style="position: absolute; right: 3%; top: 50%; transform: translateY(-50%); text-align: right; z-index: 5; max-width: 550px; overflow: visible;">
+      <h1 class="threshold__title" style="overflow: visible; word-wrap: break-word;">About the Studio</h1>
+      <p class="threshold__statement" style="overflow: visible;">Where hair becomes a medium for radical self-expression.</p>
+    </div>
+    
+    <!-- Scroll cue -->
+    <div class="threshold__scroll-cue" aria-hidden="true" style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); z-index: 5;">
+      <div class="threshold__scroll-line" style="width: 1px; height: 60px; background: rgba(232,228,223,0.3);"></div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT WRAPPER
+       ============================================ -->
+  <main data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="about">
+
+      <!-- ============================================
+           PHILOSOPHY
+           ============================================ -->
+      <section class="philosophy section" aria-label="Studio Philosophy">
+        <div class="section-inner">
+          <div class="grid grid--2col">
+            <div class="philosophy__text">
+              <span class="section-label">The Philosophy</span>
+              <h2 class="philosophy__title">Hair as Architecture</h2>
+              <p class="philosophy__body">
+                This is not hairdressing in the conventional sense. This is the discipline of reshaping how a person is seen — through the structural possibilities of hair, the precision of silhouette, and the language of transformation.
+              </p>
+              <p class="philosophy__body">
+                Every shape is deliberate. Every line is composed. The work does not simply enhance — it reconstructs the visual identity of the person wearing it. Hair becomes material. The head becomes a site for design.
+              </p>
+              <p class="philosophy__body">
+                This is for the person who does not want to look "nice." This is for the person who wants to look like they have arrived from somewhere else entirely — and the room has to adjust.
+              </p>
+            </div>
+            <div class="philosophy__portrait parallax-container">
+              <img
+                src="https://picsum.photos/id/1025/800/1067"
+                alt="Conceptual portrait — sculptural hair silhouette"
+                class="parallax-image"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           CLOSING
+           ============================================ -->
+      <section class="closing section" aria-label="Closing Statement">
+        <div class="closing__statement">
+          Every transformation is a collaboration — a conversation between the vision and the person who will wear it.
+        </div>
+      </section>
+
+      <!-- ============================================
+           FOOTER
+           ============================================ -->
+      <footer class="footer" role="contentinfo">
+        <p class="footer__tagline">Seventy-eight doors. One infinite corridor.</p>
+        <div class="footer__divider" aria-hidden="true"></div>
+        <p class="footer__credit">MADE WITH LOVE <span class="footer__love">❤️</span> BY EMPATHY STUDIO<br>91 + 9833274308 / 91 + 9833274305</p>
+        <p class="footer__studio">© 2026. The Avant Garde. All rights reserved.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- SplitType -->
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.js"></script>
+  <!-- Barba.js -->
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/lenis-init.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/split-text.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/barba-init.js"></script>
+  <script src="js/atmosphere.js"></script>
+
+  <!-- Init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined') return;
+
+      function runInit() {
+        try {
+          if (typeof initLenis === 'function') initLenis();
+          splitTextElements('.threshold__title');
+          revealWords('.threshold__title', { delay: 0.5, stagger: 0.06 });
+          if (typeof initAnimations === 'function') initAnimations();
+          if (typeof initCursor === 'function') initCursor();
+          if (typeof initGallery === 'function') initGallery();
+          ScrollTrigger.refresh();
+          if (typeof initBarba === 'function') initBarba();
+        } catch (e) { console.error('Init error:', e); }
+      }
+
+      let initialized = false;
+      function safeInit() { if (initialized) return; initialized = true; runInit(); }
+
+      const preloaderDone = (typeof initPreloader === 'function') ? initPreloader() : Promise.resolve();
+      preloaderDone.then(safeInit);
+      setTimeout(safeInit, 4000);
+
+      const hamburger = document.querySelector('.nav__hamburger');
+      const mobileMenu = document.querySelector('.nav__mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !isExpanded);
+          hamburger.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('.nav__link, .nav__cta').forEach((link) => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Right-click protection -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+  </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hair Ritualist — About</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ═══════════════ PRELOADER ═══════════════ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__aurora"></div>
+    <div class="preloader__rings">
+      <div class="preloader__ring"></div>
+      <div class="preloader__ring"></div>
+      <div class="preloader__ring"></div>
+    </div>
+    <div class="preloader__sparks"></div>
+  </div>
+
+  <!-- ═══════════════ RADIAL NAV ═══════════════ -->
+  <nav id="radialNav" class="radial-nav">
+    <button class="radial-nav__toggle" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="radial-nav__wheel">
+      <a href="index.html" class="radial-nav__item" data-index="0">Home</a>
+      <a href="#bio" class="radial-nav__item" data-index="1">Bio</a>
+      <a href="#approach" class="radial-nav__item" data-index="2">Approach</a>
+      <a href="#contact" class="radial-nav__item" data-index="3">Connect</a>
+      <a href="work.html" class="radial-nav__item" data-index="4">Work</a>
+      <svg class="radial-nav__lines" aria-hidden="true"></svg>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main id="scrollContainer">
+
+    <!-- HERO -->
+    <section class="about-hero" id="hero">
+      <div class="ripple-ritual">
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+      </div>
+      <div class="about-hero__content">
+        <span class="section-tag">World 10 / About</span>
+        <h1 class="about-hero__title">
+          <span class="split-line">The Ritualist</span>
+          <span class="split-line">Behind the Restoration</span>
+        </h1>
+        <p class="about-hero__sub">Where presence meets practice. Where patience becomes medicine.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=80" alt="" class="panel__bg" loading="eager">
+    </section>
+
+    <!-- BIO -->
+    <section class="about-bio" id="bio">
+      <div class="about-bio__inner">
+        <div class="about-bio__portrait">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Norman James" loading="lazy">
+        </div>
+        <div class="about-bio__text">
+          <span class="section-tag">01 / Origin</span>
+          <h2 class="section-heading split-chars">Norman James</h2>
+          <p class="body-text">Norman James is a hair ritualist — a practitioner who sees scalp care not as maintenance, but as ceremony. A sacred practice rooted in presence, patience, and the deliberate art of restoration.</p>
+          <p class="body-text">His approach draws from ancient scalp massage traditions, modern trichology, and a deep reverence for the body's intelligence. Every session is a conversation between hand and scalp, oil and intention, touch and trust.</p>
+          <p class="body-text">After years of studying botanical remedies and pressure therapy across three continents, Norman developed a methodology that treats the scalp as a living ecosystem — one that responds not to speed, but to stillness.</p>
+          <div class="about-bio__quote">
+            <blockquote>
+              <p>"The scalp holds what the mind releases. To care for one is to honor the other."</p>
+              <cite>— Norman James</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=1400&q=80" alt="" class="panel__bg panel__bg--warm" loading="lazy">
+    </section>
+
+    <!-- APPROACH -->
+    <section class="about-approach" id="approach">
+      <div class="about-approach__inner">
+        <span class="section-tag">02 / Approach</span>
+        <h2 class="section-heading split-chars">Four<br>Pillars</h2>
+        <div class="approach-grid">
+          <div class="approach-card">
+            <div class="approach-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+            <span class="approach-card__num">I</span>
+            <h3 class="approach-card__title">Scalp is Foundation</h3>
+            <p class="approach-card__desc">Every transformation begins at the root. The scalp is the soil from which all hair grows — healthy soil yields abundant harvest. We map, assess, and restore before anything else.</p>
+          </div>
+          <div class="approach-card">
+            <div class="approach-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66l4.24-4.24"/></svg>
+            </div>
+            <span class="approach-card__num">II</span>
+            <h3 class="approach-card__title">Oil is Medicine</h3>
+            <p class="approach-card__desc">Botanical oils are not products — they are prescriptions. Rosemary for circulation, cedarwood for balance, argan for sealing. Each blend is compounded to the individual's needs.</p>
+          </div>
+          <div class="approach-card">
+            <div class="approach-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="approach-card__num">III</span>
+            <h3 class="approach-card__title">Patience is Practice</h3>
+            <p class="approach-card__desc">Restoration cannot be rushed. It is measured in weeks and months, not minutes. The ritual demands consistency — showing up, again and again, with the same quiet intention.</p>
+          </div>
+          <div class="approach-card">
+            <div class="approach-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 11c2-2 5-2 7 0s5 2 7 0"/><path d="M7 17c2-2 5-2 7 0s5 2 7 0"/><circle cx="12" cy="8" r="4"/></svg>
+            </div>
+            <span class="approach-card__num">IV</span>
+            <h3 class="approach-card__title">Touch is Trust</h3>
+            <p class="approach-card__desc">The hands know what words cannot express. Through calibrated pressure and intuitive touch, the body reveals where tension lives and where healing wants to begin.</p>
+          </div>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1400&q=80" alt="" class="panel__bg panel__bg--cool" loading="lazy">
+    </section>
+
+    <!-- CONTACT -->
+    <section class="about-contact" id="contact">
+      <div class="about-contact__inner">
+        <span class="section-tag">03 / Connect</span>
+        <h2 class="section-heading split-chars">Begin Your<br>Ritual</h2>
+        <p class="body-text about-contact__intro">The ceremony awaits. Share your intentions and we will craft a path to restoration.</p>
+        <form class="contact__form" id="ritualForm">
+          <div class="form-group">
+            <input type="text" id="formName" placeholder=" " required>
+            <label for="formName">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="formEmail" placeholder=" " required>
+            <label for="formEmail">Email</label>
+          </div>
+          <div class="form-group">
+            <select id="formType" required>
+              <option value="" disabled selected></option>
+              <option value="scalp">Scalp</option>
+              <option value="oil">Oil</option>
+              <option value="treatment">Treatment</option>
+              <option value="restoration">Restoration</option>
+            </select>
+            <label for="formType" class="form-group__select-label">Project Type</label>
+          </div>
+          <div class="form-group">
+            <textarea id="formMessage" rows="3" placeholder=" " required></textarea>
+            <label for="formMessage">Your Intentions</label>
+          </div>
+          <button type="submit" class="btn-ritual">
+            <span>Submit</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        <footer class="contact__footer">
+          <p>&copy; The Hair Ritualist &mdash; Sacred Practice</p>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>

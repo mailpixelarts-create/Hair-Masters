@@ -1,0 +1,148 @@
+/* ============================================
+   THE BRIDAL SCULPTOR — Animation Styles
+   ============================================ */
+
+/* --- REVEAL ANIMATIONS --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+/* --- SPLIT TEXT MASKS --- */
+[data-split] .line {
+  overflow: hidden;
+  display: block;
+}
+
+[data-split] .line-inner {
+  display: block;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+/* --- HERO ANIMATIONS --- */
+.hero-label,
+.hero-title,
+.hero-sub,
+.hero-cta {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+}
+
+.hero-detail {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  will-change: transform, opacity;
+}
+
+/* --- GALLERY CARD HOVER --- */
+.gallery-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 36, 32, 0);
+  transition: background 0.5s var(--ease-smooth);
+  pointer-events: none;
+}
+
+.gallery-card:hover::after {
+  background: rgba(42, 36, 32, 0.05);
+}
+
+/* --- LOOK CARD (GSAP-driven expand, scaleY transform only) --- */
+.look-card-content {
+  will-change: transform;
+  transform-origin: top;
+}
+
+.look-card.active .look-card-image img {
+  transform: scale(1.05);
+}
+
+/* --- FORM FOCUS ANIMATIONS --- */
+.inquire-form-input {
+  transition: border-color 0.3s var(--ease-smooth),
+              box-shadow 0.3s var(--ease-smooth);
+}
+
+.inquire-form-input:focus {
+  box-shadow: 0 1px 0 0 var(--muted-gold);
+}
+
+/* --- BUTTON HOVER LINE --- */
+.hero-cta-line,
+.inquire-form-submit-line {
+  position: relative;
+}
+
+.hero-cta-line::after,
+.inquire-form-submit-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--charcoal);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.hero-cta:hover .hero-cta-line::after,
+.inquire-form-submit:hover .inquire-form-submit-line::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- PROCESS STEP HOVER (transform only, no layout thrash) --- */
+.process-step {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.process-step:hover {
+  transform: translateX(1rem);
+}
+
+.process-step:hover .process-step-num {
+  color: var(--charcoal);
+}
+
+/* --- NAV SCROLL TRANSITION (scale transform only, no font-size) --- */
+.nav-logo-text {
+  transition: transform 0.4s var(--ease-smooth);
+  transform-origin: left center;
+}
+
+.nav.scrolled .nav-logo-text {
+  transform: scale(0.9);
+}
+
+/* --- EXPERIENCE CARD HOVER --- */
+.experience-card {
+  transition: border-color 0.4s var(--ease-smooth),
+              background 0.4s var(--ease-smooth),
+              transform 0.4s var(--ease-out);
+}
+
+.experience-card:hover {
+  transform: translateY(-2px);
+}
+
+/* --- MOBILE NAV TRANSITION --- */
+.mobile-nav-link {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mobile-nav.active .mobile-nav-link {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.mobile-nav.active .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav.active .mobile-nav-link:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav.active .mobile-nav-link:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav.active .mobile-nav-link:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav.active .mobile-nav-link:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav.active .mobile-nav-link:nth-child(6) { transition-delay: 0.35s; }

@@ -1,0 +1,394 @@
+/* ═══════════════════════════════════════════════════
+   THE HAIR RITUALIST — Animations
+   ═══════════════════════════════════════════════════ */
+
+/* ─── PRELOADER AURORA ─── */
+
+@property --aurora-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --aurora-pos {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes auroraShift {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(15deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(-10deg);
+  }
+  75% {
+    filter: hue-rotate(8deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* ─── PRELOADER RINGS ─── */
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ─── SPARK PARTICLES ─── */
+
+@keyframes sparkFloat {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── RIPPLE RITUAL (HERO) ─── */
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.35;
+  }
+  60% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* ─── BREATHING PULSE ─── */
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+}
+
+/* ─── TEXT REVEAL ─── */
+
+@keyframes revealLine {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ─── STEP STAGGER ─── */
+
+@keyframes stepReveal {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ─── MASONRY ITEM GLOW ─── */
+
+@keyframes warmGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(201, 169, 110, 0);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(201, 169, 110, 0.12);
+  }
+}
+
+/* ─── FORM LINE ANIMATE ─── */
+
+@keyframes lineGrow {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* ─── NAV TOGGLE PULSE ─── */
+
+@keyframes togglePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(139, 115, 85, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(139, 115, 85, 0);
+  }
+}
+
+.radial-nav__toggle {
+  animation: togglePulse 4s var(--ease-ritual) infinite;
+}
+
+/* ─── SCROLL CUE BOUNCE ─── */
+
+@keyframes cueBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.hero__scroll-cue svg {
+  animation: cueBounce 2s var(--ease-ritual) infinite;
+}
+
+/* ─── TAG LINE DRAW ─── */
+
+.section-tag {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s var(--ease-ritual), transform 1s var(--ease-ritual);
+}
+
+.section-tag.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── SECTION HEADING CHARS ─── */
+
+.section-heading .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60%) rotateX(-80deg);
+  transform-origin: bottom center;
+}
+
+/* ─── PRACTICE STEP REVEAL ─── */
+
+.practice__step {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.practice__step.is-revealed {
+  animation: stepReveal 1.2s var(--ease-ritual) forwards;
+}
+
+.practice__step:nth-child(1).is-revealed { animation-delay: 0s; }
+.practice__step:nth-child(2).is-revealed { animation-delay: 0.2s; }
+.practice__step:nth-child(3).is-revealed { animation-delay: 0.4s; }
+.practice__step:nth-child(4).is-revealed { animation-delay: 0.6s; }
+
+/* ─── MASONRY STAGGER ─── */
+
+.masonry__item {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: opacity 1.2s var(--ease-ritual), transform 1.2s var(--ease-ritual);
+}
+
+.masonry__item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ─── EDITORIAL SPREAD REVEAL ─── */
+
+.editorial-spread__item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s var(--ease-ritual), transform 1.2s var(--ease-ritual);
+}
+
+.editorial-spread__item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-spread__item:nth-child(1).is-visible { transition-delay: 0s; }
+.editorial-spread__item:nth-child(2).is-visible { transition-delay: 0.3s; }
+.editorial-spread__col--center .editorial-spread__item.is-visible { transition-delay: 0.15s; }
+
+/* ─── INTELLIGENCE CARDS ─── */
+
+.intelligence__card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-ritual), transform 0.8s var(--ease-ritual), border-color 0.6s var(--ease-ritual);
+}
+
+.intelligence__card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intelligence__card:nth-child(1).is-visible { transition-delay: 0s; }
+.intelligence__card:nth-child(2).is-visible { transition-delay: 0.15s; }
+.intelligence__card:nth-child(3).is-visible { transition-delay: 0.3s; }
+
+/* ─── TRANSFORMATION ROWS ─── */
+
+.transformation__row {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--ease-ritual), transform 1s var(--ease-ritual);
+}
+
+.transformation__row.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transformation__row:nth-child(1).is-visible { transition-delay: 0s; }
+.transformation__row:nth-child(3).is-visible { transition-delay: 0.2s; }
+
+/* ─── CLOSING QUOTE ─── */
+
+.closing__quote {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s var(--ease-ritual), transform 1.2s var(--ease-ritual);
+}
+
+.closing__quote.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.closing__text {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s var(--ease-ritual) 0.3s, transform 1s var(--ease-ritual) 0.3s;
+}
+
+.closing__text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── ATMOSPHERE ITEMS ─── */
+
+.atmosphere__item {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 1s var(--ease-ritual), transform 1s var(--ease-ritual);
+}
+
+.atmosphere__item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.atmosphere__item:nth-child(1).is-visible { transition-delay: 0s; }
+.atmosphere__item:nth-child(2).is-visible { transition-delay: 0.1s; }
+.atmosphere__item:nth-child(3).is-visible { transition-delay: 0.2s; }
+.atmosphere__item:nth-child(4).is-visible { transition-delay: 0.3s; }
+.atmosphere__item:nth-child(5).is-visible { transition-delay: 0.4s; }
+.atmosphere__item:nth-child(6).is-visible { transition-delay: 0.5s; }
+
+/* ─── FORM REVEAL ─── */
+
+.form-group {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.form-group.is-visible {
+  animation: fadeUp 1s var(--ease-ritual) forwards;
+}
+
+.form-group:nth-child(1).is-visible { animation-delay: 0s; }
+.form-group:nth-child(2).is-visible { animation-delay: 0.15s; }
+.form-group:nth-child(3).is-visible { animation-delay: 0.3s; }
+
+/* ─── VALUE ITEMS ─── */
+
+.value-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-ritual), transform 0.8s var(--ease-ritual);
+}
+
+.value-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.value-item:nth-child(1).is-visible { transition-delay: 0s; }
+.value-item:nth-child(2).is-visible { transition-delay: 0.15s; }
+.value-item:nth-child(3).is-visible { transition-delay: 0.3s; }
+
+/* ─── BACKGROUND PARALLAX FILTER ─── */
+
+.panel__bg {
+  transition: opacity 1.5s var(--ease-ritual), filter 2s var(--ease-ritual);
+}
+
+.panel.is-active .panel__bg {
+  filter: sepia(8%) saturate(65%) brightness(105%);
+}

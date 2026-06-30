@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WORK | THE PRECISION CUTTER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- PRELOADER (geometric morph) -->
+  <div id="preloader">
+    <div class="preloader-shape shape-1"></div>
+    <div class="preloader-shape shape-2"></div>
+    <div class="preloader-shape shape-3"></div>
+  </div>
+
+  <!-- NAV INDICATOR -->
+  <nav id="nav-indicator">
+    <div class="nav-scramble" id="navScramble">
+      <span class="nav-label">WORK</span>
+    </div>
+    <div class="nav-dropdown" id="navDropdown">
+      <div class="nav-grid">
+        <a href="index.html" class="nav-link">00 HOME</a>
+        <a href="about.html" class="nav-link">01 ABOUT</a>
+        <a href="work.html" class="nav-link">02 WORK</a>
+        <a href="index.html#contact" class="nav-link">03 CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECTION: HERO -->
+  <section id="work-hero" class="pinned-section work-hero-section">
+    <div class="section-content">
+      <span class="section-number mono">02</span>
+      <h1 class="work-hero-title">
+        <span class="line">Cut</span>
+        <span class="line accent">Archive</span>
+      </h1>
+      <div class="work-filters" id="workFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="bob">Bob</button>
+        <button class="filter-btn" data-filter="pixie">Pixie</button>
+        <button class="filter-btn" data-filter="fringe">Fringe</button>
+        <button class="filter-btn" data-filter="editorial">Editorial</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: HORIZONTAL GALLERY -->
+  <section id="work-gallery" class="work-gallery-section">
+    <div class="gallery-wrapper" id="galleryWrapper">
+      <div class="gallery-track" id="galleryTrack">
+
+        <div class="gallery-slide" data-category="bob">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_01_graphic_blunt_bob.png" alt="Graphic blunt bob" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">01</span>
+            <h3>THE ARCHITECT</h3>
+            <p class="slide-cat mono">BOB &middot; ANGLE: 0&deg; &middot; LENGTH: 14cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="pixie">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_02_micro_fringe_cut_portrait.png" alt="Micro fringe cut" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">02</span>
+            <h3>THE FORMULA</h3>
+            <p class="slide-cat mono">PIXIE &middot; ANGLE: 45&deg; &middot; LENGTH: 8cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="fringe">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_03_tucked_ear_collarbone_lob.png" alt="Tucked ear collarbone lob" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">03</span>
+            <h3>THE BLUEPRINT</h3>
+            <p class="slide-cat mono">FRINGE &middot; ANGLE: 12&deg; &middot; LENGTH: 22cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="editorial">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_04_profile_pixie_short_cut_silhouette.png" alt="Profile pixie short cut silhouette" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">04</span>
+            <h3>THE GRID</h3>
+            <p class="slide-cat mono">EDITORIAL &middot; ANGLE: 90&deg; &middot; LENGTH: 6cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="bob">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_05_natural_texture_precision_shape.png" alt="Natural texture precision shape" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">05</span>
+            <h3>THE THEOREM</h3>
+            <p class="slide-cat mono">BOB &middot; ANGLE: 30&deg; &middot; LENGTH: 18cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="pixie">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_06_back_view_nape_line_portrait.png" alt="Back view nape line portrait" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">06</span>
+            <h3>THE CALCULUS</h3>
+            <p class="slide-cat mono">PIXIE &middot; ANGLE: 60&deg; &middot; LENGTH: 5cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="fringe">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_07_severe_center_part_cut.png" alt="Severe center part cut" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">07</span>
+            <h3>THE EQUATION</h3>
+            <p class="slide-cat mono">FRINGE &middot; ANGLE: 22&deg; &middot; LENGTH: 12cm</p>
+          </div>
+        </div>
+
+        <div class="gallery-slide" data-category="editorial">
+          <div class="slide-image">
+            <img src="precision_cutter_images/gallery/gallery_08_modernist_seated_cut_portrait.png" alt="Modernist seated cut portrait" />
+          </div>
+          <div class="slide-info">
+            <span class="slide-num mono">08</span>
+            <h3>THE VECTOR</h3>
+            <p class="slide-cat mono">EDITORIAL &middot; ANGLE: 75&deg; &middot; LENGTH: 10cm</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="gallery-progress">
+        <div class="progress-bar"><div class="progress-fill" id="galleryProgress"></div></div>
+        <span class="progress-count mono"><span id="currentSlide">01</span> / <span id="totalSlides">08</span></span>
+      </div>
+      <div class="gallery-drag-hint mono">DRAG &rarr;</div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE CUT LINE -->
+  <svg id="cutLine" class="cut-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path id="cutPath" d="M0,50 L100,50 L100,0 L0,0 Z" fill="none" stroke="#0A0A0A" stroke-width="0.3" stroke-dasharray="400" stroke-dashoffset="400" />
+  </svg>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="mono">&copy; 2026 THE PRECISION CUTTER</p>
+      </div>
+      <div class="footer-col footer-center">
+        <p class="footer-norman">&copy; Norman James <svg class="heart-icon" viewBox="0 0 24 24" fill="#E03C31" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></p>
+      </div>
+      <div class="footer-col footer-right">
+        <p class="footer-made-with-love">made with love <svg class="heart-icon" viewBox="0 0 24 24" fill="#E03C31" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by <strong>Empathy Studio</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="js/work.js"></script>
+</body>
+</html>

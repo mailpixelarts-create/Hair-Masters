@@ -1,0 +1,12 @@
+{
+  "name": "the-avant-garde-transformer",
+  "version": "2.0.0",
+  "description": "Hair as architecture. Sculptural, conceptual, transformative.",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -c-1 -o",
+    "serve": "npx http-server . -p 3000 -c-1"
+  },
+  "author": "The Avant Garde",
+  "license": "UNLICENSED",
+  "private": true
+}

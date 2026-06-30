@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Nav</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0D0A07;
+            --text-primary: #F5EDE0;
+            --text-tertiary: #8A7E6E;
+            --accent-gold: #C4A265;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: var(--bg-deep);
+        }
+        .nav-vertical {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 70px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+            mix-blend-mode: difference;
+            background: transparent;
+        }
+        .nav-brand {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .nav-brand-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.5em;
+            color: var(--text-primary);
+        }
+        .nav-scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-scene {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            opacity: 0.3;
+            transition: opacity 0.4s ease;
+            text-decoration: none;
+        }
+        .nav-scene.active, .nav-scene:hover {
+            opacity: 1;
+        }
+        .nav-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--accent-gold);
+        }
+        .nav-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .nav-scene:hover .nav-label, .nav-scene.active .nav-label {
+            opacity: 1;
+        }
+        .content {
+            padding-left: 110px;
+            padding-top: 100px;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-vertical" id="nav">
+        <div class="nav-brand">
+            <span class="nav-brand-text">THE ALCHEMIST</span>
+        </div>
+        <div class="nav-scenes">
+            <a href="#scene-01" class="nav-scene active" data-scene="1">
+                <span class="nav-num">01</span>
+                <span class="nav-label">Invocation</span>
+            </a>
+            <a href="#scene-02" class="nav-scene" data-scene="2">
+                <span class="nav-num">02</span>
+                <span class="nav-label">Philosophy</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Test Content</h1>
+        <p>Is the nav showing?</p>
+    </div>
+</body>
+</html>

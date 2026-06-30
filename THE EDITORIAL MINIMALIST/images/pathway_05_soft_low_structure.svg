@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" width="2000" height="2000">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4C5B5"/>
+      <stop offset="100%" stop-color="#C4B5A5"/>
+    </linearGradient>
+    <linearGradient id="hair5" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4A3A2A"/>
+      <stop offset="40%" stop-color="#5C4A38"/>
+      <stop offset="100%" stop-color="#3A2A1A"/>
+    </linearGradient>
+  </defs>
+  <rect width="2000" height="2000" fill="url(#bg5)"/>
+  <!-- Body / cashmere wrap -->
+  <ellipse cx="1000" cy="1600" rx="300" ry="400" fill="#D8CFC0" opacity="0.8"/>
+  <!-- Neck -->
+  <rect x="880" y="700" width="240" height="400" rx="60" fill="#E8D5C0"/>
+  <!-- Head profile -->
+  <ellipse cx="950" cy="550" rx="160" ry="200" fill="#EDDCC8"/>
+  <!-- Low twist at nape -->
+  <ellipse cx="920" cy="780" rx="70" ry="50" fill="url(#hair5)"/>
+  <path d="M850 780 Q880 740 920 750 Q960 740 990 780" fill="none" stroke="#5C4A38" stroke-width="3"/>
+  <!-- Escape strands -->
+  <path d="M880 600 Q850 650 840 700" fill="none" stroke="#5C4A38" stroke-width="1.5" opacity="0.7"/>
+  <path d="M900 620 Q870 670 865 720" fill="none" stroke="#5C4A38" stroke-width="1" opacity="0.5"/>
+  <!-- Light catch on twist -->
+  <ellipse cx="900" cy="770" rx="20" ry="8" fill="white" opacity="0.15"/>
+  <!-- Text -->
+  <text x="1000" y="1850" font-family="Georgia, serif" font-size="28" fill="#8A7A6A" text-anchor="middle" letter-spacing="6">PATHWAY 05 — SOFT LOW STRUCTURE</text>
+</svg>

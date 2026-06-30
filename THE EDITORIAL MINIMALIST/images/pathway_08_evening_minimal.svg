@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" width="2000" height="2000">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A2A2A"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </linearGradient>
+    <linearGradient id="hair8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1A1A"/>
+      <stop offset="100%" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+  <rect width="2000" height="2000" fill="url(#bg8)"/>
+  <!-- Jacket merging with bg -->
+  <path d="M400 1000 Q500 800 1000 900 Q1500 800 1600 1000 L1600 2000 L400 2000 Z" fill="#1A1A1A"/>
+  <!-- Satin lapel highlight -->
+  <path d="M950 900 L900 1300 L1050 1350 L1000 900 Z" fill="#2A2A2A" opacity="0.6"/>
+  <path d="M970 900 L930 1250" fill="none" stroke="white" stroke-width="1" opacity="0.08"/>
+  <!-- Neck -->
+  <rect x="900" y="650" width="200" height="300" rx="50" fill="#E0C8B0" opacity="0.8"/>
+  <!-- Profile -->
+  <ellipse cx="900" cy="500" rx="140" ry="180" fill="#E8D0B8"/>
+  <!-- Hair swept back - tight twist at nape -->
+  <path d="M820 380 Q850 350 900 340 Q950 350 980 380" fill="url(#hair8)"/>
+  <path d="M820 380 Q800 450 810 550 Q820 650 860 720" fill="url(#hair8)"/>
+  <path d="M980 380 Q1000 450 990 550 Q980 650 940 720" fill="url(#hair8)"/>
+  <!-- Twist at nape -->
+  <ellipse cx="900" cy="730" rx="45" ry="35" fill="#0A0A0A"/>
+  <!-- Diamond stud earring -->
+  <circle cx="860" cy="570" r="8" fill="white" opacity="0.9"/>
+  <circle cx="860" cy="570" r="4" fill="#E0E8FF" opacity="0.7"/>
+  <circle cx="860" cy="570" r="2" fill="white" opacity="1"/>
+  <!-- Surface highlight on hair -->
+  <path d="M830 400 Q860 380 900 370 Q940 380 970 400" fill="none" stroke="white" stroke-width="1.5" opacity="0.12"/>
+  <!-- Text -->
+  <text x="1000" y="1850" font-family="Georgia, serif" font-size="28" fill="#5A5A5A" text-anchor="middle" letter-spacing="6">PATHWAY 08 — THE EVENING MINIMAL</text>
+</svg>

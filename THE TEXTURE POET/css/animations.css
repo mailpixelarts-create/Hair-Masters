@@ -1,0 +1,527 @@
+/* ============================================
+   THE TEXTURE POET — Animations
+   Luminous reveal, curl ripple, organic motion
+   ============================================ */
+
+/* --- PRELOADER GRADIENT ANIMATION --- */
+@property --preloader-gradient-pos {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: false;
+}
+
+.preloader__gradient {
+  animation: preloaderShift 4s var(--ease-breath) forwards;
+}
+
+@keyframes preloaderShift {
+  0% {
+    background-position: 0% 0%;
+    filter: brightness(0);
+  }
+  30% {
+    background-position: 25% 25%;
+    filter: brightness(0.4);
+  }
+  60% {
+    background-position: 50% 50%;
+    filter: brightness(0.7);
+  }
+  85% {
+    background-position: 75% 75%;
+    filter: brightness(0.9);
+  }
+  100% {
+    background-position: 100% 100%;
+    filter: brightness(1);
+  }
+}
+
+.preloader__texture {
+  animation: textureFadeIn 3s 0.5s var(--ease-organic) forwards;
+}
+
+@keyframes textureFadeIn {
+  0% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 0.15; transform: scale(1); }
+}
+
+.preloader__brand {
+  animation: brandReveal 1.5s 0.3s var(--ease-breath) forwards;
+}
+
+@keyframes brandReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 0.8;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.preloader__tagline {
+  animation: taglineReveal 1.2s 0.9s var(--ease-breath) forwards;
+}
+
+@keyframes taglineReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+    letter-spacing: 0.5em;
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+    letter-spacing: 0.2em;
+  }
+}
+
+/* --- PRELOADER EXIT --- */
+.preloader.is-exiting {
+  animation: preloaderExit 1.2s var(--ease-organic) forwards;
+}
+
+@keyframes preloaderExit {
+  0% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+}
+
+/* --- CURL RIPPLE --- */
+@keyframes curlRippleExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+    border-width: 1.5px;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+    border-width: 0.5px;
+  }
+}
+
+@keyframes curlRipplePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.08;
+  }
+}
+
+/* --- ORGANIC TEXT REVEALS --- */
+@keyframes textRevealUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes textRevealFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes lineGrow {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+/* ============================================
+   VERTICAL SECTION REVEALS
+   ============================================ */
+
+/* --- Scene number reveal --- */
+.scene__number {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s var(--ease-breath) 0.1s, transform 0.8s var(--ease-breath) 0.1s;
+}
+
+.scene.is-inview .scene__number {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Scene body reveal --- */
+.scene__body {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s var(--ease-breath) 0.3s, transform 0.8s var(--ease-breath) 0.3s;
+}
+
+.scene.is-inview .scene__body {
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+/* --- Scene label reveal --- */
+.scene__label {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s var(--ease-breath) 0.5s, transform 0.8s var(--ease-breath) 0.5s;
+}
+
+.scene.is-inview .scene__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Scene line reveal --- */
+.scene__line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s var(--ease-cinematic) 0.2s;
+}
+
+.scene.is-inview .scene__line {
+  transform: scaleX(1);
+}
+
+/* --- Scene sub text reveal --- */
+.scene__sub {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-breath) 0.3s, transform 0.8s var(--ease-breath) 0.3s;
+}
+
+.scene.is-inview .scene__sub {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+/* --- Scene CTA reveal --- */
+.scene__cta {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s var(--ease-breath) 0.5s, transform 0.8s var(--ease-breath) 0.5s;
+}
+
+.scene.is-inview .scene__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Background image parallax float --- */
+.scene__bg-img {
+  transition: transform 8s var(--ease-breath);
+}
+
+.scene.is-inview .scene__bg-img {
+  transform: scale(1);
+}
+
+/* --- Scroll cue animation --- */
+.scroll-cue__line {
+  animation: scrollCuePulse 2s var(--ease-breath) infinite;
+}
+
+@keyframes scrollCuePulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.7; transform: scaleY(1.2); }
+}
+
+/* --- MENU ITEM HOVER --- */
+@keyframes menuItemGlow {
+  0% {
+    box-shadow: inset 0 0 0 0 rgba(196, 168, 130, 0);
+  }
+  100% {
+    box-shadow: inset 0 0 40px -10px rgba(196, 168, 130, 0.15);
+  }
+}
+
+.editorial-menu__item:hover {
+  animation: menuItemGlow 0.6s var(--ease-organic) forwards;
+}
+
+/* --- GALLERY SLIDE TRANSITIONS --- */
+@keyframes gallerySlideParallax {
+  0% {
+    transform: scale(1.05) translateX(3%);
+  }
+  100% {
+    transform: scale(1) translateX(0);
+  }
+}
+
+.gallery__slide.is-active .gallery__img {
+  animation: gallerySlideParallax 1.2s var(--ease-breath) forwards;
+}
+
+/* --- AMBIENT FLOATING --- */
+@keyframes ambientFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(-0.3deg);
+  }
+  75% {
+    transform: translateY(-7px) rotate(0.2deg);
+  }
+}
+
+/* --- LOADING SHIMMER --- */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* --- SCROLL INDICATOR PULSE --- */
+@keyframes indicatorPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* --- PROCESS CARD REVEALS --- */
+.process-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s var(--ease-cinematic), transform 0.8s var(--ease-cinematic);
+}
+
+.scene.is-inview .process-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.scene.is-inview .process-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.scene.is-inview .process-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.scene.is-inview .process-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.scene.is-inview .process-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.scene.is-inview .process-card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+/* --- DETAIL ITEM REVEALS --- */
+.detail-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-cinematic), transform 0.6s var(--ease-cinematic);
+}
+
+.scene.is-inview .detail-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scene.is-inview .detail-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.scene.is-inview .detail-item:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.scene.is-inview .detail-item:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.scene.is-inview .detail-item:nth-child(4) {
+  transition-delay: 0.25s;
+}
+
+.scene.is-inview .detail-item:nth-child(5) {
+  transition-delay: 0.3s;
+}
+
+.scene.is-inview .detail-item:nth-child(6) {
+  transition-delay: 0.35s;
+}
+
+/* --- DETAILS STRIP SCROLL --- */
+.details-strip__track {
+  animation: detailsScroll 30s linear infinite;
+}
+
+@keyframes detailsScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- LOOKBOOK POEM REVEALS --- */
+.lookbook-poem__line {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s var(--ease-cinematic), transform 0.6s var(--ease-cinematic);
+}
+
+.scene.is-inview .lookbook-poem__line {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+.scene.is-inview .lookbook-poem__line--lead {
+  transition-delay: 0.1s;
+  opacity: 0.9;
+}
+
+.scene.is-inview .lookbook-poem__line:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.scene.is-inview .lookbook-poem__line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.scene.is-inview .lookbook-poem__line:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.scene.is-inview .lookbook-poem__line--emphasis {
+  transition-delay: 0.6s;
+  opacity: 0.95;
+}
+
+.scene.is-inview .lookbook-poem__line--final {
+  transition-delay: 0.8s;
+  opacity: 1;
+}
+
+.lookbook-poem__divider {
+  transform: scaleX(0);
+  transition: transform 0.8s var(--ease-cinematic) 0.5s;
+}
+
+.scene.is-inview .lookbook-poem__divider {
+  transform: scaleX(1);
+}
+
+/* --- REDUCED MOTION --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .preloader__gradient {
+    animation: none;
+    filter: brightness(1);
+  }
+
+  .preloader__texture {
+    animation: none;
+    opacity: 0.15;
+  }
+
+  .preloader__brand {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .scene__number,
+  .scene__body,
+  .scene__label,
+  .scene__sub,
+  .scene__cta {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scene__title > div > span {
+    transform: none;
+    opacity: 1;
+  }
+
+  .scene__line {
+    transform: scaleX(1);
+  }
+
+  .scroll-cue__line {
+    animation: none;
+  }
+
+  .process-card,
+  .detail-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .details-strip__track {
+    animation: none;
+  }
+
+  .lookbook-poem__line,
+  .lookbook-poem__divider {
+    opacity: 1;
+    transform: none;
+  }
+}

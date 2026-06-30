@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE TEXTURE POET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- FILM GRAIN OVERLAY -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- FLOATING PARTICLES -->
+  <canvas id="particles" class="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- SKIP LINK -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__gradient"></div>
+    <div class="preloader__texture"></div>
+    <div class="preloader__content">
+      <span class="preloader__brand">THE TEXTURE POET</span>
+      <span class="preloader__tagline">Where curl becomes verse</span>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="header">
+    <button class="header__brand" id="menuToggle" aria-label="Open menu">
+      <span class="header__brand-text">THE TEXTURE POET</span>
+    </button>
+    <span class="header__tagline">World 06</span>
+  </header>
+
+  <!-- FULLSCREEN EDITORIAL MENU -->
+  <nav id="editorialMenu" class="editorial-menu" aria-label="Main navigation">
+    <div class="editorial-menu__bg"></div>
+    <div class="editorial-menu__grid">
+      <a href="#genesis" class="editorial-menu__item" data-texture="texture-a">
+        <span class="editorial-menu__number">01</span>
+        <span class="editorial-menu__heading">The Genesis</span>
+        <span class="editorial-menu__sub">Origin & Philosophy</span>
+      </a>
+      <a href="#manifesto" class="editorial-menu__item" data-texture="texture-b">
+        <span class="editorial-menu__number">02</span>
+        <span class="editorial-menu__heading">Manifesto</span>
+        <span class="editorial-menu__sub">Our Belief</span>
+      </a>
+      <a href="#beauty" class="editorial-menu__item" data-texture="texture-c">
+        <span class="editorial-menu__number">03</span>
+        <span class="editorial-menu__heading">Raw Beauty</span>
+        <span class="editorial-menu__sub">Texture Unfiltered</span>
+      </a>
+      <a href="#sacred" class="editorial-menu__item" data-texture="texture-d">
+        <span class="editorial-menu__number">04</span>
+        <span class="editorial-menu__heading">Sacred Curls</span>
+        <span class="editorial-menu__sub">The Crown Collection</span>
+      </a>
+      <a href="#motion" class="editorial-menu__item" data-texture="texture-e">
+        <span class="editorial-menu__number">05</span>
+        <span class="editorial-menu__heading">Poetry in Motion</span>
+        <span class="editorial-menu__sub">Movement & Flow</span>
+      </a>
+      <a href="#ritual" class="editorial-menu__item" data-texture="texture-f">
+        <span class="editorial-menu__number">06</span>
+        <span class="editorial-menu__heading">The Ritual</span>
+        <span class="editorial-menu__sub">Sacred Steps</span>
+      </a>
+      <a href="#details" class="editorial-menu__item" data-texture="texture-g">
+        <span class="editorial-menu__number">07</span>
+        <span class="editorial-menu__heading">Intimate Details</span>
+        <span class="editorial-menu__sub">Close & Personal</span>
+      </a>
+      <a href="#lookbook" class="editorial-menu__item" data-texture="texture-h">
+        <span class="editorial-menu__number">08</span>
+        <span class="editorial-menu__heading">The Lookbook</span>
+        <span class="editorial-menu__sub">Full Gallery</span>
+      </a>
+    </div>
+    <button class="editorial-menu__close" id="menuClose" aria-label="Close menu">
+      <svg width="32" height="32" viewBox="0 0 32 32"><line x1="6" y1="6" x2="26" y2="26" stroke="currentColor" stroke-width="1.5"/><line x1="26" y1="6" x2="6" y2="26" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" role="main">
+
+    <!-- SECTION 1: GENESIS — Hero -->
+    <section class="scene scene--hero" id="genesis" data-scene="01">
+      <div class="scene__bg">
+        <img src="images/hero/hero-01.png" alt="Natural hair texture" class="scene__bg-img" loading="eager">
+      </div>
+      <div class="scene__overlay"></div>
+      <div class="scene__content scene__content--hero">
+        <span class="scene__number">01</span>
+        <h1 class="scene__title scene__title--hero" data-split>Where Curl Becomes Verse</h1>
+        <p class="scene__sub">I started this journey not with a comb, but with a question: what does it mean to wear your truth on the outside? Every strand carries a story. Every curl is a verse written by nature, untamed and unapologetic. This is not a salon. This is a sanctuary.</p>
+        <div class="scene__line" aria-hidden="true"></div>
+        <span class="scene__credit">The Texture Poet &mdash; World 06</span>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">
+        <div class="scroll-cue__line"></div>
+      </div>
+    </section>
+
+    <!-- THREAD QUOTE 1 -->
+    <div class="thread-quote" aria-hidden="true">
+      <div class="thread-quote__inner">
+        <span class="thread-quote__mark">&ldquo;</span>
+        <p class="thread-quote__text">Hair is the first thing people see. It is the last thing they forget. It is the only thing that grows from your body and tells the world who you are before you speak.</p>
+        <span class="thread-quote__mark">&rdquo;</span>
+      </div>
+      <div class="thread-quote__line"></div>
+    </div>
+
+    <!-- SECTION 2: MANIFESTO -->
+    <section class="scene scene--manifesto" id="manifesto" data-scene="02">
+      <div class="scene__bg scene__bg--dark"></div>
+      <div class="scene__content scene__content--manifesto">
+        <div class="manifesto-block">
+          <span class="scene__number">02</span>
+          <h2 class="scene__title" data-split>What We Believe</h2>
+          <div class="manifesto-columns">
+            <div class="manifesto-col">
+              <p class="manifesto-text manifesto-text--lead">We do not tame. We do not flatten. We do not apologize for volume, for coil, for the way hair takes up space in a world that asks it to shrink.</p>
+              <p class="manifesto-text">Texture is not a trend. It is a lineage. It is your grandmother&rsquo;s hands braiding in the kitchen light. It is the way your mother touched your crown and said, &ldquo;You are beautiful.&rdquo;</p>
+            </div>
+            <div class="manifesto-col">
+              <p class="manifesto-text">At The Texture Poet, we believe every curl pattern is a fingerprint of the soul. Type 3a is not &ldquo;better&rdquo; than 4c. They are different poems in the same language.</p>
+              <p class="manifesto-text manifesto-text--signature">&mdash; The Texture Poet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREAD QUOTE 2 -->
+    <div class="thread-quote thread-quote--right" aria-hidden="true">
+      <div class="thread-quote__inner">
+        <p class="thread-quote__text">I stopped straightening my hair the day I realized I was trying to make it into something it was never meant to be. That day, I met my curls for the first time.</p>
+        <span class="thread-quote__attr">&mdash; A client, 2024</span>
+      </div>
+    </div>
+
+    <!-- SECTION 3: RAW BEAUTY -->
+    <section class="scene scene--split" id="beauty" data-scene="03">
+      <div class="scene__bg">
+        <img src="images/hero/hero-02.png" alt="Curly hair beauty" class="scene__bg-img" loading="lazy">
+      </div>
+      <div class="scene__overlay"></div>
+      <div class="scene__content scene__content--split">
+        <div class="scene__text-block">
+          <span class="scene__number">03</span>
+          <h2 class="scene__title" data-split>Raw Beauty</h2>
+          <p class="scene__body">Texture is not a problem to be solved. It is a language to be spoken. In every coil and wave, there is rhythm&mdash;a cadence that belongs only to the wearer. We listen to that rhythm before we ever touch a strand.</p>
+          <p class="scene__body scene__body--small">Our hands are trained to read texture like braille. Each curl pattern tells us what it needs: moisture, shape, time. We give it all three without hurry.</p>
+          <span class="scene__label">Texture Unfiltered</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREAD QUOTE 3 -->
+    <div class="thread-quote" aria-hidden="true">
+      <div class="thread-quote__inner">
+        <p class="thread-quote__text">There is a moment in every session when the client sees themselves&mdash;truly sees themselves&mdash;for the first time. That moment is why we do this work.</p>
+        <span class="thread-quote__attr">&mdash; The Texture Poet</span>
+      </div>
+    </div>
+
+    <!-- SECTION 4: SACRED CURLS — Full bleed -->
+    <section class="scene scene--full" id="sacred" data-scene="04">
+      <div class="scene__bg">
+        <img src="images/atmosphere/atmosphere-01.png" alt="Sacred curls portrait" class="scene__bg-img" loading="lazy">
+      </div>
+      <div class="scene__overlay scene__overlay--gradient"></div>
+      <div class="scene__content scene__content--bottom">
+        <span class="scene__number">04</span>
+        <h2 class="scene__title scene__title--large" data-split>Sacred Curls</h2>
+        <p class="scene__body">The crown collection is not about adornment. It is about recognition&mdash;seeing the divine in the way hair spirals upward, reaching, always reaching. These are the moments when hair stops being hair and becomes architecture, becomes sculpture, becomes prayer.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5: POETRY IN MOTION — Diagonal -->
+    <section class="scene scene--diagonal" id="motion" data-scene="05">
+      <div class="scene__bg">
+        <img src="images/atmosphere/atmosphere-02.png" alt="Hair movement" class="scene__bg-img" loading="lazy">
+      </div>
+      <div class="scene__overlay scene__overlay--diagonal"></div>
+      <div class="scene__content scene__content--diagonal">
+        <div class="scene__text-block scene__text-block--elevated">
+          <span class="scene__number">05</span>
+          <h2 class="scene__title" data-split>Poetry in Motion</h2>
+          <p class="scene__body">Watch how curls move when freed. They bounce, they cascade, they catch light like water. There is choreography in every gesture&mdash;a dance that begins at the scalp and ends at the shoulders. We do not style hair. We choreograph movement.</p>
+          <p class="scene__body scene__body--small">The way a curl falls when you shake your head is the most honest thing in the world. We protect that honesty.</p>
+          <span class="scene__label">Movement & Flow</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREAD QUOTE 4 -->
+    <div class="thread-quote thread-quote--right" aria-hidden="true">
+      <div class="thread-quote__inner">
+        <span class="thread-quote__mark">&ldquo;</span>
+        <p class="thread-quote__text">Every curl is a decision. A choice to grow in spiral instead of line. To take up space. To be unapologetically itself.</p>
+        <span class="thread-quote__mark">&rdquo;</span>
+      </div>
+    </div>
+
+    <!-- SECTION 6: THE RITUAL — Process Grid -->
+    <section class="scene scene--process" id="ritual" data-scene="06">
+      <div class="scene__bg">
+        <img src="images/atmosphere/atmosphere-03.png" alt="Ritual atmosphere" class="scene__bg-img" loading="lazy">
+      </div>
+      <div class="scene__overlay scene__overlay--dark"></div>
+      <div class="scene__content scene__content--process">
+        <div class="process-header">
+          <span class="scene__number">06</span>
+          <h2 class="scene__title" data-split>The Ritual</h2>
+          <p class="scene__body">Every crown deserves a ceremony. Five sacred steps that transform the ordinary into the eternal. We do not rush. We do not skip. We honor the process because the process honors the hair.</p>
+          <p class="scene__body scene__body--small">Each step is a conversation between our hands and your texture. We listen. We respond. We create.</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-card process-card--tall">
+            <img src="images/process/process-01.png" alt="Step 1: Awakening" class="process-card__img" loading="lazy">
+            <div class="process-card__overlay">
+              <span class="process-card__step">I</span>
+              <span class="process-card__name">Awakening</span>
+              <span class="process-card__desc">We begin by understanding. What does your hair want to be?</span>
+            </div>
+          </div>
+          <div class="process-card">
+            <img src="images/process/process-02.png" alt="Step 2: Cleansing" class="process-card__img" loading="lazy">
+            <div class="process-card__overlay">
+              <span class="process-card__step">II</span>
+              <span class="process-card__name">Cleansing</span>
+              <span class="process-card__desc">Water meets scalp. The old falls away. Fresh canvas.</span>
+            </div>
+          </div>
+          <div class="process-card process-card--wide">
+            <img src="images/process/process-03.png" alt="Step 3: Sculpting" class="process-card__img" loading="lazy">
+            <div class="process-card__overlay">
+              <span class="process-card__step">III</span>
+              <span class="process-card__name">Sculpting</span>
+              <span class="process-card__desc">Hands become instruments. Shape emerges from chaos.</span>
+            </div>
+          </div>
+          <div class="process-card">
+            <img src="images/process/process-04.png" alt="Step 4: Defining" class="process-card__img" loading="lazy">
+            <div class="process-card__overlay">
+              <span class="process-card__step">IV</span>
+              <span class="process-card__name">Defining</span>
+              <span class="process-card__desc">Each curl finds its voice. Each coil finds its direction.</span>
+            </div>
+          </div>
+          <div class="process-card process-card--tall">
+            <img src="images/process/process-05.png" alt="Step 5: Crown" class="process-card__img" loading="lazy">
+            <div class="process-card__overlay">
+              <span class="process-card__step">V</span>
+              <span class="process-card__name">Crown</span>
+              <span class="process-card__desc">The reveal. The mirror. The moment you meet yourself again.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREAD QUOTE 5 -->
+    <div class="thread-quote" aria-hidden="true">
+      <div class="thread-quote__inner">
+        <p class="thread-quote__text">The best hairstyle is the one that makes you forget you&rsquo;re wearing hair at all. It should feel like breathing. Like belonging. Like home.</p>
+        <span class="thread-quote__attr">&mdash; Something we believe</span>
+      </div>
+    </div>
+
+    <!-- SECTION 7: INTIMATE DETAILS — Detail Strip -->
+    <section class="scene scene--details" id="details" data-scene="07">
+      <div class="scene__bg scene__bg--dark"></div>
+      <div class="scene__content scene__content--details">
+        <div class="details-header">
+          <span class="scene__number">07</span>
+          <h2 class="scene__title" data-split>Intimate Details</h2>
+          <p class="scene__body">In the quiet spaces between strands, beauty reveals itself. Close your eyes. Feel the texture. The coil of a curl is the most intimate geometry in nature&mdash;it spirals inward like a secret, like a prayer, like the way love grows.</p>
+          <p class="scene__body scene__body--small">We photograph these details not because they are small, but because they are everything.</p>
+        </div>
+        <div class="details-strip">
+          <div class="details-strip__track">
+            <div class="detail-item">
+              <img src="images/detail/detail-01.png" alt="Detail: Coil pattern" class="detail-item__img" loading="lazy">
+              <span class="detail-item__label">Coil</span>
+            </div>
+            <div class="detail-item">
+              <img src="images/detail/detail-02.png" alt="Detail: Wave rhythm" class="detail-item__img" loading="lazy">
+              <span class="detail-item__label">Wave</span>
+            </div>
+            <div class="detail-item">
+              <img src="images/detail/detail-03.png" alt="Detail: Strand architecture" class="detail-item__img" loading="lazy">
+              <span class="detail-item__label">Strand</span>
+            </div>
+            <div class="detail-item">
+              <img src="images/detail/detail-04.png" alt="Detail: Curl formation" class="detail-item__img" loading="lazy">
+              <span class="detail-item__label">Curl</span>
+            </div>
+            <div class="detail-item">
+              <img src="images/detail/detail-05.png" alt="Detail: Root strength" class="detail-item__img" loading="lazy">
+              <span class="detail-item__label">Root</span>
+            </div>
+            <div class="detail-item">
+              <img src="images/detail/detail-06.png" alt="Detail: Crown essence" class="detail-item__img" loading="lazy">
+              <span class="detail-item__label">Crown</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: THE LOOKBOOK — CTA -->
+    <section class="scene scene--cta" id="lookbook" data-scene="08">
+      <div class="scene__bg">
+        <img src="images/gallery/gallery-01.png" alt="Lookbook background" class="scene__bg-img" loading="lazy">
+      </div>
+      <div class="scene__overlay scene__overlay--gradient"></div>
+      <div class="scene__content scene__content--center">
+        <span class="scene__number">08</span>
+        <h2 class="scene__title scene__title--display" data-split>The Lookbook</h2>
+        <div class="lookbook-poem">
+          <p class="lookbook-poem__line lookbook-poem__line--lead">Every portrait is a love letter to texture.</p>
+          <p class="lookbook-poem__line">Eight souls.</p>
+          <p class="lookbook-poem__line">Eight curl patterns.</p>
+          <p class="lookbook-poem__line">Eight stories told through light and shadow.</p>
+          <div class="lookbook-poem__divider" aria-hidden="true"></div>
+          <p class="lookbook-poem__line lookbook-poem__line--emphasis">This is not photography.</p>
+          <p class="lookbook-poem__line lookbook-poem__line--final">This is testimony.</p>
+        </div>
+        <button class="scene__cta" id="openGallery">Enter the Gallery</button>
+      </div>
+    </section>
+
+    <!-- FINAL THREAD -->
+    <div class="thread-quote thread-quote--final" aria-hidden="true">
+      <div class="thread-quote__inner">
+        <p class="thread-quote__text">Hair is the first thing people see. It is the last thing they forget. It is the only thing that grows from your body and tells the world who you are before you speak.</p>
+        <span class="thread-quote__attr">&mdash; The Texture Poet</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FULLSCREEN LOOKBOOK GALLERY -->
+  <div id="lookbookGallery" class="gallery" role="dialog" aria-label="Lookbook gallery">
+    <div class="gallery__track" id="galleryTrack">
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-01.png" alt="Portrait 1" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">I &mdash; Defiance</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-02.png" alt="Portrait 2" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">II &mdash; Grace</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-03.png" alt="Portrait 3" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">III &mdash; Crown</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-04.png" alt="Portrait 4" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">IV &mdash; Motion</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-05.png" alt="Portrait 5" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">V &mdash; Solitude</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-06.png" alt="Portrait 6" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">VI &mdash; Radiance</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-07.png" alt="Portrait 7" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">VII &mdash; Wild</span>
+      </div>
+      <div class="gallery__slide">
+        <img src="images/gallery/gallery-08.png" alt="Portrait 8" class="gallery__img" loading="lazy">
+        <span class="gallery__caption">VIII &mdash; Still</span>
+      </div>
+    </div>
+    <div class="gallery__progress">
+      <div class="gallery__progress-bar" id="galleryProgress"></div>
+    </div>
+    <button class="gallery__close" id="closeGallery" aria-label="Close gallery">
+      <svg width="32" height="32" viewBox="0 0 32 32"><line x1="6" y1="6" x2="26" y2="26" stroke="currentColor" stroke-width="1.5"/><line x1="26" y1="6" x2="6" y2="26" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__main">
+        <span class="footer__brand">THE TEXTURE POET</span>
+        <span class="footer__copy">Seventy-eight doors. One infinite corridor. &copy; 2026. Norman James All rights reserved.</span>
+      </div>
+      <div class="footer__credits">
+        <span class="footer__studio">MADE WITH LOVE &#10084;&#65039; BY EMPATHY STUDIO</span>
+        <span class="footer__phone">91 + 9833274308 / 91 + 9833274305</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true">
+    <div class="progress-bar__fill" id="scrollFill"></div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

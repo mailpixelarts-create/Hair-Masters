@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE RUNWAY ARCHITECT — Industrial Precision in Hair Design</title>
+    <meta name="description" content="Industrial backstage aesthetic meets runway precision. Structural hair design with architectural methodology.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body data-barba="wrapper">
+
+    <!-- PAGE TRANSITION OVERLAY -->
+    <div class="page-transition-overlay"></div>
+
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader__half preloader__half--left"></div>
+        <div class="preloader__half preloader__half--right"></div>
+        <div class="preloader__content">
+            <div class="preloader__scanlines"></div>
+            <div class="preloader__grain"></div>
+            <div class="preloader__counter">
+                <span class="preloader__label">LOADING</span>
+                <span class="preloader__percent">000</span>
+                <span class="preloader__percent-sign">%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- VERTICAL SIDE NAV -->
+    <nav id="sideNav" class="side-nav">
+        <div class="side-nav__brand">
+            <span class="side-nav__logo">TRA</span>
+        </div>
+        <ul class="side-nav__list">
+            <li class="side-nav__item active" data-section="0">
+                <a href="index.html" class="side-nav__link">
+                    <span class="side-nav__number">01</span>
+                    <span class="side-nav__name" data-scramble="COMMAND">COMMAND</span>
+                    <span class="side-nav__dot"></span>
+                </a>
+            </li>
+            <li class="side-nav__item" data-section="1">
+                <a href="about.html" class="side-nav__link">
+                    <span class="side-nav__number">02</span>
+                    <span class="side-nav__name" data-scramble="ABOUT">ABOUT</span>
+                    <span class="side-nav__dot"></span>
+                </a>
+            </li>
+            <li class="side-nav__item" data-section="2">
+                <a href="work.html" class="side-nav__link">
+                    <span class="side-nav__number">03</span>
+                    <span class="side-nav__name" data-scramble="ARCHIVE">ARCHIVE</span>
+                    <span class="side-nav__dot"></span>
+                </a>
+            </li>
+            <li class="side-nav__item" data-section="3">
+                <a href="about.html#approach" class="side-nav__link">
+                    <span class="side-nav__number">04</span>
+                    <span class="side-nav__name" data-scramble="PROCESS">PROCESS</span>
+                    <span class="side-nav__dot"></span>
+                </a>
+            </li>
+            <li class="side-nav__item" data-section="4">
+                <a href="about.html#contact" class="side-nav__link">
+                    <span class="side-nav__number">05</span>
+                    <span class="side-nav__name" data-scramble="CONTACT">CONTACT</span>
+                    <span class="side-nav__dot"></span>
+                </a>
+            </li>
+        </ul>
+        <div class="side-nav__footer">
+            <span class="side-nav__year">&copy; 2026</span>
+        </div>
+    </nav>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <nav id="mobileNav" class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item active" data-section="0">
+                <a href="index.html" class="mobile-nav__link">
+                    <span class="mobile-nav__number">01</span>
+                    <span class="mobile-nav__name">CMD</span>
+                </a>
+            </li>
+            <li class="mobile-nav__item" data-section="1">
+                <a href="about.html" class="mobile-nav__link">
+                    <span class="mobile-nav__number">02</span>
+                    <span class="mobile-nav__name">ABT</span>
+                </a>
+            </li>
+            <li class="mobile-nav__item" data-section="2">
+                <a href="work.html" class="mobile-nav__link">
+                    <span class="mobile-nav__number">03</span>
+                    <span class="mobile-nav__name">ARC</span>
+                </a>
+            </li>
+            <li class="mobile-nav__item" data-section="3">
+                <a href="about.html#approach" class="mobile-nav__link">
+                    <span class="mobile-nav__number">04</span>
+                    <span class="mobile-nav__name">PRC</span>
+                </a>
+            </li>
+            <li class="mobile-nav__item" data-section="4">
+                <a href="about.html#contact" class="mobile-nav__link">
+                    <span class="mobile-nav__number">05</span>
+                    <span class="mobile-nav__name">CTA</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- BARBA CONTAINER -->
+    <main data-barba="container" data-barba-namespace="home">
+
+        <!-- HORIZONTAL SCROLL -->
+        <div class="horizontal-scroll">
+            <div class="horizontal-scroll__wrapper">
+
+                <!-- SECTION 01 — COMMAND (Hero) -->
+                <section id="section-0" class="section section--command" data-section="0">
+                    <div class="section__bg">
+                        <img src="images/runway-architect/hero/hero-01.jpg" alt="Runway backstage" class="section__bg-img" loading="eager">
+                        <div class="section__overlay"></div>
+                    </div>
+                    <div class="section__content">
+                        <div class="section__label reveal">
+                            <span class="label label--mono">SECTION 01 — COMMAND</span>
+                        </div>
+                        <h1 class="section__title section__title--hero" data-split="words">
+                            <span class="title-line">THE RUNWAY</span>
+                            <span class="title-line title-line--accent">ARCHITECT</span>
+                        </h1>
+                        <p class="section__subtitle reveal">Industrial precision meets backstage artistry. Every strand, a structural decision. Every look, an engineered masterpiece.</p>
+                        <div class="section__meta reveal">
+                            <span class="meta-item">EST. 2019</span>
+                            <span class="meta-divider">/</span>
+                            <span class="meta-item">NEW YORK</span>
+                            <span class="meta-divider">/</span>
+                            <span class="meta-item">BACKSTAGE</span>
+                        </div>
+                        <div class="section__scroll-indicator reveal">
+                            <span class="scroll-text">SCROLL TO ADVANCE</span>
+                            <div class="scroll-line"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 02 — STRUCTURE (Philosophy) -->
+                <section id="section-1" class="section section--structure" data-section="1">
+                    <div class="section__bg">
+                        <img src="images/runway-architect/hero/hero-02.jpg" alt="Structural precision" class="section__bg-img" loading="lazy">
+                        <div class="section__overlay"></div>
+                    </div>
+                    <div class="section__content">
+                        <div class="section__label reveal">
+                            <span class="label label--mono">SECTION 02 — STRUCTURE</span>
+                        </div>
+                        <h2 class="section__title" data-split="words">
+                            <span class="title-line">PHILOSOPHY OF</span>
+                            <span class="title-line title-line--accent">STRUCTURAL DESIGN</span>
+                        </h2>
+                        <div class="section__columns stagger-reveal">
+                            <div class="column">
+                                <h3 class="column__title">INDUSTRIAL METHODOLOGY</h3>
+                                <p class="column__text">Every hairstyle begins as an architectural blueprint. We analyze bone structure, hair density, and movement patterns before the first cut is made.</p>
+                            </div>
+                            <div class="column">
+                                <h3 class="column__title">PRECISION ENGINEERING</h3>
+                                <p class="column__text">Backstage at Fashion Week, there is no room for error. Our techniques are refined through thousands of hours of structural practice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 03 — ARCHIVE (Gallery) -->
+                <section id="section-2" class="section section--archive" data-section="2">
+                    <div class="section__bg">
+                        <img src="images/runway-architect/hero/hero-03.jpg" alt="Fashion archive" class="section__bg-img" loading="lazy">
+                        <div class="section__overlay"></div>
+                    </div>
+                    <div class="section__content">
+                        <div class="section__label reveal">
+                            <span class="label label--mono">SECTION 03 — ARCHIVE</span>
+                        </div>
+                        <h2 class="section__title" data-split="words">
+                            <span class="title-line">SELECTED</span>
+                            <span class="title-line title-line--accent">WORKS</span>
+                        </h2>
+                        <div class="gallery-index stagger-reveal">
+                            <a href="work.html" class="gallery-index__item" data-project="1">
+                                <span class="gallery-index__name">VOGUE ITALIA</span>
+                                <span class="gallery-index__year">2025</span>
+                                <span class="gallery-index__line"></span>
+                            </a>
+                            <a href="work.html" class="gallery-index__item" data-project="2">
+                                <span class="gallery-index__name">BALMAIN SS26</span>
+                                <span class="gallery-index__year">2025</span>
+                                <span class="gallery-index__line"></span>
+                            </a>
+                            <a href="work.html" class="gallery-index__item" data-project="3">
+                                <span class="gallery-index__name">BALENCIAGA FW</span>
+                                <span class="gallery-index__year">2024</span>
+                                <span class="gallery-index__line"></span>
+                            </a>
+                            <a href="work.html" class="gallery-index__item" data-project="4">
+                                <span class="gallery-index__name">OFF-WHITE TRIBUTE</span>
+                                <span class="gallery-index__year">2024</span>
+                                <span class="gallery-index__line"></span>
+                            </a>
+                            <a href="work.html" class="gallery-index__item" data-project="5">
+                                <span class="gallery-index__name">ALYX STUDIO</span>
+                                <span class="gallery-index__year">2024</span>
+                                <span class="gallery-index__line"></span>
+                            </a>
+                            <a href="work.html" class="gallery-index__item" data-project="6">
+                                <span class="gallery-index__name">ACNE STUDIOS</span>
+                                <span class="gallery-index__year">2023</span>
+                                <span class="gallery-index__line"></span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 04 — PROCESS (Construction) -->
+                <section id="section-3" class="section section--process" data-section="3">
+                    <div class="section__bg">
+                        <img src="images/runway-architect/hero/hero-04.jpg" alt="Hair construction process" class="section__bg-img" loading="lazy">
+                        <div class="section__overlay"></div>
+                    </div>
+                    <div class="section__content">
+                        <div class="section__label reveal">
+                            <span class="label label--mono">SECTION 04 — PROCESS</span>
+                        </div>
+                        <h2 class="section__title" data-split="words">
+                            <span class="title-line">THE</span>
+                            <span class="title-line title-line--accent">CONSTRUCTION</span>
+                        </h2>
+                        <div class="process-steps stagger-reveal">
+                            <div class="process-step">
+                                <span class="process-step__number">01</span>
+                                <h3 class="process-step__title">ANALYSIS</h3>
+                                <p class="process-step__text">Bone structure mapping, hair fiber assessment, movement pattern study.</p>
+                            </div>
+                            <div class="process-step">
+                                <span class="process-step__number">02</span>
+                                <h3 class="process-step__title">BLUEPRINT</h3>
+                                <p class="process-step__text">Technical drawings, sectioning diagrams, product specifications.</p>
+                            </div>
+                            <div class="process-step">
+                                <span class="process-step__number">03</span>
+                                <h3 class="process-step__title">EXECUTION</h3>
+                                <p class="process-step__text">Precision cutting, structural building, architectural styling.</p>
+                            </div>
+                            <div class="process-step">
+                                <span class="process-step__number">04</span>
+                                <h3 class="process-step__title">QUALITY</h3>
+                                <p class="process-step__text">Under-stage lighting tests, movement durability, 360&deg; verification.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 05 — CONTACT (CTA) -->
+                <section id="section-4" class="section section--contact" data-section="4">
+                    <div class="section__bg">
+                        <img src="images/runway-architect/hero/hero-05.jpg" alt="Contact" class="section__bg-img" loading="lazy">
+                        <div class="section__overlay"></div>
+                    </div>
+                    <div class="section__content">
+                        <div class="section__label reveal">
+                            <span class="label label--mono">SECTION 05 — CONTACT</span>
+                        </div>
+                        <h2 class="section__title" data-split="words">
+                            <span class="title-line">INITIATE</span>
+                            <span class="title-line title-line--accent">COLLABORATION</span>
+                        </h2>
+                        <div class="contact-grid stagger-reveal">
+                            <div class="contact-block">
+                                <h3 class="contact-block__title">BOOKINGS</h3>
+                                <a href="mailto:bookings@therunwayarchitect.com" class="contact-block__link">bookings@therunwayarchitect.com</a>
+                            </div>
+                            <div class="contact-block">
+                                <h3 class="contact-block__title">PRESS</h3>
+                                <a href="mailto:press@therunwayarchitect.com" class="contact-block__link">press@therunwayarchitect.com</a>
+                            </div>
+                            <div class="contact-block">
+                                <h3 class="contact-block__title">STUDIO</h3>
+                                <p class="contact-block__text">147 West 35th Street<br>New York, NY 10001</p>
+                            </div>
+                            <div class="contact-block">
+                                <h3 class="contact-block__title">SOCIAL</h3>
+                                <div class="contact-block__socials">
+                                    <a href="#" class="social-link">INSTAGRAM</a>
+                                    <a href="#" class="social-link">TIKTOK</a>
+                                    <a href="#" class="social-link">PINTEREST</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section__cta reveal">
+                            <a href="mailto:bookings@therunwayarchitect.com" class="btn btn--primary">
+                                <span class="btn__text">SCHEDULE CONSULTATION</span>
+                                <span class="btn__arrow">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__content">
+            <span class="footer__brand">THE RUNWAY ARCHITECT</span>
+            <span class="footer__divider">/</span>
+            <span class="footer__tagline">Industrial Precision in Hair Design</span>
+            <span class="footer__divider">/</span>
+            <span class="footer__copy">&copy; 2026 ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

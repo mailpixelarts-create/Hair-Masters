@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Avant-Garde Transformer — The Avant Garde</title>
+  <meta name="description" content="Hair as architecture. Sculptural, conceptual, transformative. The Avant Garde — The Avant-Garde Transformer.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Preloader inline styles (prevent FOUC) -->
+  <style>
+    .preloader { position: fixed; inset: 0; background: #080808; z-index: 9999; overflow: hidden; }
+    .preloader__count { position: absolute; bottom: 12%; left: 50%; transform: translateX(-50%); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; color: #e8e4df; line-height: 1; z-index: 2; opacity: 0; letter-spacing: 0.05em; }
+    .preloader__fragments { position: absolute; inset: 0; z-index: 1; }
+    .preloader__fragment { position: absolute; background: #0d0d0d; opacity: 0; will-change: transform, opacity; }
+    .preloader__fragment--1 { top: -5%; left: -5%; width: 45vw; height: 50vh; }
+    .preloader__fragment--2 { top: 15%; right: -8%; width: 38vw; height: 42vh; }
+    .preloader__fragment--3 { bottom: -8%; left: 18%; width: 42vw; height: 38vh; }
+    .preloader__fragment--4 { top: 8%; right: 12%; width: 28vw; height: 32vh; }
+    .preloader__fragment--5 { top: 40%; left: 5%; width: 32vw; height: 48vh; }
+    .preloader__wipe { position: fixed; inset: 0; background: #080808; z-index: 9998; transform-origin: bottom; visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER — Cinematic Fragment Scatter
+       ============================================ -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__fragments">
+      <div class="preloader__fragment preloader__fragment--1"></div>
+      <div class="preloader__fragment preloader__fragment--2"></div>
+      <div class="preloader__fragment preloader__fragment--3"></div>
+      <div class="preloader__fragment preloader__fragment--4"></div>
+      <div class="preloader__fragment preloader__fragment--5"></div>
+    </div>
+    <div class="preloader__count">000</div>
+  </div>
+  <div class="preloader__wipe" aria-hidden="true"></div>
+
+  <!-- ============================================
+       CUSTOM CURSOR
+       ============================================ -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HERO — CINEMATIC TRANSFORMATION GATE
+       ============================================ -->
+  <header class="header act--threshold" style="position: relative; height: 100vh; width: 100%; overflow: hidden; background: #080808;">
+    <!-- Primary silhouette image — dominates viewport -->
+    <div class="threshold__canvas" style="position: absolute; inset: 0;">
+      <img
+        src="assets/images/hero_03.png"
+        alt="The Silhouette Reveal — hair form emerging from darkness"
+        class="threshold__image threshold__image--primary"
+        loading="eager"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      >
+      <!-- Secondary detail crop — floating depth plane -->
+      <div class="threshold__detail" style="position: absolute; bottom: 10%; right: 5%; width: 25vw; max-width: 300px; z-index: 2;">
+        <img
+          src="assets/images/detail_08.png"
+          alt="Material Study — hair as fiber, surface tension"
+          class="threshold__image threshold__image--detail"
+          loading="eager"
+          style="width: 100%; height: auto; display: block;"
+        >
+      </div>
+      <div class="threshold__veil" aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.3) 50%, rgba(8,8,8,0.1) 100%);"></div>
+      <!-- Light passing — diagonal warm sweep -->
+      <div class="light" aria-hidden="true"></div>
+    </div>
+    
+    <!-- Navigation — positioned over hero -->
+    <nav class="nav" role="navigation" aria-label="Main navigation" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; padding: 2rem 5%;">
+      <a href="index.html" class="nav__logo">The Avant Garde</a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="work.html" class="nav__link">Work</a>
+        <a href="#act-08" class="nav__cta">Book a Transformation</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+        <span class="nav__hamburger-line"></span>
+      </button>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="nav__mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="work.html" class="nav__link">Work</a>
+      <a href="#act-08" class="nav__cta">Book a Transformation</a>
+    </div>
+    
+    <!-- Typography — minimal, severe, asymmetrical (right-aligned) -->
+    <div class="threshold__content" style="position: absolute; right: 3%; top: 50%; transform: translateY(-50%); text-align: right; z-index: 5; max-width: 550px; overflow: visible;">
+      <h1 class="threshold__title" style="overflow: visible; word-wrap: break-word;">The Avant-Garde<br>Transformer</h1>
+      <p class="threshold__statement" style="overflow: visible;">Hair can do more than flatter. It can become architecture.</p>
+    </div>
+    
+    <!-- Scroll cue -->
+    <div class="threshold__scroll-cue" aria-hidden="true" style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); z-index: 5;">
+      <div class="threshold__scroll-line" style="width: 1px; height: 60px; background: rgba(232,228,223,0.3);"></div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT WRAPPER
+       ============================================ -->
+  <main data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+
+      <!-- ============================================
+           ACT 02 — THE MANIFESTO OF TRANSFORMATION
+           Staggered editorial text + close crops
+           ============================================ -->
+      <section class="act act--manifesto" id="act-02" aria-label="Manifesto">
+        <div class="manifesto__grid">
+          <!-- Left column — text fragments -->
+          <div class="manifesto__text">
+            <span class="manifesto__label">The Thesis</span>
+            <h2 class="manifesto__title">Hair as<br>Architecture</h2>
+            <div class="manifesto__fragments">
+              <p class="manifesto__fragment manifesto__fragment--1">
+                This is not hairdressing in the conventional sense.
+              </p>
+              <p class="manifesto__fragment manifesto__fragment--2">
+                This is the discipline of reshaping how a person is seen — through the structural possibilities of hair, the precision of silhouette, and the language of transformation.
+              </p>
+              <p class="manifesto__fragment manifesto__fragment--3">
+                Every shape is deliberate. Every line is composed. The work does not simply enhance — it reconstructs the visual identity of the person wearing it.
+              </p>
+              <p class="manifesto__fragment manifesto__fragment--4">
+                Hair becomes material. The head becomes a site for design.
+              </p>
+            </div>
+          </div>
+          <!-- Right column — stacked detail crops -->
+          <div class="manifesto__imagery">
+            <div class="manifesto__crop manifesto__crop--1">
+              <img
+                src="assets/images/detail_02.png"
+                alt="Conceptual portrait — sculptural hair silhouette"
+                loading="lazy"
+              >
+            </div>
+            <div class="manifesto__crop manifesto__crop--2">
+              <img
+                src="assets/images/detail_03.png"
+                alt="Hair construction detail — structural engineering"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ACT 03 — THE SILHOUETTE CHAMBER
+           Sculptural installations in dark gallery
+           ============================================ -->
+      <section class="act act--silhouette" id="act-03" aria-label="Silhouette Chamber">
+        <div class="silhouette__header">
+          <span class="silhouette__label">The Chamber of Forms</span>
+          <h2 class="silhouette__title">Silhouette<br>Studies</h2>
+        </div>
+        <!-- Vertical procession — monolithic portraits -->
+        <div class="silhouette__procession">
+          <div class="silhouette__study silhouette__study--1">
+            <img
+              src="assets/images/gallery_01.png"
+              alt="Structural wave — hair sculpted into undulating wave form"
+              loading="lazy"
+            >
+            <div class="silhouette__meta">
+              <span class="silhouette__meta-label">Form 01</span>
+              <span class="silhouette__meta-title">Structural Wave</span>
+            </div>
+          </div>
+          <div class="silhouette__study silhouette__study--2">
+            <img
+              src="assets/images/gallery_02.png"
+              alt="Wig transformation — complete identity shift"
+              loading="lazy"
+            >
+            <div class="silhouette__meta">
+              <span class="silhouette__meta-label">Form 02</span>
+              <span class="silhouette__meta-title">Identity Shift</span>
+            </div>
+          </div>
+          <div class="silhouette__study silhouette__study--3">
+            <img
+              src="assets/images/gallery_03.png"
+              alt="Conceptual knot — interlocking hair structures"
+              loading="lazy"
+            >
+            <div class="silhouette__meta">
+              <span class="silhouette__meta-label">Form 03</span>
+              <span class="silhouette__meta-title">Conceptual Knot</span>
+            </div>
+          </div>
+          <div class="silhouette__study silhouette__study--4">
+            <img
+              src="assets/images/gallery_09.png"
+              alt="Side profile — structural wave cascading into negative space"
+              loading="lazy"
+            >
+            <div class="silhouette__meta">
+              <span class="silhouette__meta-label">Form 04</span>
+              <span class="silhouette__meta-title">Structural Cascade</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ACT 04 — THE MUTATION ARCHIVE
+           Curated editorial sequence with rhythm
+           ============================================ -->
+      <section class="act act--archive" id="act-04" aria-label="Mutation Archive">
+        <div class="archive__header">
+          <span class="archive__label">The Archive</span>
+          <h2 class="archive__title">Mutation<br>Archive</h2>
+        </div>
+        <!-- Editorial image rhythm — not masonry -->
+        <div class="archive__sequence">
+          <!-- Full-width transformation frame -->
+          <div class="archive__frame archive__frame--full">
+            <img
+              src="assets/images/gallery_04.png"
+              alt="Architectural form — geometric hair construction"
+              loading="lazy"
+            >
+            <div class="archive__frame-meta">
+              <span class="archive__frame-title">Architectural Form</span>
+              <span class="archive__frame-category">Sculptural Silhouette</span>
+            </div>
+          </div>
+          <!-- Supporting close crops — diptych -->
+          <div class="archive__frame archive__frame--diptych">
+            <div class="archive__frame-item">
+              <img
+                src="assets/images/gallery_05.png"
+                alt="Volume study — extreme height and mass"
+                loading="lazy"
+              >
+            </div>
+            <div class="archive__frame-item">
+              <img
+                src="assets/images/gallery_06.png"
+                alt="Deconstructed form — intentionally disrupted silhouette"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <!-- Vertical portrait -->
+          <div class="archive__frame archive__frame--vertical">
+            <img
+              src="assets/images/gallery_07.png"
+              alt="Identity shift — dramatic transformation"
+              loading="lazy"
+            >
+            <div class="archive__frame-meta">
+              <span class="archive__frame-title">Identity Shift</span>
+              <span class="archive__frame-category">Identity-Shift Direction</span>
+            </div>
+          </div>
+          <!-- Gallery interruption quote — Wow Moment 06 -->
+          <div class="archive__quote">
+            <blockquote class="archive__quote-text">
+              "This is someone who can re-author a human image from the silhouette outward."
+            </blockquote>
+          </div>
+          <!-- Wide transformation frame -->
+          <div class="archive__frame archive__frame--wide">
+            <img
+              src="assets/images/gallery_08.png"
+              alt="Hair as material — raw medium for artistic expression"
+              loading="lazy"
+            >
+            <div class="archive__frame-meta">
+              <span class="archive__frame-title">Hair as Material</span>
+              <span class="archive__frame-category">Hair-Object</span>
+            </div>
+          </div>
+          <!-- Vertical portrait — identity shift -->
+          <div class="archive__frame archive__frame--vertical">
+            <img
+              src="assets/images/gallery_10.png"
+              alt="Identity shift — dual exposure transformation study"
+              loading="lazy"
+            >
+            <div class="archive__frame-meta">
+              <span class="archive__frame-title">Dual Exposure</span>
+              <span class="archive__frame-category">Identity-Shift Direction</span>
+            </div>
+          </div>
+          <!-- Profile architecture — closing frame -->
+          <div class="archive__frame archive__frame--full">
+            <img
+              src="assets/images/gallery_11.png"
+              alt="Profile architecture — before-after triptych transformation"
+              loading="lazy"
+            >
+            <div class="archive__frame-meta">
+              <span class="archive__frame-title">Profile Architecture</span>
+              <span class="archive__frame-category">Transformation Sequence</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ACT 05 — THE CONSTRUCTION LAB
+           Forensic process evidence — dossier style
+           ============================================ -->
+      <section class="act act--construction" id="act-05" aria-label="Construction Lab">
+        <div class="construction__header">
+          <span class="construction__label">The Lab</span>
+          <h2 class="construction__title">Construction<br>Dossier</h2>
+        </div>
+        <!-- Dossier grid — evidence cards -->
+        <div class="construction__dossier">
+          <div class="construction__card construction__card--hero">
+            <img
+              src="assets/images/process_01.png"
+              alt="Conceive phase — research and conceptual development"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 01</span>
+              <span class="construction__card-title">Conceive</span>
+              <span class="construction__card-desc">The vision takes shape. Research, mood, reference.</span>
+            </div>
+          </div>
+          <div class="construction__card">
+            <img
+              src="assets/images/process_02.png"
+              alt="Construct phase — structural foundation"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 02</span>
+              <span class="construction__card-title">Construct</span>
+              <span class="construction__card-desc">The foundation is built. Structure, support, architecture.</span>
+            </div>
+          </div>
+          <div class="construction__card">
+            <img
+              src="assets/images/process_03.png"
+              alt="Manipulate phase — texture and direction altered"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 03</span>
+              <span class="construction__card-title">Manipulate</span>
+              <span class="construction__card-desc">Texture is altered. Direction is forced.</span>
+            </div>
+          </div>
+          <div class="construction__card">
+            <img
+              src="assets/images/process_04.png"
+              alt="Sculpt phase — silhouette emerging"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 04</span>
+              <span class="construction__card-title">Sculpt</span>
+              <span class="construction__card-desc">The silhouette emerges. Volume, proportion, balance.</span>
+            </div>
+          </div>
+          <div class="construction__card">
+            <img
+              src="assets/images/process_05.png"
+              alt="Refine phase — precision detailing"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 05</span>
+              <span class="construction__card-title">Refine</span>
+              <span class="construction__card-desc">The edges are cleaned. The details are tightened.</span>
+            </div>
+          </div>
+          <div class="construction__card">
+            <img
+              src="assets/images/detail_07.png"
+              alt="Test phase — construction evidence, pin architecture under stress"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 06</span>
+              <span class="construction__card-title">Test</span>
+              <span class="construction__card-desc">The form is challenged. Movement, light, gravity.</span>
+            </div>
+          </div>
+          <div class="construction__card">
+            <img
+              src="assets/images/detail_06.png"
+              alt="Reveal phase — seam, join, wrap detail under final inspection"
+              loading="lazy"
+            >
+            <div class="construction__card-meta">
+              <span class="construction__card-phase">Phase 07</span>
+              <span class="construction__card-title">Reveal</span>
+              <span class="construction__card-desc">The transformation is complete. The new identity emerges.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ACT 06 — THE IDENTITY SPLIT
+           Transformation proof — editorial, cinematic
+           ============================================ -->
+      <section class="act act--split" id="act-06" aria-label="Identity Split">
+        <div class="split__header">
+          <span class="split__label">The Rupture</span>
+          <h2 class="split__title">Identity<br>Split</h2>
+        </div>
+        <!-- Layered dual-state frame — scroll-driven reveal -->
+        <div class="split__module">
+          <div class="split__state split__state--before">
+            <img
+              src="assets/images/detail_04.png"
+              alt="Before transformation — pre-state identity"
+              loading="lazy"
+            >
+            <div class="split__state-label">
+              <span class="split__state-tag">Pre-State</span>
+              <span class="split__state-desc">Silhouette shift</span>
+            </div>
+          </div>
+          <div class="split__state split__state--after">
+            <img
+              src="assets/images/hero_02.png"
+              alt="After transformation — reconstructed identity"
+              loading="lazy"
+            >
+            <div class="split__state-label">
+              <span class="split__state-tag">Transformed</span>
+              <span class="split__state-desc">Profile architecture rebuilt</span>
+            </div>
+          </div>
+          <div class="split__divider" aria-hidden="true"></div>
+        </div>
+        <!-- Second transformation pair — cinematic dual exposure -->
+        <div class="split__module split__module--2">
+          <div class="split__state split__state--before">
+            <img
+              src="assets/images/detail_05.png"
+              alt="Before transformation — silhouette edge, negative space"
+              loading="lazy"
+            >
+            <div class="split__state-label">
+              <span class="split__state-tag">Pre-State</span>
+              <span class="split__state-desc">Line extended</span>
+            </div>
+          </div>
+          <div class="split__state split__state--after">
+            <img
+              src="assets/images/detail_01.png"
+              alt="After transformation — lacquered surface, hair as reflective material"
+              loading="lazy"
+            >
+            <div class="split__state-label">
+              <span class="split__state-tag">Transformed</span>
+              <span class="split__state-desc">Texture re-authored</span>
+            </div>
+          </div>
+          <div class="split__divider" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ACT 07 — THE ATMOSPHERE INTERLUDE
+           Still-life, backstage, world-building
+           ============================================ -->
+      <section class="act act--atmosphere" id="act-07" aria-label="Atmosphere Interlude">
+        <div class="atmosphere__header">
+          <span class="atmosphere__label">The Interlude</span>
+          <h2 class="atmosphere__title">Atmosphere</h2>
+        </div>
+        <!-- Editorial grid — staggered still-life wall -->
+        <div class="atmosphere__grid">
+          <div class="atmosphere__item atmosphere__item--tall">
+            <img
+              src="assets/images/atmosphere_01.png"
+              alt="The Build Table — wigs on stands, backstage preparation"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">Staging</span>
+          </div>
+          <div class="atmosphere__item">
+            <img
+              src="assets/images/atmosphere_02.png"
+              alt="Mirror and shadow — half-built silhouette"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">Instruments</span>
+          </div>
+          <div class="atmosphere__item atmosphere__item--wide">
+            <img
+              src="assets/images/atmosphere_03.png"
+              alt="Metal, water, fabric — concept still life"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">Workspace</span>
+          </div>
+          <div class="atmosphere__item">
+            <img
+              src="assets/images/atmosphere_04.png"
+              alt="Backstage Altar — preparation table with tools"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">Altar</span>
+          </div>
+          <div class="atmosphere__item atmosphere__item--tall">
+            <img
+              src="assets/images/atmosphere_05.png"
+              alt="Shadow Study — mirror fragment reflection"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">Shadow</span>
+          </div>
+          <div class="atmosphere__item">
+            <img
+              src="assets/images/atmosphere_06.png"
+              alt="Material Texture — lacquer and mesh surfaces"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">Material</span>
+          </div>
+          <div class="atmosphere__item atmosphere__item--wide">
+            <img
+              src="assets/images/atmosphere_07.png"
+              alt="The Chamber — empty stage awaiting transformation"
+              loading="lazy"
+            >
+            <span class="atmosphere__item-label">The Chamber</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           ACT 08 — THE INVITATION TO TRANSFORM
+           Closing CTA — final frame of fashion film
+           ============================================ -->
+      <section class="act act--invocation" id="act-08" aria-label="Collaboration Invocation">
+        <div class="invocation__content">
+          <span class="invocation__label">The Invitation</span>
+          <h2 class="invocation__title">Begin Your<br>Transformation</h2>
+          <p class="invocation__statement">This work is by consultation only. Each transformation is a collaboration — a conversation about who you are and who you could become.</p>
+          <a href="mailto:norman@normanjames.studio" class="invocation__cta">
+            <span>Book a Consultation</span>
+          </a>
+        </div>
+        <!-- Final transformation image — vanishes on scroll -->
+        <div class="invocation__image">
+          <img
+            src="assets/images/hero_01.png"
+            alt="The Transformation Icon — final metamorphosis vanishing into darkness"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+      <!-- ============================================
+           FOOTER — Closing title card
+           ============================================ -->
+      <footer class="footer" role="contentinfo">
+        <p class="footer__tagline">Seventy-eight doors. One infinite corridor.</p>
+        <div class="footer__divider" aria-hidden="true"></div>
+        <p class="footer__credit">MADE WITH LOVE <span class="footer__love">❤️</span> BY EMPATHY STUDIO<br>91 + 9833274308 / 91 + 9833274305</p>
+        <p class="footer__studio">© 2026. The Avant Garde. All rights reserved.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- SplitType -->
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.js"></script>
+  <!-- Barba.js -->
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/lenis-init.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/split-text.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/barba-init.js"></script>
+
+  <!-- Init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined') {
+        console.warn('GSAP not loaded');
+        return;
+      }
+
+      function runInit() {
+        try {
+          // 1. Lenis
+          if (typeof initLenis === 'function') initLenis();
+
+          // 2. Split text
+          splitTextElements('.threshold__title');
+          splitTextElements('.manifesto__title');
+          splitTextElements('.silhouette__title');
+          splitTextElements('.archive__title');
+          splitTextElements('.construction__title');
+          splitTextElements('.split__title');
+          splitTextElements('.invocation__title');
+          revealWords('.threshold__title', { delay: 0.5, stagger: 0.06 });
+
+          // 3. Animations
+          if (typeof initAnimations === 'function') initAnimations();
+          if (typeof initCursor === 'function') initCursor();
+          if (typeof initGallery === 'function') initGallery();
+
+          // 4. ScrollTrigger refresh
+          ScrollTrigger.refresh();
+
+          // 5. Barba last
+          if (typeof initBarba === 'function') initBarba();
+        } catch (e) {
+          console.error('Init error:', e);
+        }
+      }
+
+      // 1. Preloader starts
+      const preloaderDone = (typeof initPreloader === 'function') ? initPreloader() : Promise.resolve();
+
+      // 2. Wait for preloader to finish, with 4s timeout fallback
+      let initialized = false;
+      function safeInit() {
+        if (initialized) return;
+        initialized = true;
+        runInit();
+      }
+
+      preloaderDone.then(safeInit);
+      setTimeout(safeInit, 4000);
+
+      // Hamburger menu
+      const hamburger = document.querySelector('.nav__hamburger');
+      const mobileMenu = document.querySelector('.nav__mobile-menu');
+
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !isExpanded);
+          hamburger.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('.nav__link, .nav__cta').forEach((link) => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Right-click protection -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORK — The Red Carpet Director</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- PRELOADER (Simplified — gradient fade) -->
+  <div id="preloader" class="preloader preloader--simple">
+    <div class="preloader__gradient"></div>
+    <div class="preloader__overlay"></div>
+    <div class="preloader__gate">
+      <div class="preloader__film-border preloader__film-border--top"></div>
+      <div class="preloader__content">
+        <span class="preloader__label">WORLD 08 PRESENTS</span>
+        <h1 class="preloader__title">THE RED CARPET<br>DIRECTOR</h1>
+        <p class="preloader__sub">Red Carpet Archive</p>
+        <button class="preloader__enter" id="preloaderEnter">
+          <span class="preloader__enter-text">VIEW THE ARCHIVE</span>
+          <span class="preloader__enter-line"></span>
+        </button>
+      </div>
+      <div class="preloader__film-border preloader__film-border--bottom"></div>
+    </div>
+  </div>
+
+  <!-- GRAIN OVERLAY -->
+  <div class="film-grain"></div>
+
+  <!-- BOTTOM NAV -->
+  <nav id="mainNav" class="nav-bar">
+    <div class="nav-bar__inner">
+      <a href="index.html" class="nav-bar__item">HOME</a>
+      <a href="about.html" class="nav-bar__item">ABOUT</a>
+      <a href="work.html" class="nav-bar__item active">WORK</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="work-page">
+
+    <!-- HERO -->
+    <section class="work-hero">
+      <div class="work-hero__bg">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1920&q=80" alt="" class="work-hero__bg-img">
+      </div>
+      <div class="work-hero__overlay"></div>
+      <div class="work-hero__content">
+        <span class="work-hero__label">THE ARCHIVE</span>
+        <h1 class="work-hero__title">RED CARPET<br>ARCHIVE</h1>
+        <div class="work-hero__divider"></div>
+        <p class="work-hero__tagline">Every frame, a premiere moment</p>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <section class="work-filters">
+      <div class="work-filters__container">
+        <button class="work-filters__btn active" data-filter="all">ALL</button>
+        <button class="work-filters__btn" data-filter="glam">GLAM</button>
+        <button class="work-filters__btn" data-filter="updo">UPDO</button>
+        <button class="work-filters__btn" data-filter="wave">WAVE</button>
+        <button class="work-filters__btn" data-filter="campaign">CAMPAIGN</button>
+      </div>
+    </section>
+
+    <!-- FILMSTRIP GALLERY -->
+    <section class="work-gallery">
+      <div class="work-gallery__container">
+        <div class="filmstrip-wrap">
+          <div class="filmstrip" id="filmstrip">
+            <div class="filmstrip__track">
+
+              <div class="filmstrip__item" data-category="glam">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80" alt="Golden Hour Glam" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">GOLDEN HOUR</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="glam">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&q=80" alt="Premiere Night" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">PREMIERE NIGHT</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="updo">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80" alt="Aisle Lights Updo" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">AISLE LIGHTS</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="glam">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&q=80" alt="Editorial Glam" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">EDITORIAL</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="campaign">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80" alt="Gala Campaign" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">GALA</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="wave">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&q=80" alt="Street Luxe Waves" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">STREET LUXE</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="glam">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Classic Noir" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">CLASSIC NOIR</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="updo">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Avant-Garde Updo" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">AVANT-GARDE</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="campaign">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=80" alt="Runway Campaign" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">RUNWAY</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="wave">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80" alt="Couture Waves" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">COUTURE</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="wave">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Red Carpet Waves" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">RED CARPET</span>
+              </div>
+
+              <div class="filmstrip__item" data-category="campaign">
+                <div class="filmstrip__gate">
+                  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500&q=80" alt="Luxe Campaign" class="filmstrip__img" loading="lazy">
+                </div>
+                <span class="filmstrip__caption">LUXE</span>
+              </div>
+
+            </div>
+          </div>
+          <div class="filmstrip__scroll-hint">
+            <span>DRAG OR SCROLL</span>
+            <svg width="40" height="12" viewBox="0 0 40 12"><line x1="0" y1="6" x2="32" y2="6" stroke="#8B7355" stroke-width="1"/><polyline points="28,2 34,6 28,10" fill="none" stroke="#8B7355" stroke-width="1"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FOOTER -->
+    <section class="work-footer">
+      <div class="work-footer__container">
+        <div class="scene__divider"></div>
+        <p class="work-footer__text">Ready to step into the spotlight?</p>
+        <a href="about.html#contact" class="scene__cta">
+          <span class="scene__cta-text">BOOK YOUR PREMIERE</span>
+          <span class="scene__cta-line"></span>
+        </a>
+        <div class="work-footer__credit">
+          <span class="scene__credits-small">WORLD 08 &copy; 2026 — ALL RIGHTS RESERVED</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FULLSCREEN LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox__close" id="lightboxClose">&times;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/work.js"></script>
+</body>
+</html>

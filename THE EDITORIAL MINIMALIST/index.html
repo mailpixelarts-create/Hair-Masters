@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAIR MASTERS — The Editorial Minimalist</title>
+  <meta name="description" content="Hair reduced to its most precise and expensive form. Editorial minimalist hair atelier in London.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__count" id="preloaderCount">0</div>
+      <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Film Grain -->
+  <div class="grain"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="/" class="nav__wordmark">HAIR MASTERS</a>
+    <div class="nav__links">
+      <a href="#portfolio" class="nav__link">Portfolio</a>
+      <a href="#method" class="nav__link">Method</a>
+      <a href="#contact" class="nav__link">Book</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- SCENE 01 — The Quiet Statement -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <div class="hero__label">The Editorial Minimalist</div>
+        <h1 class="hero__title">
+          <span class="hero__line" data-split>Hair,</span>
+          <span class="hero__line hero__line--indent" data-split>reduced to its most</span>
+          <span class="hero__line hero__line--italic" data-split>precise form.</span>
+        </h1>
+        <p class="hero__subtitle">Quiet shape. Controlled softness. Editorial finish.</p>
+        <a href="#portfolio" class="hero__cta magnetic-btn"><span class="magnetic-btn__text">View the work</span></a>
+      </div>
+      <div class="hero__image-wrap">
+        <img src="images/hero_a_profile_study.jpg" alt="Editorial hair portrait — structured profile" class="hero__image" loading="eager">
+      </div>
+      <div class="hero__scroll-cue">
+        <div class="hero__scroll-line"></div>
+        <span class="hero__scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- SCENE 02 — The Philosophy of Less -->
+    <section class="philosophy" id="philosophy">
+      <div class="philosophy__inner">
+        <div class="philosophy__number">01</div>
+        <div class="philosophy__rule"></div>
+        <blockquote class="philosophy__quote" data-split>
+          Nothing more than what is necessary. Nothing less than what is essential.
+        </blockquote>
+        <div class="philosophy__body">
+          <p>Clean hair is the hardest thing to do well. It requires understanding proportion, controlling texture, and knowing when to stop. Every cut begins with subtraction. What remains after editing is the design.</p>
+          <p>The luxury is not in what is added. It is in what is removed until only the strongest version of the image remains. This is not simplicity. This is precision.</p>
+        </div>
+      </div>
+      <div class="philosophy__images">
+        <div class="philosophy__img-wrap" data-reveal>
+          <img src="images/philosophy_a_hands.jpg" alt="Precision cutting — the moment before" class="philosophy__img" loading="lazy">
+        </div>
+        <div class="philosophy__img-wrap" data-reveal>
+          <img src="images/philosophy_b_mirror.jpg" alt="Consultation mirror study" class="philosophy__img" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS LOGOS — Social Proof -->
+    <section class="press" data-reveal>
+      <div class="press__inner">
+        <div class="press__label">As featured in</div>
+        <div class="press__logos">
+          <span class="press__logo">VOGUE</span>
+          <span class="press__logo">GQ</span>
+          <span class="press__logo">ELLE</span>
+          <span class="press__logo">HARPER'S BAZAAR</span>
+          <span class="press__logo">WANT</span>
+          <span class="press__logo">ANOTHER</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 03 — The Silhouette Archive -->
+    <section class="portfolio" id="portfolio">
+      <div class="portfolio__header">
+        <div class="portfolio__number">02</div>
+        <h2 class="portfolio__title" data-split>Selected Work</h2>
+        <p class="portfolio__subtitle">A curated study of shape, finish, and restraint.</p>
+      </div>
+
+      <div class="portfolio__grid">
+        <figure class="portfolio__item portfolio__item--wide" data-reveal>
+          <div class="portfolio__img-wrap">
+            <img src="images/portfolio_01_structured_elegance.jpg" alt="Structured elegance — clean silhouette" class="portfolio__img" loading="lazy">
+          </div>
+          <figcaption class="portfolio__caption">
+            <span class="portfolio__caption-num">I</span>
+            <span class="portfolio__caption-text">Structured Elegance</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio__item" data-reveal>
+          <div class="portfolio__img-wrap">
+            <img src="images/portfolio_02_volume_study.jpg" alt="Volume study — controlled movement" class="portfolio__img" loading="lazy">
+          </div>
+          <figcaption class="portfolio__caption">
+            <span class="portfolio__caption-num">II</span>
+            <span class="portfolio__caption-text">Volume Study</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio__item" data-reveal>
+          <div class="portfolio__img-wrap">
+            <img src="images/portfolio_03_quiet_power.jpg" alt="Quiet power — editorial finish" class="portfolio__img" loading="lazy">
+          </div>
+          <figcaption class="portfolio__caption">
+            <span class="portfolio__caption-num">III</span>
+            <span class="portfolio__caption-text">Quiet Power</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio__item portfolio__item--wide" data-reveal>
+          <div class="portfolio__img-wrap">
+            <img src="images/portfolio_04_surface_study.jpg" alt="Surface study — texture and line" class="portfolio__img" loading="lazy">
+          </div>
+          <figcaption class="portfolio__caption">
+            <span class="portfolio__caption-num">IV</span>
+            <span class="portfolio__caption-text">Surface Study</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio__item portfolio__item--tall" data-reveal>
+          <div class="portfolio__img-wrap">
+            <img src="images/portfolio_05_clean_geometry.jpg" alt="Clean geometry — minimal form" class="portfolio__img" loading="lazy">
+          </div>
+          <figcaption class="portfolio__caption">
+            <span class="portfolio__caption-num">V</span>
+            <span class="portfolio__caption-text">Clean Geometry</span>
+          </figcaption>
+        </figure>
+
+        <figure class="portfolio__item portfolio__item--tall" data-reveal>
+          <div class="portfolio__img-wrap">
+            <img src="images/portfolio_06_soft_architecture.jpg" alt="Soft architecture — polished tuck" class="portfolio__img" loading="lazy">
+          </div>
+          <figcaption class="portfolio__caption">
+            <span class="portfolio__caption-num">VI</span>
+            <span class="portfolio__caption-text">Soft Architecture</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- STATS STRIP — Credibility -->
+    <section class="stats" data-reveal>
+      <div class="stats__inner">
+        <div class="stats__item">
+          <div class="stats__num" data-count="12">12</div>
+          <div class="stats__label">Years of precision</div>
+        </div>
+        <div class="stats__divider"></div>
+        <div class="stats__item">
+          <div class="stats__num" data-count="3000">3000+</div>
+          <div class="stats__label">Cuts delivered</div>
+        </div>
+        <div class="stats__divider"></div>
+        <div class="stats__item">
+          <div class="stats__num" data-count="47">47</div>
+          <div class="stats__label">Editorial shoots</div>
+        </div>
+        <div class="stats__divider"></div>
+        <div class="stats__item">
+          <div class="stats__num">London</div>
+          <div class="stats__label">Based in Fitzrovia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 04 — The Precision Method -->
+    <section class="method" id="method">
+      <div class="method__inner">
+        <div class="method__header">
+          <div class="method__number">03</div>
+          <h2 class="method__title" data-split>The Precision Method</h2>
+        </div>
+        <div class="method__steps">
+          <div class="method__step" data-reveal>
+            <div class="method__step-num">01</div>
+            <div class="method__step-img-wrap">
+              <img src="images/method_a_consultation.jpg" alt="Consultation — studying the face" class="method__step-img" loading="lazy">
+            </div>
+            <div class="method__step-label">Consultation</div>
+            <p>Understanding the architecture of desire. We begin with silence, observation, and the geometry of the face. Bone structure, growth patterns, density — the data that makes a cut inevitable.</p>
+          </div>
+          <div class="method__step" data-reveal>
+            <div class="method__step-num">02</div>
+            <div class="method__step-img-wrap">
+              <img src="images/method_b_the_cut.jpg" alt="The cut — precision blade work" class="method__step-img" loading="lazy">
+            </div>
+            <div class="method__step-label">Shape</div>
+            <p>Every decision is subtractive. Mapping form through restraint. Edges that breathe. Lines that resolve. No ambiguity in the silhouette — every angle considered, every curve intentional.</p>
+          </div>
+          <div class="method__step" data-reveal>
+            <div class="method__step-num">03</div>
+            <div class="method__step-img-wrap">
+              <img src="images/method_c_the_finish.jpg" alt="The finish — surface perfection" class="method__step-img" loading="lazy">
+            </div>
+            <div class="method__step-label">Finish</div>
+            <p>Texture is the detail. The finish tells the truth about the cut beneath it. Healthy hair catches light; great hair holds it. Product-free-looking polish that feels modern, not stiff.</p>
+          </div>
+          <div class="method__step" data-reveal>
+            <div class="method__step-num">04</div>
+            <div class="method__step-img-wrap">
+              <img src="images/method_d_resolution.jpg" alt="Resolution — the work reveals itself" class="method__step-img" loading="lazy">
+            </div>
+            <div class="method__step-label">Resolution</div>
+            <p>The work completes itself. What remains is inevitable. Hair that looks good from every angle, moves naturally, and feels expensive without obvious effort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES — What We Offer -->
+    <section class="services" id="services" data-reveal>
+      <div class="services__inner">
+        <div class="services__header">
+          <div class="services__number">03b</div>
+          <h2 class="services__title" data-split>Services</h2>
+        </div>
+        <div class="services__list">
+          <div class="services__item">
+            <div class="services__item-header">
+              <span class="services__item-name">The Signature Cut</span>
+              <span class="services__item-dots"></span>
+              <span class="services__item-price">£185</span>
+            </div>
+            <p class="services__item-desc">Full consultation, precision cut, wash and finish. 90 minutes.</p>
+          </div>
+          <div class="services__item">
+            <div class="services__item-header">
+              <span class="services__item-name">The Editorial Session</span>
+              <span class="services__item-dots"></span>
+              <span class="services__item-price">£350</span>
+            </div>
+            <p class="services__item-desc">Styling for shoots, campaigns, and events. Includes consultation and look development.</p>
+          </div>
+          <div class="services__item">
+            <div class="services__item-header">
+              <span class="services__item-name">The Shape Edit</span>
+              <span class="services__item-dots"></span>
+              <span class="services__item-price">£145</span>
+            </div>
+            <p class="services__item-desc">Refinement of existing shape. Wash, cut, finish. 60 minutes.</p>
+          </div>
+          <div class="services__item">
+            <div class="services__item-header">
+              <span class="services__item-name">The Texture Consultation</span>
+              <span class="services__item-dots"></span>
+              <span class="services__item-price">£95</span>
+            </div>
+            <p class="services__item-desc">In-depth analysis of hair type, growth patterns, and product strategy. No cut.</p>
+          </div>
+          <div class="services__item">
+            <div class="services__item-header">
+              <span class="services__item-name">Bridal / Civil Ceremony</span>
+              <span class="services__item-dots"></span>
+              <span class="services__item-price">From £450</span>
+            </div>
+            <p class="services__item-desc">Quiet luxury for the most photographed day. Trial included.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 05 — Look Pathways -->
+    <section class="pathways" id="pathways">
+      <div class="pathways__inner">
+        <div class="pathways__header">
+          <div class="pathways__number">04</div>
+          <h2 class="pathways__title" data-split>Look Pathways</h2>
+        </div>
+        <div class="pathways__grid">
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_01_glass_finish.jpg" alt="The Glass Finish" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Glass Finish</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_02_quiet_wave.jpg" alt="The Quiet Wave" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Quiet Wave</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_03_polished_tuck.jpg" alt="The Polished Tuck" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Polished Tuck</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_04_architectural_pony.jpg" alt="The Architectural Pony" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Architectural Pony</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_05_soft_low_structure.jpg" alt="The Soft Low Structure" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Soft Low Structure</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_06_clean_blowout.jpg" alt="The Clean Blowout" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Clean Blowout</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_07_controlled_texture.jpg" alt="The Controlled Texture Edit" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Controlled Texture Edit</div>
+          </div>
+          <div class="pathways__card" data-reveal>
+            <div class="pathways__card-img-wrap">
+              <img src="images/pathway_08_evening_minimal.jpg" alt="The Evening Minimal" class="pathways__card-img" loading="lazy">
+            </div>
+            <div class="pathways__card-name">The Evening Minimal</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS — Social Proof -->
+    <section class="testimonials" data-reveal>
+      <div class="testimonials__inner">
+        <div class="testimonials__header">
+          <div class="testimonials__number">04b</div>
+          <h2 class="testimonials__title" data-split>Words</h2>
+        </div>
+        <div class="testimonials__grid">
+          <blockquote class="testimonials__item" data-reveal>
+            <p>"Norman doesn't cut hair. He edits it. I've never felt more myself than after leaving his chair."</p>
+            <cite>— Creative Director, London</cite>
+          </blockquote>
+          <blockquote class="testimonials__item" data-reveal>
+            <p>"The kind of quiet luxury that makes people ask who your hairdresser is. Without you saying a word."</p>
+            <cite>— Fashion Editor, Vogue</cite>
+          </blockquote>
+          <blockquote class="testimonials__item" data-reveal>
+            <p>"No drama. No upselling. Just precision, silence, and a result that photographs beautifully from every angle."</p>
+            <cite>— Model</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 06 — The Experience -->
+    <section class="experience" id="experience">
+      <div class="experience__inner">
+        <div class="experience__header">
+          <div class="experience__number">05</div>
+          <h2 class="experience__title" data-split>The Experience</h2>
+        </div>
+        <div class="experience__grid">
+          <div class="experience__col" data-reveal>
+            <div class="experience__img-wrap">
+              <img src="images/experience_a_studio.jpg" alt="The studio environment" class="experience__img" loading="lazy">
+            </div>
+            <h3>Who This Is For</h3>
+            <p>For clients who want hair that looks expensive rather than flashy. People who prefer clean lines, polished finishes, and timeless imagery. Clients who want to look elevated without looking like they tried too hard.</p>
+          </div>
+          <div class="experience__col" data-reveal>
+            <div class="experience__img-wrap">
+              <img src="images/experience_b_appointment.jpg" alt="The appointment experience" class="experience__img" loading="lazy">
+            </div>
+            <h3>The Session</h3>
+            <p>Studio visits by appointment. Every session begins with a consultation — understanding your face, your lifestyle, and the image you want to project. The result is authored, not decorated.</p>
+          </div>
+          <div class="experience__col" data-reveal>
+            <div class="experience__img-wrap">
+              <img src="images/experience_c_campaign.jpg" alt="Campaign editorial result" class="experience__img" loading="lazy">
+            </div>
+            <h3>Ideal For</h3>
+            <p>Campaigns, editorial shoots, events, portraits, luxury everyday, bridal civil ceremonies. Hair that works with architecture, fashion, and minimal interiors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NORMAN JAMES — The Artist -->
+    <section class="artist" data-reveal>
+      <div class="artist__inner">
+        <div class="artist__header">
+          <div class="artist__number">06</div>
+          <h2 class="artist__title" data-split>The Artist</h2>
+        </div>
+        <div class="artist__content">
+          <div class="artist__portrait-wrap">
+            <img src="images/artist_portrait.jpg" alt="Hugo Javier — editorial hair" class="artist__portrait" loading="lazy">
+          </div>
+          <div class="artist__bio">
+            <blockquote class="artist__quote" data-split>
+              I don't follow trends. I study faces.
+            </blockquote>
+            <p>Hugo Javier has spent twelve years refining a language of hair that speaks through restraint. Trained in London and Milan, his work bridges editorial precision with the quiet luxury of modern minimalism.</p>
+            <p>His approach is subtractive — removing until only the strongest shape remains. Every cut is authored, not decorated. The result is hair that looks expensive without obvious effort, moves naturally, and photographs from every angle.</p>
+            <p>Published in Vogue, GQ, and Harper's Bazaar. Based in Fitzrovia, London.</p>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="artist__ig magnetic-btn"><span class="magnetic-btn__text">@hugojavierhair</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM FEED — Fresh Content -->
+    <section class="instagram" data-reveal>
+      <div class="instagram__inner">
+        <div class="instagram__header">
+          <h3 class="instagram__title" data-split>From the Chair</h3>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram__follow magnetic-btn"><span class="magnetic-btn__text">Follow</span></a>
+        </div>
+        <div class="instagram__grid">
+          <div class="instagram__item"><img src="images/ig_01.jpg" alt="Instagram" loading="lazy"></div>
+          <div class="instagram__item"><img src="images/ig_02.jpg" alt="Instagram" loading="lazy"></div>
+          <div class="instagram__item"><img src="images/ig_03.jpg" alt="Instagram" loading="lazy"></div>
+          <div class="instagram__item"><img src="images/ig_04.jpg" alt="Instagram" loading="lazy"></div>
+          <div class="instagram__item"><img src="images/ig_05.jpg" alt="Instagram" loading="lazy"></div>
+          <div class="instagram__item"><img src="images/ig_06.jpg" alt="Instagram" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 07 — The Quiet Close -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <div class="contact__portrait-wrap" data-reveal>
+          <img src="images/contact_b_closing_portrait.jpg" alt="Final portrait — composure" class="contact__portrait" loading="lazy">
+        </div>
+        <div class="contact__statement">The luxury is in the restraint.</div>
+        <div class="contact__cta" data-reveal>
+          <a href="mailto:hello@hairmasters.studio" class="contact__book magnetic-btn"><span class="magnetic-btn__text">Book a Session</span></a>
+          <p class="contact__availability">Next available — July 2026</p>
+        </div>
+        <div class="contact__details">
+          <a href="mailto:hello@hairmasters.studio" class="contact__email">hello@hairmasters.studio</a>
+          <p class="contact__info">Studio visits by appointment — Fitzrovia, London W1</p>
+          <p class="contact__info">+44 20 7946 0123</p>
+        </div>
+        <div class="contact__rule"></div>
+        <div class="contact__footer">
+          <span>HAIR MASTERS</span>
+          <span>The Editorial Minimalist</span>
+        </div>
+        <div class="contact__credits">
+          <span>&copy; Hugo Javier</span>
+          <span>made with love <span style="color:#e74c3c;">&#10084;</span> by <a href="https://empathystudio.in" target="_blank" rel="noopener">Empathy Studio</a> +91 9833274308</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts — correct initialization order -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="js/lenis-init.js"></script>
+  <script src="js/preloader.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/split-text.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // ─── Initialisation Order (critical) ───
+    document.fonts.ready.then(async () => {
+      initLenis();
+      initSplitText();
+      initAnimations();
+      initCursor();
+      initSmoothAnchor();
+      initMagneticBtns();
+      initTiltHover();
+      ScrollTrigger.refresh();
+      await initPreloader();
+    });
+  </script>
+</body>
+</html>

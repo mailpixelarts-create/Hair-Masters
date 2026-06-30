@@ -1,0 +1,34 @@
+"System Check: Review root/FASHION-SOTD-GRANDMASTER.SKILL.MD and ensure all subsequent UI code perfectly aligns with the Motion Doctrine and Aesthetic World guidelines.
+
+You must maintain a file in the root directory named `CHANGELOG.md`. 
+Every time you successfully implement, modify, or delete a feature:
+1. Append a new entry to `CHANGELOG.md` under the current date.
+2. Clearly list the files modified and a 1-sentence summary of the logic changed.
+3. State the current version number (increment by 0.1, e.g., v1.3 to v1.4).
+
+Before starting any new task, read `CHANGELOG.md` to understand the state of the PROJECT .
+
+
+
+project sequence for Production_Image_Prompts.md should now be:
+
+The Alchemist
+The Runway Architect
+The Bridal Sculptor
+The Color Futurist
+The Editorial Minimalist
+The Texture Poet
+The Avant-Garde Transformer
+The Red Carpet Director
+The Precision Cutter
+The Hair Ritualist
+
+
+what  about 4 different .MD 
+
+1- PROJECT BRIEF.MD 
+2- CREATIVE CONTENT .MD
+3- tech-stack-& design.md
+4- update .md  
+
+

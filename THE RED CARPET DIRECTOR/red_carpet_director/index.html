@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Red Carpet Director — Luxury Event Hair Direction</title>
+<style>
+  :root{
+    --black:#0c0b0a;
+    --espresso:#1a1714;
+    --charcoal:#211d1a;
+    --champagne:#cbb190;
+    --champagne-soft:#e3d4bd;
+    --bronze:#9a7c52;
+    --ivory:#f3ece1;
+    --muted:#9a9088;
+    --line:rgba(203,177,144,.22);
+    --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans:'Helvetica Neue', Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--black);
+    color:var(--ivory);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* serif headings via system fallback (sandbox-safe, no external fonts) */
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;letter-spacing:.01em}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--champagne);
+    font-weight:600;
+  }
+  .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 40px;
+    background:linear-gradient(180deg,rgba(12,11,10,.85),rgba(12,11,10,0));
+    backdrop-filter:blur(2px);
+  }
+  nav .brand{font-family:var(--serif);font-size:20px;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory)}
+  nav .brand span{color:var(--champagne)}
+  nav ul{display:flex;gap:34px;list-style:none}
+  nav a{color:var(--ivory);text-decoration:none;font-size:12px;letter-spacing:.22em;text-transform:uppercase;opacity:.82;transition:opacity .3s,color .3s}
+  nav a:hover{opacity:1;color:var(--champagne)}
+  .nav-cta{border:1px solid var(--champagne);padding:9px 20px;color:var(--champagne)!important;opacity:1!important}
+  .nav-cta:hover{background:var(--champagne);color:var(--black)!important}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden}
+  .hero-img{position:absolute;inset:0}
+  .hero-img img{filter:saturate(1.02) contrast(1.02)}
+  .hero-img::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(12,11,10,.95) 0%,rgba(12,11,10,.72) 32%,rgba(12,11,10,.18) 60%,rgba(12,11,10,0) 100%);
+  }
+  .hero-content{position:relative;z-index:2;max-width:620px;padding-left:40px}
+  .hero .eyebrow{display:block;margin-bottom:26px}
+  .hero h1{font-size:clamp(42px,6.4vw,92px);line-height:.98;letter-spacing:.005em}
+  .hero h1 em{font-style:italic;color:var(--champagne)}
+  .hero p{margin:28px 0 38px;font-size:17px;color:#d9d0c4;max-width:440px;font-weight:300}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:15px 34px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+    text-decoration:none;transition:.3s;cursor:pointer;border:1px solid var(--champagne)
+  }
+  .btn-solid{background:var(--champagne);color:var(--black);font-weight:600}
+  .btn-solid:hover{background:var(--champagne-soft)}
+  .btn-ghost{color:var(--champagne);background:transparent}
+  .btn-ghost:hover{background:rgba(203,177,144,.12)}
+  .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;color:var(--champagne);font-size:10px;letter-spacing:.34em;text-transform:uppercase;opacity:.7}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{position:relative}
+  .pad{padding:120px 0}
+  .pad-sm{padding:90px 0}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 70px}
+  .sec-head .eyebrow{display:block;margin-bottom:20px}
+  .sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1.05}
+  .sec-head p{margin-top:20px;color:var(--muted);font-size:16px;font-weight:300}
+  .divider{width:54px;height:1px;background:var(--champagne);margin:26px auto 0}
+
+  /* ---------- MANIFESTO (Hero 02) ---------- */
+  .manifesto{background:var(--espresso)}
+  .manifesto .grid{display:grid;grid-template-columns:0.92fr 1.08fr;align-items:stretch;gap:0}
+  .manifesto .ph{position:relative;min-height:560px}
+  .manifesto .ph img{filter:contrast(1.03)}
+  .manifesto .txt{padding:80px 70px;display:flex;flex-direction:column;justify-content:center}
+  .manifesto .txt h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;margin:22px 0 26px}
+  .manifesto .txt p{color:#cabfb0;font-weight:300;margin-bottom:18px;font-size:16px}
+  .manifesto .sign{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--champagne)}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .card{position:relative;overflow:hidden;background:var(--charcoal)}
+  .card .imgbox{aspect-ratio:3/4;overflow:hidden}
+  .card.tall .imgbox{aspect-ratio:3/4}
+  .card img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1);filter:saturate(1.01)}
+  .card:hover img{transform:scale(1.06)}
+  .card .meta{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+    padding:24px;background:linear-gradient(0deg,rgba(12,11,10,.82) 0%,rgba(12,11,10,0) 55%);
+    opacity:0;transition:opacity .45s;
+  }
+  .card:hover .meta{opacity:1}
+  .card .meta .n{font-size:10px;letter-spacing:.3em;color:var(--champagne);text-transform:uppercase}
+  .card .meta .t{font-family:var(--serif);font-size:22px;margin-top:6px;line-height:1.1}
+  .span-2{grid-column:span 2}
+
+  /* ---------- DETAIL STRIP ---------- */
+  .detail{background:var(--espresso)}
+  .detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .dcard{position:relative;overflow:hidden;aspect-ratio:1/1;background:#000}
+  .dcard.wide{aspect-ratio:2/1;grid-column:span 2}
+  .dcard img{transition:transform 1s ease;filter:contrast(1.05)}
+  .dcard:hover img{transform:scale(1.05)}
+  .dcard .cap{position:absolute;left:0;bottom:0;padding:16px 20px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);width:100%}
+  .dcard .cap span{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--champagne)}
+  .dcard .cap p{font-family:var(--serif);font-size:18px;margin-top:3px}
+
+  /* ---------- PROCESS ---------- */
+  .process-rows{display:flex;flex-direction:column;gap:90px}
+  .prow{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+  .prow.rev .ph{order:2}
+  .prow .ph{aspect-ratio:4/3;overflow:hidden;background:#000}
+  .prow .ph img{transition:transform 1.2s ease}
+  .prow:hover .ph img{transform:scale(1.04)}
+  .prow .step{font-family:var(--serif);font-size:64px;color:rgba(203,177,144,.28);line-height:1}
+  .prow h3{font-size:30px;margin:10px 0 16px}
+  .prow p{color:#bcb2a4;font-weight:300}
+
+  /* ---------- ATMOSPHERE ---------- */
+  .atmos{background:var(--black)}
+  .atmos-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:14px}
+  .atmos-grid .a1{grid-row:span 2}
+  .acell{position:relative;overflow:hidden;background:#000}
+  .acell img{transition:transform 1.2s ease}
+  .acell:hover img{transform:scale(1.05)}
+  .a1{aspect-ratio:4/5}
+  .a2,.a3{aspect-ratio:16/9}
+
+  /* ---------- QUOTE / COMMANDMENT ---------- */
+  .commandment{background:var(--espresso);text-align:center}
+  .commandment .wrap{max-width:900px}
+  .commandment .eyebrow{display:block;margin-bottom:30px}
+  .commandment blockquote{font-family:var(--serif);font-size:clamp(26px,3.6vw,44px);line-height:1.28;font-style:italic}
+  .commandment blockquote em{color:var(--champagne);font-style:italic}
+
+  /* ---------- CONTACT ---------- */
+  .contact{position:relative;text-align:center;overflow:hidden}
+  .contact-bg{position:absolute;inset:0}
+  .contact-bg::after{content:"";position:absolute;inset:0;background:rgba(12,11,10,.82)}
+  .contact .inner{position:relative;z-index:2;padding:130px 0}
+  .contact h2{font-size:clamp(34px,5vw,64px);line-height:1.04}
+  .contact p{margin:22px auto 38px;max-width:520px;color:#d2c9bc;font-weight:300}
+
+  footer{background:var(--black);border-top:1px solid var(--line);padding:46px 0}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+  footer .brand{font-family:var(--serif);font-size:18px;letter-spacing:.16em;text-transform:uppercase}
+  footer .brand span{color:var(--champagne)}
+  footer small{color:var(--muted);letter-spacing:.06em}
+  footer .soc{display:flex;gap:26px}
+  footer .soc a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase;transition:color .3s}
+  footer .soc a:hover{color:var(--champagne)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    .detail-grid{grid-template-columns:repeat(2,1fr)}
+    .dcard.wide{grid-column:span 2}
+    .manifesto .grid{grid-template-columns:1fr}
+    .manifesto .ph{min-height:420px}
+    .manifesto .txt{padding:60px 40px}
+    .prow,.prow.rev .ph{grid-template-columns:1fr;order:0!important;gap:24px}
+    .atmos-grid{grid-template-columns:1fr}
+    .atmos-grid .a1{grid-row:auto}
+    .a1{aspect-ratio:4/3}
+    nav ul{display:none}
+  }
+  @media(max-width:620px){
+    .wrap{padding:0 22px}
+    nav{padding:18px 22px}
+    .hero-content{padding-left:22px}
+    .pad{padding:80px 0}
+    .gallery-grid{grid-template-columns:1fr}
+    .detail-grid{grid-template-columns:1fr}
+    .dcard.wide{grid-column:auto}
+    .span-2{grid-column:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">THE RED CARPET <span>DIRECTOR</span></div>
+  <ul>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#craft">The Craft</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#world">The World</a></li>
+    <li><a href="#contact" class="nav-cta">Book</a></li>
+  </ul>
+</nav>
+
+<!-- HERO 01 -->
+<header class="hero" id="top">
+  <div class="hero-img"><img src="images/hero/hero_01_premiere_night_icon.jpg" alt="Premiere-night celebrity glamour portrait"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Luxury Event Hair Direction</span>
+    <h1>Glamour that<br>survives the <em>flash.</em></h1>
+    <p>Red carpet strategy, camera-proof finish, and silhouette control for premiere nights, award shows, and couture events.</p>
+    <div class="btn-row">
+      <a href="#portfolio" class="btn btn-solid">View the Portfolio</a>
+      <a href="#contact" class="btn btn-ghost">Book a Consultation</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- MANIFESTO / HERO 02 -->
+<section class="manifesto" id="craft">
+  <div class="grid">
+    <div class="ph"><img src="images/hero/hero_02_couture_suite_portrait.jpg" alt="Couture suite preparation portrait"></div>
+    <div class="txt">
+      <span class="eyebrow">The Philosophy</span>
+      <h2>This is not glam hair.<br>It is beauty direction<br>under pressure.</h2>
+      <p>Every look is engineered to read from every angle and hold under flash, movement, and scrutiny — sculpted silhouettes, precision hairlines, and luxury finish that performs in public.</p>
+      <p>From the couture suite to the carpet, the work is strategy: image control, formal authority, and celebrity-level polish that never tips into prom, bridal, or influencer territory.</p>
+      <div class="sign">— Image, engineered.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO GALLERY 01-08 -->
+<section class="pad" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Red Carpet Portfolio</span>
+      <h2>Looks built for the moment of arrival</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="card"><div class="imgbox"><img src="images/gallery/gallery_01_sleek_bun_authority.jpg" alt="Sleek low bun authority portrait"></div>
+        <div class="meta"><div class="n">01 — Sculpted</div><div class="t">Sleek Bun Authority</div></div></div>
+      <div class="card"><div class="imgbox"><img src="images/gallery/gallery_02_side_part_wave_icon.jpg" alt="Side-part red carpet waves"></div>
+        <div class="meta"><div class="n">02 — Movement</div><div class="t">Side-Part Wave Icon</div></div></div>
+      <div class="card"><div class="imgbox"><img src="images/gallery/gallery_03_polished_ponytail.jpg" alt="Polished wrapped-base ponytail"></div>
+        <div class="meta"><div class="n">03 — Architecture</div><div class="t">Polished Ponytail</div></div></div>
+      <div class="card"><div class="imgbox"><img src="images/gallery/gallery_04_old_hollywood_profile.jpg" alt="Modern old-Hollywood profile"></div>
+        <div class="meta"><div class="n">04 — Profile</div><div class="t">Modern Old-Hollywood</div></div></div>
+      <div class="card span-2"><div class="imgbox"><img src="images/gallery/gallery_05_black_tie_natural_glam.jpg" alt="Black-tie natural glam portrait"></div>
+        <div class="meta"><div class="n">05 — Texture</div><div class="t">Black-Tie Natural Glam</div></div></div>
+      <div class="card"><div class="imgbox"><img src="images/gallery/gallery_06_back_view_chignon.jpg" alt="Back-view chignon structure"></div>
+        <div class="meta"><div class="n">06 — Construction</div><div class="t">Chignon Structure</div></div></div>
+      <div class="card"><div class="imgbox"><img src="images/gallery/gallery_07_short_hair_glam.jpg" alt="Short-hair red carpet glam"></div>
+        <div class="meta"><div class="n">07 — Sharp</div><div class="t">Short-Hair Glam</div></div></div>
+      <div class="card span-2"><div class="imgbox"><img src="images/gallery/gallery_08_couture_seated.jpg" alt="Couture seated event portrait"></div>
+        <div class="meta"><div class="n">08 — Poise</div><div class="t">The Couture Seated Portrait</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL 01-06 -->
+<section class="detail pad" id="finish">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Finish & Silhouette</span>
+      <h2>Obsession lives in the detail</h2>
+      <p>Hairline precision, gloss, wrapped bases, and silhouette edges — the technical finish that holds under a 100mm macro lens.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="detail-grid">
+      <div class="dcard wide"><img src="images/detail/detail_01_wave_ridge_macro.jpg" alt="Wave ridge macro"><div class="cap"><span>Detail 01</span><p>Wave Ridge</p></div></div>
+      <div class="dcard"><img src="images/detail/detail_02_hairline_parting.jpg" alt="Hairline and parting precision"><div class="cap"><span>Detail 02</span><p>Hairline & Parting</p></div></div>
+      <div class="dcard"><img src="images/detail/detail_03_bun_base_wrap.jpg" alt="Bun base wrap detail"><div class="cap"><span>Detail 03</span><p>Wrapped Base</p></div></div>
+      <div class="dcard"><img src="images/detail/detail_04_crown_gloss.jpg" alt="Crown smoothness gloss"><div class="cap"><span>Detail 04</span><p>Crown Gloss</p></div></div>
+      <div class="dcard"><img src="images/detail/detail_05_profile_silhouette_ear.jpg" alt="Profile silhouette ear detail"><div class="cap"><span>Detail 05</span><p>Profile Line</p></div></div>
+      <div class="dcard wide"><img src="images/detail/detail_06_finish_edge_silhouette.jpg" alt="Finish edge silhouette control"><div class="cap"><span>Detail 06</span><p>Silhouette Control</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS 01-05 -->
+<section class="pad" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Prep World</span>
+      <h2>The calm before the carpet</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="process-rows">
+      <div class="prow">
+        <div class="ph"><img src="images/process/process_01_brushing_wave.jpg" alt="Brushing out the wave"></div>
+        <div><div class="step">01</div><h3>Brushing the Wave</h3><p>Refining a formal wave set with control — preserving shine and shape rather than chasing salon chaos. Every pass is deliberate.</p></div>
+      </div>
+      <div class="prow rev">
+        <div class="ph"><img src="images/process/process_02_pinning_bun.jpg" alt="Pinning the bun"></div>
+        <div><div class="step">02</div><h3>Pinning & Securing</h3><p>Invisible pin placement, smooth tension, silhouette discipline. The architecture that holds through a full event.</p></div>
+      </div>
+      <div class="prow">
+        <div class="ph"><img src="images/process/process_03_polishing_hairline.jpg" alt="Polishing the hairline"></div>
+        <div><div class="step">03</div><h3>Polishing the Hairline</h3><p>Micro-detail flyaway control and edge refinement — the final finish that reads camera-proof under flash.</p></div>
+      </div>
+      <div class="prow rev">
+        <div class="ph"><img src="images/process/process_04_mirror_check.jpg" alt="The mirror check moment"></div>
+        <div><div class="step">04</div><h3>The Mirror Check</h3><p>A final silhouette read before the doors open — calm concentration, confidence, readiness.</p></div>
+      </div>
+      <div class="prow">
+        <div class="ph"><img src="images/process/process_05_couture_final_adjustment.jpg" alt="Couture suite final adjustment"></div>
+        <div><div class="step">05</div><h3>Final Adjustment</h3><p>The last refinement in the couture suite — straightening a wave line, smoothing the crown. The pressure of pre-event perfection.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATMOSPHERE 01-03 -->
+<section class="atmos pad-sm" id="world">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Glam World</span>
+      <h2>An atmosphere of expensive calm</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="atmos-grid">
+      <div class="acell a1"><img src="images/atmosphere/atmosphere_02_suite_mirror_garment.jpg" alt="Couture suite mirror and garment"></div>
+      <div class="acell a2"><img src="images/atmosphere/atmosphere_01_glam_station.jpg" alt="Luxury glam station still life"></div>
+      <div class="acell a3"><img src="images/atmosphere/atmosphere_03_satin_marble_metal.jpg" alt="Satin marble metal still life"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMANDMENT -->
+<section class="commandment pad">
+  <div class="wrap">
+    <span class="eyebrow">The Build Commandment</span>
+    <blockquote>Make hair perform <em>in public</em>, under light, and under scrutiny — formal polish from every angle, silhouette strategy that never drifts into ordinary.</blockquote>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-bg"><img src="images/gallery/gallery_04_old_hollywood_profile.jpg" alt=""></div>
+  <div class="inner wrap">
+    <span class="eyebrow">Book the Director</span>
+    <h2>Ready for the carpet.</h2>
+    <p>Premiere nights, award shows, couture events, and luxury campaigns. Limited bookings per season.</p>
+    <a href="mailto:studio@redcarpetdirector.com" class="btn btn-solid">Enquire Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="brand">THE RED CARPET <span>DIRECTOR</span></div>
+    <small>Luxury Event Hair Direction · Hair Styling World 08</small>
+    <div class="soc">
+      <a href="#">Instagram</a>
+      <a href="#">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+================================================================
+THE BRIDAL SCULPTOR — Image Generation Prompts v2
+Theme: Luxury bridal hair atelier | Quiet luxury | Sculptural editorial
+Palette: Ivory, champagne, warm stone, muted gold, charcoal
+Lens: 85mm–105mm beauty compression | Soft directional light
+================================================================
+
+PROMPT 01 — The Veil Portrait (Golden Hour)
+-------------------------------------------
+Editorial bridal portrait of a South Asian model with rich dark hair sculpted into
+a flawless low chignon with a sheer cathedral veil catching golden hour light, the
+veil creating luminous translucent layers around the face, warm backlight producing
+a halo effect through the veil fabric, model in profile with eyes lowered, wearing
+a minimal ivory silk gown with clean neckline, luxury bridal suite with arched
+windows and soft champagne curtains, golden hour sunlight streaming through sheer
+drapes, 85mm portrait lens, shallow depth of field with hair and veil fully legible,
+warm ivory-champagne color grading, editorial retouching, the veil as a sculptural
+element of light and shadow, premium bridal campaign, quiet luxury atmosphere
+
+
+PROMPT 02 — The Mirror Study
+-----------------------------
+Intimate bridal process image showing a bride's reflection in an antique gilded
+mirror, her dark hair mid-transformation into a sculpted updo, the stylist's hands
+visible in the reflection placing a delicate pin, soft morning light from a window
+behind the camera creating gentle highlights on the hair surface, the mirror
+framing the moment like a Renaissance portrait, wearing a cream silk robe, luxury
+bridal suite with warm-toned marble and soft floral arrangements blurred in the
+foreground, 85mm lens, warm neutral color grading, tactile premium feel, the
+reflection as a second composition within the frame, editorial documentary
+bridal atelier atmosphere
+
+
+PROMPT 03 — The Detail Macro: Pin Architecture
+-----------------------------------------------
+Extreme macro beauty crop of structural pin work within a bridal updo, visible
+bobby pins precisely placed and partially concealed by dark espresso hair folds,
+the engineering behind the softness revealed in hyper-detail, clean sectioning
+with controlled tension visible, individual hair strands catching directional
+light to show dimension and healthy shine, neutral editorial background completely
+blurred away, 100mm macro beauty lens, shallow depth but pin placement fully
+legible, warm ivory lighting from one side creating subtle shadows that reveal
+construction, premium salon-craft detail, bridal sculpture evidence, the system
+behind the beauty, hyper-realistic hair texture, expensive editorial finish
+
+
+PROMPT 04 — The Getting Ready: Hands and Veil
+----------------------------------------------
+Close editorial process image of a stylist's hands carefully attaching a cathedral
+veil to a completed sculpted bridal updo, the moment of final attachment captured
+with precision, sheer tulle cascading from the secure point with delicate movement
+frozen in time, the stylist's manicured hands holding the veil with gentle authority,
+client partially visible in profile with eyes closed in calm trust, hair already
+polished and sculptural, luxury bridal suite environment with soft blurred mirrors
+and cream surfaces, daylight-balanced soft directional lighting, 85mm close
+documentary lens, the veil as the final sculptural element, premium bridal
+atelier atmosphere, calm exacting luxury
+
+
+PROMPT 05 — The Texture Study: Hair Surface
+--------------------------------------------
+Beauty macro close-up of the crown area of a bridal updo showing immaculate surface
+texture, clean center part with subtle tonal variation under a glossy finish,
+individual hair strands visible with healthy luminous shine, soft directional light
+creating a narrow highlight running across the hair plane, the surface reading as
+both soft and structurally sound, rich dark brunette with warm undertones,
+photographed against a neutral editorial background blurred away, 100mm macro
+beauty lens, hyper-clear strand definition, the image communicating technical
+excellence and polish, healthy hair integrity for bridal work, premium editorial
+beauty, quiet luxury precision
+
+
+PROMPT 06 — The Candid: Between Moments
+----------------------------------------
+Quiet documentary bridal image of a bride seated in a luxury bridal suite, hair
+already sculpted and polished, captured in a relaxed candid moment adjusting her
+earring while looking slightly downward, natural morning window light creating
+soft shadows across her face and hair, the sculpted updo visible with structural
+integrity and natural softening at the edges, wearing a minimal ivory silk robe
+slipping slightly off one shoulder, warm cream interior with soft focus floral
+arrangements and champagne glass in background, 85mm portrait lens, low-contrast
+fill light, the image communicating calm confidence and emotional readiness,
+premium editorial tone, not posed not performative, authentic bridal presence
+
+
+PROMPT 07 — The Two Looks: Ceremony to Reception
+-------------------------------------------------
+Diptych-style editorial bridal image showing the same model in two states: left
+panel shows her with a sculpted low chignon and cathedral veil in a formal dark
+editorial studio with charcoal background, right panel shows the same model with
+hair released into soft romantic waves wearing a champagne slip dress in warm
+editorial studio light, the transformation energy of ceremony-to-reception captured,
+hair showing memory of the updo shape but now flowing with controlled softness,
+both images shot at 85mm portrait lens, the left with dramatic side lighting, the
+right with soft warm diffusion, premium bridal editorial, the beauty of
+transformation within the same wedding day, two chapters one story
+
+
+PROMPT 08 — The Accessory Moment
+---------------------------------
+Luxury close-up of a jeweled bridal hair comb being placed into a sculpted updo,
+the accessory catching light to reveal delicate crystal or pearl details against
+dark rich hair, the comb entering the hair structure with visible precision,
+surrounding hair showing premium texture and healthy shine, partial profile
+visible with soft blurred background of a warm bridal suite, directional gloss
+lighting emphasizing both the accessory and the hair craftsmanship, 100mm macro
+close beauty lens, warm ivory color grading, the accessory as an extension of
+the sculpture not separate from it, premium bridal atelier detail, tactile
+and refined, the finishing architectural element
+
+
+PROMPT 09 — The Morning Light: Atmosphere Editorial
+-----------------------------------------------------
+Editorial still life of a luxury bridal preparation scene, a sculpted veil laid
+carefully across a marble vanity surface with morning window light creating soft
+long shadows, delicate hair pins and a jeweled comb arranged nearby with deliberate
+spacing, a single stem of white peony resting at the edge, ivory silk fabric
+draped casually but elegantly, soft champagne tones dominating the composition,
+everything immaculate and editorial, no clutter no branding, photographed in
+natural-feeling studio daylight with soft side shadows, the scene communicating
+anticipation and preparation without showing a person, 50mm editorial lens,
+shallow depth of field, luxury bridal atelier mood, cinematic but restrained,
+the objects as characters in a bridal story
+
+
+PROMPT 10 — The Editorial Bride: Avant-Garde Sculpture
+--------------------------------------------------------
+High-fashion editorial bridal portrait of a model with an avant-garde sculptural
+hairstyle that transcends traditional bridal boundaries, hair constructed into a
+dramatic architectural form with bold volume and artistic precision, asymmetric
+composition with the hair as the dominant visual element, model wearing a minimal
+structured ivory gown with clean lines, photographed in a premium editorial studio
+with dramatic directional lighting creating deep shadows and bright highlights,
+the hair catching light to reveal both the structural complexity and surface
+softness, 85mm portrait lens, dark charcoal background with subtle warm tones,
+the image positioned at the intersection of fashion editorial and fine art,
+runway meets ceremony, the bride as living sculpture, bold unforgettable presence
+
+
+================================================================
+NOTES FOR IMAGE GENERATION
+================================================================
+- All prompts designed for 85mm–105mm beauty compression aesthetic
+- Warm ivory-champagne color grading throughout
+- Soft directional lighting preferred over flat lighting
+- Hair must remain fully legible (not blurred into background)
+- Premium editorial retouching expected
+- Avoid: harsh shadows, oversaturation, cluttered backgrounds, stock photography feel
+- Target aspect ratios: 3:4 (portrait), 4:5 (editorial), 16:9 (atmosphere)
+- Each prompt can be adapted for specific model diversity as needed
+================================================================

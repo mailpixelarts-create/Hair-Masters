@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hair Ritualist — Work</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ═══════════════ PRELOADER ═══════════════ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__aurora"></div>
+    <div class="preloader__rings">
+      <div class="preloader__ring"></div>
+      <div class="preloader__ring"></div>
+      <div class="preloader__ring"></div>
+    </div>
+    <div class="preloader__sparks"></div>
+  </div>
+
+  <!-- ═══════════════ RADIAL NAV ═══════════════ -->
+  <nav id="radialNav" class="radial-nav">
+    <button class="radial-nav__toggle" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="radial-nav__wheel">
+      <a href="index.html" class="radial-nav__item" data-index="0">Home</a>
+      <a href="#archive" class="radial-nav__item" data-index="1">Archive</a>
+      <a href="about.html" class="radial-nav__item" data-index="2">About</a>
+      <a href="#filter" class="radial-nav__item" data-index="3">Filter</a>
+      <a href="index.html#contact" class="radial-nav__item" data-index="4">Connect</a>
+      <svg class="radial-nav__lines" aria-hidden="true"></svg>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main>
+
+    <!-- HERO -->
+    <section class="work-hero" id="hero">
+      <div class="ripple-ritual">
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+        <div class="ripple-ritual__ring"></div>
+      </div>
+      <div class="work-hero__content">
+        <span class="section-tag">World 10 / Work</span>
+        <h1 class="work-hero__title">
+          <span class="split-line">Ritual</span>
+          <span class="split-line">Archive</span>
+        </h1>
+        <p class="work-hero__sub">A living record of restoration. Each image a chapter in the ongoing ceremony.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=80" alt="" class="panel__bg" loading="eager">
+    </section>
+
+    <!-- FILTER + GALLERY -->
+    <section class="work-gallery" id="archive">
+      <div class="work-gallery__inner">
+        <div class="work-filter" id="filter">
+          <button class="work-filter__btn is-active" data-filter="all">All</button>
+          <button class="work-filter__btn" data-filter="scalp">Scalp</button>
+          <button class="work-filter__btn" data-filter="oil">Oil</button>
+          <button class="work-filter__btn" data-filter="treatment">Treatment</button>
+          <button class="work-filter__btn" data-filter="restoration">Restoration</button>
+        </div>
+        <div class="work-masonry" id="workGrid">
+          <div class="work-masonry__item" data-category="scalp" data-speed="0.6">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Scalp treatment" loading="lazy">
+            <span class="work-masonry__label">Scalp Mapping</span>
+          </div>
+          <div class="work-masonry__item" data-category="oil" data-speed="0.9">
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80" alt="Oil anointing" loading="lazy">
+            <span class="work-masonry__label">Botanical Anointing</span>
+          </div>
+          <div class="work-masonry__item" data-category="restoration" data-speed="0.5">
+            <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Hair restoration" loading="lazy">
+            <span class="work-masonry__label">Deep Restoration</span>
+          </div>
+          <div class="work-masonry__item" data-category="treatment" data-speed="0.8">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Steam treatment" loading="lazy">
+            <span class="work-masonry__label">Steam Veil</span>
+          </div>
+          <div class="work-masonry__item" data-category="scalp" data-speed="0.7">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Scalp care" loading="lazy">
+            <span class="work-masonry__label">Pressure Therapy</span>
+          </div>
+          <div class="work-masonry__item" data-category="oil" data-speed="0.55">
+            <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=600&q=80" alt="Oil treatment" loading="lazy">
+            <span class="work-masonry__label">Rosemary Ritual</span>
+          </div>
+          <div class="work-masonry__item" data-category="treatment" data-speed="0.85">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Treatment session" loading="lazy">
+            <span class="work-masonry__label">Ceremony</span>
+          </div>
+          <div class="work-masonry__item" data-category="restoration" data-speed="0.65">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80" alt="Restoration journey" loading="lazy">
+            <span class="work-masonry__label">Twelve-Week Journey</span>
+          </div>
+          <div class="work-masonry__item" data-category="scalp" data-speed="0.75">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80" alt="Scalp analysis" loading="lazy">
+            <span class="work-masonry__label">Micro-Analysis</span>
+          </div>
+          <div class="work-masonry__item" data-category="restoration" data-speed="0.6">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&q=80" alt="Final restoration" loading="lazy">
+            <span class="work-masonry__label">Full Restoration</span>
+          </div>
+        </div>
+      </div>
+      <footer class="contact__footer">
+        <p>&copy; The Hair Ritualist &mdash; Sacred Practice</p>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="js/work.js"></script>
+</body>
+</html>

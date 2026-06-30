@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #070707;
+  --color-surface: #111;
+  --color-gold: #b78b4f;
+  --color-text-primary: #fff;
+  --color-text-secondary: #999;
+  --color-text-muted: #777;
+  --color-text-credit: #666;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-ghost: rgba(255, 255, 255, 0.03);
+
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --sidebar-width: 120px;
+  --image-width: 520px;
+  --stage-padding-left: 7vw;
+}

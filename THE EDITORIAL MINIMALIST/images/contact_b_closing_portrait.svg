@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" width="2000" height="2000">
+  <defs>
+    <linearGradient id="bgClose" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D0C8B8"/>
+      <stop offset="100%" stop-color="#B8B0A0"/>
+    </linearGradient>
+    <radialGradient id="spotlight" cx="0.5" cy="0.45" r="0.5">
+      <stop offset="0%" stop-color="#E8E0D0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#D0C8B8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2000" height="2000" fill="url(#bgClose)"/>
+  <rect width="2000" height="2000" fill="url(#spotlight)"/>
+  <!-- Black top -->
+  <path d="M400 1400 Q600 1100 1000 1100 Q1400 1100 1600 1400 L1600 2000 L400 2000 Z" fill="#1A1A1A"/>
+  <!-- Neck -->
+  <rect x="880" y="850" width="240" height="300" rx="60" fill="#E8D5C0" opacity="0.9"/>
+  <!-- Face -->
+  <ellipse cx="1000" cy="650" rx="180" ry="240" fill="#EDDCC8"/>
+  <!-- Hair pulled back - barely visible -->
+  <path d="M820 410 Q850 380 1000 370 Q1150 380 1180 410" fill="#2A1A0A"/>
+  <path d="M820 410 Q800 500 810 600" fill="#2A1A0A" opacity="0.7"/>
+  <path d="M1180 410 Q1200 500 1190 600" fill="#2A1A0A" opacity="0.7"/>
+  <!-- Hair surface highlight -->
+  <path d="M850 400 Q920 380 1000 375 Q1080 380 1150 400" fill="none" stroke="white" stroke-width="1.5" opacity="0.12"/>
+  <!-- Face features - direct gaze -->
+  <ellipse cx="950" cy="610" rx="12" ry="8" fill="#3A3A3A" opacity="0.7"/>
+  <ellipse cx="1050" cy="610" rx="12" ry="8" fill="#3A3A3A" opacity="0.7"/>
+  <ellipse cx="950" cy="610" rx="4" ry="4" fill="#1A1A1A"/>
+  <ellipse cx="1050" cy="610" rx="4" ry="4" fill="#1A1A1A"/>
+  <!-- Brows -->
+  <path d="M920 580 Q950 570 980 580" fill="none" stroke="#5A4A3A" stroke-width="3"/>
+  <path d="M1020 580 Q1050 570 1080 580" fill="none" stroke="#5A4A3A" stroke-width="3"/>
+  <!-- Nose -->
+  <path d="M1000 630 Q990 660 1000 680 Q1010 660 1000 630" fill="none" stroke="#D0B8A0" stroke-width="2"/>
+  <!-- Mouth - neutral -->
+  <path d="M970 720 Q1000 710 1030 720" fill="none" stroke="#C0A888" stroke-width="3"/>
+  <!-- Subtle shadow under nose -->
+  <ellipse cx="1000" cy="700" rx="30" ry="8" fill="#D0B8A0" opacity="0.15"/>
+  <!-- Text -->
+  <text x="1000" y="1850" font-family="Georgia, serif" font-size="28" fill="#8A7A6A" text-anchor="middle" letter-spacing="6">CONTACT B — THE CLOSING PORTRAIT</text>
+</svg>

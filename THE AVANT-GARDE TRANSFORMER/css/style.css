@@ -1,0 +1,1812 @@
+/* ============================================
+   THE AVANT-GARDE TRANSFORMER — Style System v2.0
+   8-Act Film Structure
+   Doctrine: "Hair as architecture. Motion as meaning."
+   ============================================ */
+
+/* --- DESIGN TOKENS --- */
+:root {
+  /* Palette — Dark Transformation Route */
+  --bg-void: #080808;
+  --bg-graphite: #141414;
+  --bg-steel: #1e1e1e;
+  --plum: #2d1b2e;
+  --burgundy: #4a1528;
+  --steel-grey: #6b6b7b;
+  --text-primary: #e8e4df;
+  --text-muted: rgba(232, 228, 223, 0.5);
+  --text-dim: rgba(232, 228, 223, 0.25);
+  --accent: #8b3a62;
+  --accent-light: #a84f7a;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+
+  /* Typography — 4 roles */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-nav: 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Layout */
+  --max-width: 1400px;
+  --gutter: clamp(1.5rem, 4vw, 4rem);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--text-primary);
+  background-color: var(--bg-void);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Vignette overlay — cinematic depth */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9989;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(8, 8, 8, 0.4) 100%
+  );
+}
+
+/* Film grain overlay — luxury fashion texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* --- SELECTION --- */
+::selection {
+  background: var(--plum);
+  color: var(--text-primary);
+}
+
+/* --- TYPOGRAPHY ROLES --- */
+/* Role 01 — World Title: Large, severe, elegant */
+.t-world-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Role 02 — Manifesto: Oversized, fragmented, editorial */
+.t-manifesto {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Role 03 — Technical Caption: Small, sharp, controlled */
+.t-technical {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Role 04 — CTA: Minimal and confident */
+.t-cta {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out),
+              height 0.3s var(--ease-out),
+              background 0.3s var(--ease-out);
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(232, 228, 223, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s var(--ease-out),
+              height 0.4s var(--ease-out),
+              border-color 0.3s var(--ease-out),
+              background 0.3s var(--ease-out);
+}
+
+.cursor.active {
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+}
+
+.cursor-follower.active {
+  width: 80px;
+  height: 80px;
+  border-color: var(--accent);
+}
+
+@media (pointer: coarse) {
+  .cursor, .cursor-follower { display: none; }
+}
+
+/* ============================================
+   PRELOADER — Cinematic Fragment Scatter
+   ============================================ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-void);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.preloader__fragments {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.preloader__fragment {
+  position: absolute;
+  background: #0d0d0d;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.preloader__fragment--1 { top: -5%; left: -5%; width: 45vw; height: 50vh; }
+.preloader__fragment--2 { top: 15%; right: -8%; width: 38vw; height: 42vh; }
+.preloader__fragment--3 { bottom: -8%; left: 18%; width: 42vw; height: 38vh; }
+.preloader__fragment--4 { top: 8%; right: 12%; width: 28vw; height: 32vh; }
+.preloader__fragment--5 { top: 40%; left: 5%; width: 32vw; height: 48vh; }
+
+.preloader__count {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1;
+  z-index: 2;
+  opacity: 0;
+  letter-spacing: 0.05em;
+}
+
+.preloader__wipe {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-void);
+  z-index: 9998;
+  transform-origin: bottom;
+  visibility: hidden;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-md) var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+
+.nav__logo {
+  font-family: var(--font-nav);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.nav__cta {
+  font-family: var(--font-nav);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  padding: 0.6em 1.5em;
+  border: 1px solid var(--border-strong);
+  transition: all 0.4s var(--ease-out);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav__link {
+  font-family: var(--font-nav);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  position: relative;
+  transition: color 0.3s var(--ease-out);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -0.3em;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-primary);
+  transition: width 0.4s var(--ease-out);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__cta:hover {
+  background: var(--text-primary);
+  color: var(--bg-void);
+}
+
+/* ============================================
+   HAMBURGER MENU
+   ============================================ */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.nav__hamburger-line {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--text-primary);
+  position: absolute;
+  left: 8px;
+  transition: all 0.4s var(--ease-out);
+}
+
+.nav__hamburger-line:nth-child(1) {
+  top: 12px;
+}
+
+.nav__hamburger-line:nth-child(2) {
+  top: 19px;
+}
+
+.nav__hamburger-line:nth-child(3) {
+  top: 26px;
+}
+
+/* Hamburger hover effect */
+.nav__hamburger:hover .nav__hamburger-line {
+  background: var(--accent-light);
+}
+
+/* Hamburger active state — transforms to X */
+.nav__hamburger.active .nav__hamburger-line:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+
+.nav__hamburger.active .nav__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.nav__hamburger.active .nav__hamburger-line:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile menu overlay */
+.nav__mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-void);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s var(--ease-out);
+}
+
+.nav__mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__mobile-menu .nav__link {
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
+  margin: 1.5rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s var(--ease-out);
+}
+
+.nav__mobile-menu.active .nav__link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav__mobile-menu.active .nav__link:nth-child(1) { transition-delay: 0.1s; }
+.nav__mobile-menu.active .nav__link:nth-child(2) { transition-delay: 0.2s; }
+.nav__mobile-menu.active .nav__link:nth-child(3) { transition-delay: 0.3s; }
+.nav__mobile-menu.active .nav__link:nth-child(4) { transition-delay: 0.4s; }
+
+/* Mobile menu CTA */
+.nav__mobile-menu .nav__cta {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s var(--ease-out);
+}
+
+.nav__mobile-menu.active .nav__cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+/* Responsive — hamburger on all screens */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+  
+  .nav__hamburger {
+    display: block;
+  }
+}
+
+/* Desktop — show hamburger, hide inline links */
+@media (min-width: 769px) {
+  .nav__links {
+    display: none;
+  }
+  
+  .nav__hamburger {
+    display: block;
+  }
+}
+
+/* ============================================
+   LAYOUT — ACT STRUCTURE
+   ============================================ */
+.act {
+  position: relative;
+  width: 100%;
+}
+
+/* ============================================
+   ACT 01 — THRESHOLD / THE TRANSFORMATION GATE
+   Wow Moment 01: Silhouette Reveal Hero
+   ============================================ */
+.act--threshold {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.threshold__canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.threshold__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.threshold__image--primary {
+  inset: 0;
+  object-position: center 30%;
+  transform: scale(1.1);
+}
+
+/* Secondary detail crop — floating depth plane */
+.threshold__detail {
+  position: absolute;
+  bottom: 15%;
+  right: var(--gutter);
+  width: clamp(120px, 18vw, 280px);
+  height: auto;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+.threshold__image--detail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Veil — obscures hero initially */
+.threshold__veil {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-void);
+  z-index: 1;
+  transform-origin: top;
+}
+
+.threshold__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg) var(--gutter);
+  padding-bottom: clamp(3rem, 8vh, 6rem);
+  z-index: 3;
+  overflow: visible;
+}
+
+.threshold__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  overflow: visible;
+  word-wrap: break-word;
+  hyphens: manual;
+}
+
+.threshold__statement {
+  font-family: var(--font-body);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+.threshold__scroll-cue {
+  position: absolute;
+  bottom: clamp(1.5rem, 3vh, 2.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.threshold__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: var(--text-dim);
+  transform-origin: top;
+}
+
+/* ============================================
+   ACT 02 — THE MANIFESTO OF TRANSFORMATION
+   Staggered editorial text + close crops
+   ============================================ */
+.act--manifesto {
+  background: var(--bg-void);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.manifesto__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.manifesto__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.manifesto__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.manifesto__fragments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.manifesto__fragment {
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.manifesto__fragment--1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* Stacked detail crops — asymmetric */
+.manifesto__imagery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.manifesto__crop {
+  overflow: hidden;
+}
+
+.manifesto__crop img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.manifesto__crop:hover img {
+  transform: scale(1.03);
+}
+
+.manifesto__crop--1 {
+  width: 85%;
+  margin-left: auto;
+}
+
+.manifesto__crop--2 {
+  width: 70%;
+}
+
+/* ============================================
+   ACT 03 — THE SILHOUETTE CHAMBER
+   Sculptural installations in dark gallery
+   ============================================ */
+.act--silhouette {
+  background: var(--bg-void);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.silhouette__header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-xl);
+}
+
+.silhouette__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.silhouette__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Vertical procession — monolithic portraits */
+.silhouette__procession {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  padding: 0 var(--gutter);
+}
+
+.silhouette__study {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.silhouette__study img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.silhouette__study--1 {
+  max-width: 100%;
+}
+
+.silhouette__study--2 {
+  max-width: 75%;
+  margin-left: auto;
+}
+
+.silhouette__study--3 {
+  max-width: 85%;
+  margin-right: auto;
+}
+
+.silhouette__study--4 {
+  max-width: 70%;
+  margin-left: auto;
+}
+
+.silhouette__meta {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.silhouette__meta-label {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.silhouette__meta-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* ============================================
+   ACT 04 — THE MUTATION ARCHIVE
+   Curated editorial sequence with rhythm
+   Wow Moment 06: Gallery Quote
+   ============================================ */
+.act--archive {
+  background: var(--bg-void);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.archive__header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-xl);
+}
+
+.archive__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.archive__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Editorial image rhythm — not masonry */
+.archive__sequence {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: 0 var(--gutter);
+}
+
+.archive__frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.archive__frame img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.archive__frame:hover img {
+  transform: scale(1.02);
+}
+
+/* Full-width transformation frame */
+.archive__frame--full {
+  width: 100%;
+}
+
+/* Diptych — supporting close crops */
+.archive__frame--diptych {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.archive__frame--diptych .archive__frame-item {
+  overflow: hidden;
+}
+
+.archive__frame--diptych .archive__frame-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Vertical portrait */
+.archive__frame--vertical {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* Wide frame */
+.archive__frame--wide {
+  width: 100%;
+}
+
+.archive__frame-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(8, 8, 8, 0.9));
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.archive__frame-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.archive__frame-category {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Gallery interruption quote — Wow Moment 06 */
+/* Enhanced: Oversized text with translucent material panel */
+.archive__quote {
+  position: relative;
+  padding: clamp(4rem, 10vh, 8rem) var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Translucent material background panel */
+.archive__quote::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 14, 14, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Subtle gradient accent lines */
+.archive__quote::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 58, 98, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+.archive__quote-text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  text-align: center;
+  max-width: 1000px;
+  line-height: 1.2;
+  border: none;
+  padding: 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   ACT 05 — THE CONSTRUCTION LAB
+   Forensic process evidence — dossier style
+   Wow Moment 04: Construction Dossier
+   ============================================ */
+.act--construction {
+  background: var(--bg-graphite);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.construction__header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-xl);
+}
+
+.construction__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.construction__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Dossier grid — evidence cards */
+.construction__dossier {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.construction__card {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-void);
+}
+
+.construction__card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.construction__card:hover img {
+  transform: scale(1.04);
+}
+
+.construction__card--hero {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.construction__card--hero img {
+  height: 100%;
+  min-height: 580px;
+}
+
+.construction__card-meta {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.construction__card-phase {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.construction__card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.construction__card-desc {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ============================================
+   ACT 06 — THE IDENTITY SPLIT
+   Transformation proof — editorial, cinematic
+   Wow Moment 05: Identity Rupture
+   ============================================ */
+.act--split {
+  background: var(--bg-void);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.split__header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-xl);
+}
+
+.split__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.split__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Layered dual-state frame — scroll-driven reveal */
+.split__module {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.split__module--2 {
+  margin-bottom: 0;
+}
+
+.split__state {
+  position: relative;
+  overflow: hidden;
+}
+
+.split__state img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.split__state--before img {
+  filter: grayscale(0.3);
+}
+
+.split__state--after img {
+  filter: none;
+}
+
+.split__state-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(8, 8, 8, 0.9));
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.split__state-tag {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.split__state-desc {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.split__divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: var(--border-strong);
+  z-index: 2;
+}
+
+/* ============================================
+   ACT 07 — THE ATMOSPHERE INTERLUDE
+   Still-life, backstage, world-building
+   ============================================ */
+.act--atmosphere {
+  background: var(--bg-void);
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.atmosphere__header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  margin-bottom: var(--space-xl);
+}
+
+.atmosphere__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.atmosphere__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Staggered grid — editorial still-life wall */
+.atmosphere__grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 280px;
+  gap: var(--space-md);
+}
+
+.atmosphere__item {
+  position: relative;
+  overflow: hidden;
+}
+
+.atmosphere__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.atmosphere__item:hover img {
+  transform: scale(1.03);
+}
+
+.atmosphere__item--tall {
+  grid-row: span 2;
+}
+
+.atmosphere__item--wide {
+  grid-column: span 2;
+}
+
+.atmosphere__item-label {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ============================================
+   ACT 08 — THE INVITATION TO TRANSFORM
+   Closing CTA — final frame of fashion film
+   Wow Moment 07: Final Vanish
+   ============================================ */
+.act--invocation {
+  position: relative;
+  background: var(--bg-void);
+  padding: var(--space-2xl) 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.invocation__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  width: 100%;
+}
+
+.invocation__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-md);
+}
+
+.invocation__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.invocation__statement {
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.invocation__cta {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  padding: 1em 2.5em;
+  border: 1px solid var(--border-strong);
+  transition: all 0.4s var(--ease-out);
+}
+
+.invocation__cta:hover {
+  background: var(--text-primary);
+  color: var(--bg-void);
+}
+
+/* Final transformation image — vanishes on scroll */
+.invocation__image {
+  position: absolute;
+  right: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  max-width: 500px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.invocation__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ============================================
+   FOOTER — Closing title card
+   ============================================ */
+.footer {
+  background: var(--bg-void);
+  padding: var(--space-xl) var(--gutter);
+  text-align: center;
+}
+
+.footer__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.footer__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 auto var(--space-md);
+}
+
+.footer__credit {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+}
+
+.footer__love {
+  color: var(--accent);
+}
+
+.footer__studio {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .manifesto__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .manifesto__imagery {
+    flex-direction: row;
+  }
+
+  .manifesto__crop {
+    width: 50% !important;
+  }
+
+  .archive__frame--diptych {
+    grid-template-columns: 1fr;
+  }
+
+  .archive__frame--vertical {
+    width: 100%;
+  }
+
+  .construction__dossier {
+    grid-template-columns: 1fr;
+  }
+
+  .construction__card--hero {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .construction__card--hero img {
+    min-height: 280px;
+  }
+
+  .split__module {
+    grid-template-columns: 1fr;
+  }
+
+  .split__divider {
+    display: none;
+  }
+
+  .split__state img {
+    height: 350px;
+  }
+
+  .invocation__image {
+    display: none;
+  }
+
+  .atmosphere__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 240px;
+  }
+
+  .atmosphere__item--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .manifesto__imagery {
+    flex-direction: column;
+  }
+
+  .manifesto__crop {
+    width: 100% !important;
+  }
+
+  .atmosphere__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .atmosphere__item--wide {
+    grid-column: span 1;
+  }
+
+  .atmosphere__item--tall {
+    grid-row: span 1;
+  }
+}
+
+/* ============================================
+   MATERIAL & SURFACE TEXTURES
+   ============================================ */
+
+/* Lacquer/gloss surface effect */
+.material--lacquer {
+  position: relative;
+  overflow: hidden;
+}
+
+.material--lacquer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out);
+}
+
+.material--lacquer:hover::after {
+  opacity: 1;
+}
+
+/* Mesh texture overlay */
+.material--mesh {
+  position: relative;
+}
+
+.material--mesh::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Translucent panel */
+.material--translucent {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Mirror-like reflection */
+.material--mirror {
+  position: relative;
+  overflow: hidden;
+}
+
+.material--mirror::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  transform: rotate(-45deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out);
+}
+
+.material--mirror:hover::after {
+  opacity: 1;
+}
+
+/* Dark velvet surface */
+.material--velvet {
+  background: linear-gradient(
+    180deg,
+    var(--bg-void) 0%,
+    var(--bg-graphite) 50%,
+    var(--bg-void) 100%
+  );
+}
+
+/* Chrome/metallic accent */
+.material--chrome {
+  background: linear-gradient(
+    135deg,
+    #2a2a2a 0%,
+    #4a4a4a 25%,
+    #3a3a3a 50%,
+    #5a5a5a 75%,
+    #2a2a2a 100%
+  );
+  background-size: 200% 200%;
+}
+
+.material--chrome:hover {
+  animation: chrome-shift 2s ease infinite;
+}
+
+@keyframes chrome-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Shadow depth layer */
+.material--shadow-depth {
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Glass morphism panel */
+.material--glass {
+  background: rgba(14, 14, 14, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================
+   ENHANCED HOVER STATES
+   ============================================ */
+
+/* CTA button — cinematic hover */
+.nav__cta,
+.invocation__cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav__cta::before,
+.invocation__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transition: left 0.6s var(--ease-out);
+}
+
+.nav__cta:hover::before,
+.invocation__cta:hover::before {
+  left: 100%;
+}
+
+/* Gallery frame — enhanced hover */
+.archive__frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.archive__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.archive__frame:hover::after {
+  opacity: 1;
+}
+
+/* Portfolio item — tilt and glow */
+.portfolio__item {
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+
+.portfolio__item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Construction card — evidence slide */
+.construction__card {
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.construction__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Atmosphere item — subtle float */
+.atmosphere__item {
+  transition: transform 0.5s var(--ease-out);
+}
+
+.atmosphere__item:hover {
+  transform: translateY(-6px);
+}
+
+/* Silhouette study — dramatic reveal */
+.silhouette__study {
+  transition: transform 0.6s var(--ease-out);
+}
+
+.silhouette__study:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   FINAL VANISH SEQUENCE — Enhanced
+   ============================================ */
+.act--invocation {
+  position: relative;
+}
+
+.invocation__content {
+  transition: transform 0.8s var(--ease-out);
+}
+
+.invocation__image {
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+/* ============================================
+   LIGHT PASSING EFFECT — Diagonal warm light sweep
+   ============================================ */
+.light {
+  position: absolute;
+  width: 120px;
+  height: 200%;
+  top: -20%;
+  left: -40%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 220, 160, 0.35) 30%,
+    rgba(255, 200, 120, 0.5) 50%,
+    rgba(255, 220, 160, 0.35) 70%,
+    transparent 100%
+  );
+  filter: blur(35px);
+  transform: rotate(18deg);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 4;
+  will-change: transform, opacity;
+}
+
+/* ============================================
+   SCROLL CUE ANIMATION
+   ============================================ */
+@keyframes scroll-pulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: translateX(-50%) scaleY(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: translateX(-50%) scaleY(1.2);
+  }
+}
+
+.threshold__scroll-cue {
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   LOADING STATE ANIMATIONS
+   ============================================ */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-graphite) 25%,
+    var(--bg-steel) 50%,
+    var(--bg-graphite) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}

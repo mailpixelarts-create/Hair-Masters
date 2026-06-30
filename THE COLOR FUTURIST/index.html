@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE COLOR FUTURIST — Where Color Becomes Art</title>
+  <meta name="description" content="Precision hair color artistry by Norman James. Where precision meets beauty.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-counter">
+      <span id="preloader-percent">000</span>
+      <span class="preloader-label">% loaded</span>
+    </div>
+  </div>
+
+  <!-- ELEGANT NAV STRIP -->
+  <nav id="mono-nav" class="mono-nav" aria-label="Section Navigation">
+    <div class="mono-nav__strip">
+      <span class="mono-nav__item" data-section="0">I. Vision</span>
+      <span class="mono-nav__item" data-section="1">II. Philosophy</span>
+      <span class="mono-nav__item" data-section="2">III. Portfolio</span>
+      <span class="mono-nav__item" data-section="3">IV. Process</span>
+      <span class="mono-nav__item" data-section="4">V. Transformation</span>
+      <span class="mono-nav__item" data-section="5">VI. Book</span>
+    </div>
+  </nav>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
+    <button class="mobile-nav__item" data-section="0">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      <span>Vision</span>
+    </button>
+    <button class="mobile-nav__item" data-section="1">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+      <span>Philosophy</span>
+    </button>
+    <button class="mobile-nav__item" data-section="2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <span>Portfolio</span>
+    </button>
+    <button class="mobile-nav__item" data-section="3">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <span>Process</span>
+    </button>
+    <button class="mobile-nav__item" data-section="4">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+      <span>Before</span>
+    </button>
+    <button class="mobile-nav__item" data-section="5">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27,6.96 12,12.01 20.73,6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      <span>Book</span>
+    </button>
+  </nav>
+
+  <!-- SCROLL SNAP CONTAINER -->
+  <main id="scroll-container" class="scroll-container">
+
+    <!-- 01 — VISION (HERO) -->
+    <section id="section-0" class="section section--hero" data-section-index="0">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__hero-image">
+        <img src="images/HM-1.jpg" alt="Editorial hair color" loading="eager">
+      </div>
+      <div class="section__content">
+        <h1 class="hero__title">
+          <span class="hero__title-line">THE COLOR</span>
+          <span class="hero__title-line hero__title-line--accent">FUTURIST</span>
+        </h1>
+        <p class="hero__subtitle">Where precision meets artistry. Every shade is intentional. Every transformation is a revelation.</p>
+        <div class="hero__data">
+          <div class="hero__data-point">
+            <span class="hero__data-label">Experience</span>
+            <span class="hero__data-value">12+ Years</span>
+          </div>
+          <div class="hero__data-point">
+            <span class="hero__data-label">Transformations</span>
+            <span class="hero__data-value">4,200+</span>
+          </div>
+          <div class="hero__data-point">
+            <span class="hero__data-label">Precision</span>
+            <span class="hero__data-value">99.7%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — PHILOSOPHY -->
+    <section id="section-1" class="section section--science" data-section-index="1">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">The Philosophy</span>
+          <h2 class="section__title">Color Is Not<br>Applied. It's Revealed.</h2>
+        </div>
+        <div class="science__grid">
+          <div class="science__card">
+            <div class="science__card-image">
+              <img src="images/tcf/philosophy/03.jpg" alt="Hair analysis" loading="lazy">
+            </div>
+            <span class="science__card-num">01</span>
+            <h3>Know the Hair</h3>
+            <p>Every strand tells a story. Before any color touches your hair, we listen — reading its porosity, its history, its natural undertones. This is not a guess. This is understanding.</p>
+          </div>
+          <div class="science__card">
+            <div class="science__card-image">
+              <img src="images/tcf/philosophy/04.jpg" alt="Color formulation" loading="lazy">
+            </div>
+            <span class="science__card-num">02</span>
+            <h3>Derive the Formula</h3>
+            <p>Color is not chosen from a swatch book. It's built — molecule by molecule — from a palette of 47 base pigments, calibrated to your unique chemistry. The result is yours alone.</p>
+          </div>
+          <div class="science__card">
+            <div class="science__card-image">
+              <img src="images/tcf/philosophy/05.jpg" alt="Color verification" loading="lazy">
+            </div>
+            <span class="science__card-num">03</span>
+            <h3>Verify the Vision</h3>
+            <p>After every application, we measure. Not to satisfy a machine — but to ensure the color you see in the mirror matches the color we imagined together. Precision is our promise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02B — TONAL SPECTRUM EXPLORER -->
+    <section class="section section--spectrum" data-section-index="2">
+      <div class="section__content">
+        <div class="spectrum">
+          <div class="spectrum__left">
+            <span class="mono-tag">Tonal Spectrum</span>
+            <h2 class="spectrum__heading">Move Through<br>the Palette</h2>
+            <p class="spectrum__description">Drag across the spectrum to explore the tonal range. Each shade is a living formula — never flat, always dimensional.</p>
+            <div class="spectrum__current">
+              <span class="spectrum__current-label">Current Tone</span>
+              <span id="spectrum-current-name" class="spectrum__current-name">Black Plum</span>
+            </div>
+          </div>
+          <div class="spectrum__right">
+            <div id="spectrum-bar" class="spectrum__bar">
+              <div class="spectrum__swatch" data-name="Black Plum" data-color="#1A0F1A" style="background: #1A0F1A;"></div>
+              <div class="spectrum__swatch" data-name="Oil-Slick Graphite" data-color="#2C2C3A" style="background: #2C2C3A;"></div>
+              <div class="spectrum__swatch" data-name="Oxidized Copper" data-color="#6B4F3A" style="background: #6B4F3A;"></div>
+              <div class="spectrum__swatch" data-name="Smoked Berry" data-color="#4A2838" style="background: #4A2838;"></div>
+              <div class="spectrum__swatch" data-name="Silvered Lavender" data-color="#9B8F9E" style="background: #9B8F9E;"></div>
+              <div class="spectrum__swatch" data-name="Muted Champagne" data-color="#C9A96E" style="background: #C9A96E;"></div>
+              <div class="spectrum__swatch" data-name="Iridescent Pearl" data-color="#E8DFD0" style="background: #E8DFD0;"></div>
+              <div class="spectrum__swatch" data-name="Taupe Noir" data-color="#3D3229" style="background: #3D3229;"></div>
+              <div class="spectrum__swatch" data-name="Berry Black" data-color="#2A1220" style="background: #2A1220;"></div>
+              <div class="spectrum__swatch" data-name="Metallic Taupe" data-color="#7A6B5D" style="background: #7A6B5D;"></div>
+            </div>
+            <div class="spectrum__preview">
+              <div id="spectrum-preview" class="spectrum__preview-swatch" style="background: #1A0F1A;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CINEMATIC INTERLUDE -->
+    <section class="section section--interlude">
+      <div class="interlude">
+        <div class="interlude__image">
+          <img src="images/USE-1.jpg" alt="Editorial hair color" loading="lazy">
+        </div>
+        <div class="interlude__overlay">
+          <span class="interlude__text">Color as authorship</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATMOSPHERIC INTERLUDE -->
+    <section class="section section--atmosphere">
+      <div class="section__content">
+        <div class="atmosphere">
+          <div class="atmosphere__image atmosphere__image--1">
+            <img src="images/tcf/atmosphere/33.jpg" alt="Pigment texture" loading="lazy">
+          </div>
+          <div class="atmosphere__image atmosphere__image--2">
+            <img src="images/tcf/atmosphere/34.jpg" alt="Reflective surface" loading="lazy">
+          </div>
+          <div class="atmosphere__image atmosphere__image--3">
+            <img src="images/tcf/atmosphere/35.jpg" alt="Metallic tones" loading="lazy">
+          </div>
+          <div class="atmosphere__image atmosphere__image--4">
+            <img src="images/tcf/atmosphere/36.jpg" alt="Smoked berry tones" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL TRIPTYCH -->
+    <section class="section section--triptych">
+      <div class="triptych">
+        <div class="triptych__item triptych__item--large">
+          <img src="images/USE-2.jpg" alt="Hair color detail" loading="lazy">
+          <div class="triptych__caption">
+            <span>Dimension</span>
+          </div>
+        </div>
+        <div class="triptych__item triptych__item--tall">
+          <img src="images/USE-3.jpg" alt="Color technique" loading="lazy">
+          <div class="triptych__caption">
+            <span>Texture</span>
+          </div>
+        </div>
+        <div class="triptych__item triptych__item--short">
+          <img src="images/USE-4.jpg" alt="Tonal movement" loading="lazy">
+          <div class="triptych__caption">
+            <span>Movement</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — PORTFOLIO (GALLERY) -->
+    <section id="section-2" class="section section--gallery" data-section-index="2">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">The Portfolio</span>
+          <h2 class="section__title">Every Color<br>Tells a Story</h2>
+        </div>
+        <div class="gallery">
+          <div class="gallery__grid">
+            <div class="gallery__item">
+              <div class="gallery__image" style="aspect-ratio: 3 / 4;">
+                <img src="images/tcf/gallery/06.jpg" alt="Honey" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Honey</div>
+                <div class="gallery__technique">Multi-Dimensional Balayage</div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="gallery__image" style="aspect-ratio: 4 / 5;">
+                <img src="images/tcf/gallery/07.jpg" alt="Espresso" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Espresso</div>
+                <div class="gallery__technique">Shadow Root Melt</div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="gallery__image" style="aspect-ratio: 1 / 1;">
+                <img src="images/tcf/gallery/08.jpg" alt="Dusty Rose" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Dusty Rose</div>
+                <div class="gallery__technique">Glaze</div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="gallery__image" style="aspect-ratio: 16 / 9;">
+                <img src="images/tcf/gallery/09.jpg" alt="Midnight" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Midnight</div>
+                <div class="gallery__technique">Violet Deposit</div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="gallery__image" style="aspect-ratio: 2 / 3;">
+                <img src="images/tcf/gallery/10.jpg" alt="Copper" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Copper</div>
+                <div class="gallery__technique">Infusion</div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="gallery__image" style="aspect-ratio: 4 / 5;">
+                <img src="images/tcf/gallery/11.jpg" alt="Platinum" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Platinum</div>
+                <div class="gallery__technique">Protocol</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — PROCESS -->
+    <section id="section-3" class="section section--process" data-section-index="3">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">The Process</span>
+          <h2 class="section__title">From Vision<br>To Reality</h2>
+        </div>
+        <div class="process__pipeline">
+          <div class="process__step">
+            <div class="process__step-image">
+              <img src="images/tcf/process/18.jpg" alt="Consultation" loading="lazy">
+            </div>
+            <span class="process__step-num">01</span>
+            <div class="process__step-content">
+              <h3>Consultation</h3>
+              <p>We begin with conversation. Your lifestyle, your inspiration, your history — everything matters. This is where vision takes shape.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <span class="process__step-num">02</span>
+            <div class="process__step-content">
+              <h3>Analysis</h3>
+              <p>We study your hair's natural undertones, porosity, and condition. Every strand is assessed. The canvas must be understood before it can be transformed.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step-image">
+              <img src="images/tcf/process/20.jpg" alt="Formulation" loading="lazy">
+            </div>
+            <span class="process__step-num">03</span>
+            <div class="process__step-content">
+              <h3>Formulation</h3>
+              <p>Your color is custom-blended — never straight from a tube. We build formulas from base pigments, calibrated to your unique chemistry and desired outcome.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <span class="process__step-num">04</span>
+            <div class="process__step-content">
+              <h3>Application</h3>
+              <p>Strategic, intentional placement. Every section is painted with purpose — building dimension, depth, and movement throughout the hair.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <div class="process__step-image">
+              <img src="images/tcf/process/22.jpg" alt="Refinement" loading="lazy">
+            </div>
+            <span class="process__step-num">05</span>
+            <div class="process__step-content">
+              <h3>Refinement</h3>
+              <p>We check, adjust, and perfect. Color is a living thing — it develops and evolves. We watch it come alive and make sure it's exactly right.</p>
+            </div>
+          </div>
+          <div class="process__step">
+            <span class="process__step-num">06</span>
+            <div class="process__step-content">
+              <h3>The Reveal</h3>
+              <p>The moment of truth. Hair is styled, lit, and presented. This is where your new color meets the world for the first time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — TRANSFORMATION (BEFORE/AFTER) -->
+    <section id="section-4" class="section section--evidence" data-section-index="4">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">The Transformation</span>
+          <h2 class="section__title">See the<br>Difference</h2>
+        </div>
+        <div class="evidence__sliders">
+          <div class="evidence__slider" data-before="images/tcf/before-after/23.jpg" data-after="images/tcf/before-after/24.jpg">
+            <div class="evidence__slider-container">
+              <div class="evidence__slider-before">
+                <img src="images/tcf/before-after/23.jpg" alt="Before" loading="lazy">
+                <span class="evidence__slider-label">BEFORE</span>
+              </div>
+              <div class="evidence__slider-after">
+                <img src="images/tcf/before-after/24.jpg" alt="After" loading="lazy">
+                <span class="evidence__slider-label">AFTER</span>
+              </div>
+              <div class="evidence__slider-handle">
+                <span class="evidence__slider-handle-line"></span>
+                <span class="evidence__slider-handle-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="evidence__data">
+              <span>Honey Comb — Warm Balayage</span>
+              <span>Multi-dimensional, sun-kissed warmth</span>
+            </div>
+          </div>
+          <div class="evidence__slider" data-before="images/tcf/before-after/25.jpg" data-after="images/tcf/before-after/26.jpg">
+            <div class="evidence__slider-container">
+              <div class="evidence__slider-before">
+                <img src="images/tcf/before-after/25.jpg" alt="Before" loading="lazy">
+                <span class="evidence__slider-label">BEFORE</span>
+              </div>
+              <div class="evidence__slider-after">
+                <img src="images/tcf/before-after/26.jpg" alt="After" loading="lazy">
+                <span class="evidence__slider-label">AFTER</span>
+              </div>
+              <div class="evidence__slider-handle">
+                <span class="evidence__slider-handle-line"></span>
+                <span class="evidence__slider-handle-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="evidence__data">
+              <span>Copper Infusion — Rich Dimension</span>
+              <span>Vibrant copper with auburn depth</span>
+            </div>
+          </div>
+          <div class="evidence__slider" data-before="images/tcf/detail/27.jpg" data-after="images/tcf/detail/28.jpg">
+            <div class="evidence__slider-container">
+              <div class="evidence__slider-before">
+                <img src="images/tcf/detail/27.jpg" alt="Before" loading="lazy">
+                <span class="evidence__slider-label">BEFORE</span>
+              </div>
+              <div class="evidence__slider-after">
+                <img src="images/tcf/detail/28.jpg" alt="After" loading="lazy">
+                <span class="evidence__slider-label">AFTER</span>
+              </div>
+              <div class="evidence__slider-handle">
+                <span class="evidence__slider-handle-line"></span>
+                <span class="evidence__slider-handle-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="evidence__data">
+              <span>Platinum Protocol — Icy Elegance</span>
+              <span>Clean, cool, editorial platinum</span>
+            </div>
+          </div>
+          <div class="evidence__slider" data-before="images/tcf/detail/29.jpg" data-after="images/tcf/detail/30.jpg">
+            <div class="evidence__slider-container">
+              <div class="evidence__slider-before">
+                <img src="images/tcf/detail/29.jpg" alt="Before" loading="lazy">
+                <span class="evidence__slider-label">BEFORE</span>
+              </div>
+              <div class="evidence__slider-after">
+                <img src="images/tcf/detail/30.jpg" alt="After" loading="lazy">
+                <span class="evidence__slider-label">AFTER</span>
+              </div>
+              <div class="evidence__slider-handle">
+                <span class="evidence__slider-handle-line"></span>
+                <span class="evidence__slider-handle-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="evidence__data">
+              <span>Smoked Berry — Depth & Dimension</span>
+              <span>Rich, layered berry with dark undertones</span>
+            </div>
+          </div>
+          <div class="evidence__slider" data-before="images/tcf/detail/31.jpg" data-after="images/tcf/detail/32.jpg">
+            <div class="evidence__slider-container">
+              <div class="evidence__slider-before">
+                <img src="images/tcf/detail/31.jpg" alt="Before" loading="lazy">
+                <span class="evidence__slider-label">BEFORE</span>
+              </div>
+              <div class="evidence__slider-after">
+                <img src="images/tcf/detail/32.jpg" alt="After" loading="lazy">
+                <span class="evidence__slider-label">AFTER</span>
+              </div>
+              <div class="evidence__slider-handle">
+                <span class="evidence__slider-handle-line"></span>
+                <span class="evidence__slider-handle-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="evidence__data">
+              <span>Lavender Silver — Cool Refinement</span>
+              <span>Soft, muted lavender with silvered finish</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL LOOKBOOK -->
+    <section class="section section--lookbook">
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">The Lookbook</span>
+          <h2 class="section__title">Study in<br>Tone</h2>
+        </div>
+        <div class="lookbook">
+          <div class="lookbook__item lookbook__item--wide">
+            <img src="images/USE-5.jpg" alt="Editorial look" loading="lazy">
+            <div class="lookbook__caption">
+              <span class="lookbook__name">Champagne Frost</span>
+              <span class="lookbook__note">Cool blonde with warm depth</span>
+            </div>
+          </div>
+          <div class="lookbook__item lookbook__item--tall">
+            <img src="images/USE-6.jpg" alt="Color study" loading="lazy">
+            <div class="lookbook__caption">
+              <span class="lookbook__name">Midnight Violet</span>
+              <span class="lookbook__note">Hidden indigo dimensions</span>
+            </div>
+          </div>
+          <div class="lookbook__item lookbook__item--square">
+            <img src="images/USE-7.jpg" alt="Tonal detail" loading="lazy">
+            <div class="lookbook__caption">
+              <span class="lookbook__name">Ash Smoke</span>
+              <span class="lookbook__note">Cool grey with lavender</span>
+            </div>
+          </div>
+          <div class="lookbook__item lookbook__item--square">
+            <img src="images/USE-8.jpg" alt="Hair texture" loading="lazy">
+            <div class="lookbook__caption">
+              <span class="lookbook__name">Copper Warmth</span>
+              <span class="lookbook__note">Burnished metallic tones</span>
+            </div>
+          </div>
+          <div class="lookbook__item lookbook__item--wide">
+            <img src="images/USE-9.jpg" alt="Final look" loading="lazy">
+            <div class="lookbook__caption">
+              <span class="lookbook__name">Espresso Noir</span>
+              <span class="lookbook__note">Dark mahogany reflections</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — BOOK (CTA) -->
+    <section id="section-5" class="section section--lab" data-section-index="5">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">Book Your Transformation</span>
+          <h2 class="section__title">Your Color<br>Awaits</h2>
+        </div>
+        <div class="lab__content">
+          <div class="lab__images">
+            <div class="lab__image lab__image--1">
+              <img src="images/tcf/cta/37.jpg" alt="Color consultation" loading="lazy">
+            </div>
+            <div class="lab__image lab__image--2">
+              <img src="images/tcf/cta/38.jpg" alt="Finished result" loading="lazy">
+            </div>
+          </div>
+          <div class="lab__cta">
+            <p class="lab__cta-text">Ready to discover what your hair has been waiting for? Every transformation begins with a conversation. Let's find your color.</p>
+            <a href="about.html#section-3" class="lab__cta-button">
+              <span class="lab__cta-button-text">Begin Your Journey</span>
+              <span class="lab__cta-button-arrow">→</span>
+            </a>
+            <div class="lab__cta-info">
+              <span>Appointments available</span>
+              <span>Virtual or in-studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__image">
+        <img id="modal-img" src="" alt="" loading="lazy">
+      </div>
+      <div class="modal__data">
+        <h3 id="modal-name" class="modal__name"></h3>
+        <div class="modal__specs">
+          <div class="modal__spec">
+            <span class="modal__spec-label">HEX VALUE</span>
+            <span id="modal-hex" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">FORMULA</span>
+            <span id="modal-formula" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">TECHNIQUE</span>
+            <span id="modal-technique" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">PROCESSING TIME</span>
+            <span id="modal-time" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">Color Family</span>
+            <span class="modal__spec-value">Custom Blend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="footer__brand">
+        <span class="footer__logo">THE COLOR FUTURIST</span>
+        <span class="footer__tagline">Where Color Becomes Art</span>
+      </div>
+      <div class="footer__image">
+        <img src="images/tcf/footer/39.jpg" alt="The Atelier signature" loading="lazy">
+      </div>
+      <div class="footer__data">
+        <span>© Norman James</span>
+        <span>made with love <span class="footer__heart">❤️</span> by Empathy Studio +91 9833274308</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- SplitType Text Splitting -->
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

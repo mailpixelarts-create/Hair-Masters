@@ -1,0 +1,217 @@
+/* ============================================
+   THE AVANT-GARDE TRANSFORMER — Animation System
+   Doctrine: "Motion that feels like a silhouette assembling itself."
+   ============================================ */
+
+/* --- REVEAL STATES --- */
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.reveal--active {
+  opacity: 1;
+}
+
+/* --- TEXT MASK REVEAL (word-level SplitType) --- */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word-mask__inner {
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.word-mask--active .word-mask__inner {
+  transform: translateY(0);
+}
+
+/* --- LINE MASK REVEAL --- */
+.line-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.line-mask__inner {
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.line-mask--active .line-mask__inner {
+  transform: translateY(0);
+}
+
+/* --- CLIP REVEAL (for images) --- */
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  will-change: clip-path;
+}
+
+.clip-reveal--active {
+  clip-path: inset(0% 0 0 0);
+}
+
+/* --- SCALE REVEAL --- */
+.scale-reveal {
+  opacity: 0;
+  transform: scale(1.15);
+  will-change: opacity, transform;
+}
+
+.scale-reveal--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- SLIDE REVEAL --- */
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  will-change: opacity, transform;
+}
+
+.slide-up--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(-60px);
+  will-change: opacity, transform;
+}
+
+.slide-down--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(60px);
+  will-change: opacity, transform;
+}
+
+.slide-left--active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(-60px);
+  will-change: opacity, transform;
+}
+
+.slide-right--active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- FADE STATES --- */
+.fade-in {
+  opacity: 0;
+  will-change: opacity;
+}
+
+.fade-in--active {
+  opacity: 1;
+}
+
+/* --- STAGGER DELAYS (set via GSAP, these are fallbacks) --- */
+.stagger-1 { transition-delay: 0.06s; }
+.stagger-2 { transition-delay: 0.12s; }
+.stagger-3 { transition-delay: 0.18s; }
+.stagger-4 { transition-delay: 0.24s; }
+.stagger-5 { transition-delay: 0.3s; }
+.stagger-6 { transition-delay: 0.36s; }
+
+/* --- KEYFRAME ANIMATIONS --- */
+
+/* Scroll line pulse */
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.threshold__scroll-line {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* Subtle float */
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Grain texture overlay */
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -3%); }
+  20% { transform: translate(3%, 1%); }
+  30% { transform: translate(-1%, 2%); }
+  40% { transform: translate(2%, -2%); }
+  50% { transform: translate(-3%, 3%); }
+  60% { transform: translate(1%, -1%); }
+  70% { transform: translate(-2%, 2%); }
+  80% { transform: translate(3%, -3%); }
+  90% { transform: translate(-1%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Horizontal line draw */
+@keyframes lineDraw {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* --- SCROLL-TRIGGERED STATES (controlled by GSAP) --- */
+[data-scroll-state="hidden"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+[data-scroll-state="visible"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- HOVER TRANSITIONS --- */
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* --- PARALLAX CONTAINER --- */
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-image {
+  position: absolute;
+  inset: -15%;
+  width: 130%;
+  height: 130%;
+  object-fit: cover;
+  will-change: transform;
+}

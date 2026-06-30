@@ -1,0 +1,193 @@
+/* ============================================
+   THE PRECISION CUTTER — ANIMATION STYLES
+   ============================================ */
+
+/* --- Preloader Shapes --- */
+.preloader-shape {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* --- Hero Lines --- */
+.hero-title .line {
+  overflow: hidden;
+}
+
+.hero-title .line span {
+  display: inline-block;
+  transform: translateY(110%);
+}
+
+.hero-tag,
+.hero-sub,
+.hero-measure {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-image-frame {
+  clip-path: inset(100% 0 0 0);
+}
+
+/* --- Philosophy --- */
+.section-number {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.philosophy-left .section-title {
+  clip-path: inset(0 100% 0 0);
+}
+
+.philosophy-text p {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.m-block {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* --- Process --- */
+.process-header .section-title {
+  clip-path: inset(0 100% 0 0);
+}
+
+.process-step {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.step-line {
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  width: 1px;
+  height: 0;
+  background: var(--black);
+}
+
+/* --- Gallery --- */
+.gallery-slide {
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: opacity 0.6s var(--ease-architect), transform 0.6s var(--ease-architect);
+}
+
+.gallery-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Measurements --- */
+.measurements-left .section-title {
+  clip-path: inset(0 100% 0 0);
+}
+
+.measurements-desc {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.measurement-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* --- Contact --- */
+.contact-left .section-title {
+  clip-path: inset(0 100% 0 0);
+}
+
+.contact-details {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.form-group {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+/* --- Zoom transition overlay --- */
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--white);
+  z-index: 7000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* --- Step images --- */
+.step-image {
+  clip-path: inset(100% 0 0 0);
+}
+
+/* --- Beauty Macro items --- */
+.macro-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* --- Transformation pairs --- */
+.transform-pair {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* --- Cut line pulse on scroll --- */
+@keyframes cutPulse {
+  0% { stroke: var(--black); }
+  50% { stroke: var(--steel); }
+  100% { stroke: var(--black); }
+}
+
+.cut-line-active #cutPath {
+  animation: cutPulse 2s ease-in-out infinite;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-title .line span {
+    transform: translateY(0) !important;
+  }
+
+  .hero-tag,
+  .hero-sub,
+  .hero-measure,
+  .section-number,
+  .philosophy-text p,
+  .m-block,
+  .process-step,
+  .measurements-desc,
+  .measurement-card,
+  .contact-details,
+  .form-group,
+  .about-hero-sub,
+  .about-bio-text p,
+  .approach-card,
+  .work-filters {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-image-frame,
+  .about-image-frame,
+  .philosophy-left .section-title,
+  .process-header .section-title,
+  .measurements-left .section-title,
+  .contact-left .section-title,
+  .about-bio-right .section-title,
+  .about-approach-header .section-title {
+    clip-path: inset(0 0% 0 0) !important;
+  }
+}

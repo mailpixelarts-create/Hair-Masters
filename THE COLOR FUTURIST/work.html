@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE COLOR FUTURIST — The Work</title>
+  <meta name="description" content="The color archive. Every transformation tells a story.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/work.css">
+</head>
+<body>
+
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-counter">
+      <span id="preloader-percent">000</span>
+      <span class="preloader-label">% loaded</span>
+    </div>
+  </div>
+
+  <!-- ELEGANT NAV STRIP -->
+  <nav id="mono-nav" class="mono-nav" aria-label="Section Navigation">
+    <div class="mono-nav__strip">
+      <a href="index.html" class="mono-nav__item">Home</a>
+      <a href="work.html" class="mono-nav__item is-active">The Work</a>
+      <a href="about.html" class="mono-nav__item">About</a>
+    </div>
+  </nav>
+
+  <!-- SCROLL CONTAINER -->
+  <main id="scroll-container" class="scroll-container">
+
+    <!-- HERO -->
+    <section id="section-0" class="section section--hero" data-section-index="0">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="hero__label">
+          <span class="mono-tag">The Work</span>
+        </div>
+        <h1 class="hero__title">
+          <span class="hero__title-line">Color</span>
+          <span class="hero__title-line hero__title-line--accent">Archive</span>
+        </h1>
+        <p class="hero__subtitle">Every transformation tells a story. Every color has a reason. This is the work — unfiltered, unretouched, real.</p>
+        <div class="hero__data">
+          <div class="hero__data-point">
+            <span class="hero__data-label">Portfolio</span>
+            <span class="hero__data-value">4,200+</span>
+          </div>
+          <div class="hero__data-point">
+            <span class="hero__data-label">Color Accuracy</span>
+            <span class="hero__data-value">99.7%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHIVE -->
+    <section id="section-1" class="section section--archive" data-section-index="1">
+      <div class="section__bg-layer section__bg-layer--1"></div>
+      <div class="section__bg-layer section__bg-layer--2"></div>
+      <div class="section__bg-layer section__bg-layer--3"></div>
+      <div class="section__content">
+        <div class="section__header">
+          <span class="mono-tag">The Archive</span>
+          <h2 class="section__title">Color<br>Archive</h2>
+        </div>
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-bar__item is-active" data-filter="all">ALL</button>
+          <button class="filter-bar__item" data-filter="platinum">PLATINUM</button>
+          <button class="filter-bar__item" data-filter="copper">COPPER</button>
+          <button class="filter-bar__item" data-filter="brunette">BRUNETTE</button>
+          <button class="filter-bar__item" data-filter="vivid">VIVID</button>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="gallery">
+          <div class="gallery__grid">
+            <div class="gallery__item" data-filter="platinum">
+              <div class="gallery__image" style="aspect-ratio: 3 / 4;">
+                <img src="images/tcf/gallery/12.jpg" alt="Platinum" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Platinum</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="copper">
+              <div class="gallery__image" style="aspect-ratio: 4 / 5;">
+                <img src="images/tcf/gallery/10.jpg" alt="Copper" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Copper</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="brunette">
+              <div class="gallery__image" style="aspect-ratio: 1 / 1;">
+                <img src="images/tcf/gallery/07.jpg" alt="Espresso" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Espresso</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="vivid">
+              <div class="gallery__image" style="aspect-ratio: 16 / 9;">
+                <img src="images/tcf/gallery/08.jpg" alt="Dusty Rose" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Dusty Rose</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="vivid">
+              <div class="gallery__image" style="aspect-ratio: 2 / 3;">
+                <img src="images/tcf/gallery/09.jpg" alt="Midnight" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Midnight</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="platinum">
+              <div class="gallery__image" style="aspect-ratio: 4 / 5;">
+                <img src="images/tcf/gallery/06.jpg" alt="Honey" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Honey</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="brunette">
+              <div class="gallery__image" style="aspect-ratio: 3 / 4;">
+                <img src="images/tcf/gallery/13.jpg" alt="Burgundy" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Burgundy</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="platinum">
+              <div class="gallery__image" style="aspect-ratio: 1 / 1;">
+                <img src="images/tcf/gallery/14.jpg" alt="Wheat" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Wheat</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="copper">
+              <div class="gallery__image" style="aspect-ratio: 4 / 5;">
+                <img src="images/tcf/gallery/15.jpg" alt="Copper Glow" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Copper Glow</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="vivid">
+              <div class="gallery__image" style="aspect-ratio: 3 / 4;">
+                <img src="images/tcf/gallery/16.jpg" alt="Neon Rose" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Neon Rose</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="brunette">
+              <div class="gallery__image" style="aspect-ratio: 4 / 5;">
+                <img src="images/tcf/gallery/17.jpg" alt="Dark Espresso" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Dark Espresso</div>
+              </div>
+            </div>
+            <div class="gallery__item" data-filter="platinum">
+              <div class="gallery__image" style="aspect-ratio: 1 / 1;">
+                <img src="images/tcf/gallery/11.jpg" alt="Ivory" loading="lazy">
+              </div>
+              <div class="gallery__caption">
+                <div class="gallery__name">Ivory</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__image">
+        <img id="modal-img" src="" alt="" loading="lazy">
+      </div>
+      <div class="modal__data">
+        <h3 id="modal-name" class="modal__name"></h3>
+        <div class="modal__specs">
+          <div class="modal__spec">
+            <span class="modal__spec-label">HEX VALUE</span>
+            <span id="modal-hex" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">TECHNIQUE</span>
+            <span id="modal-technique" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">PROCESSING TIME</span>
+            <span id="modal-time" class="modal__spec-value"></span>
+          </div>
+          <div class="modal__spec">
+            <span class="modal__spec-label">Color Family</span>
+            <span class="modal__spec-value">Custom Blend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="footer__brand">
+        <span class="footer__logo">THE COLOR FUTURIST</span>
+        <span class="footer__tagline">Where Color Becomes Art</span>
+      </div>
+      <div class="footer__data">
+        <span>© Norman James</span>
+        <span>made with love <span class="footer__heart">❤️</span> by Empathy Studio +91 9833274308</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- SplitType Text Splitting -->
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="js/work.js"></script>
+</body>
+</html>

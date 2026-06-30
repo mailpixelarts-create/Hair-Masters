@@ -1,0 +1,1287 @@
+/* ============================================
+   THE ALCHEMIST — Global Styles
+   ============================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-deep: #0D0A07;
+  --bg-surface: #1A1510;
+  --bg-surface-2: #2A2218;
+  --bg-surface-3: #3D3226;
+
+  /* Text */
+  --text-primary: #F5EDE0;
+  --text-secondary: #C4B8A4;
+  --text-tertiary: #8A7E6E;
+
+  /* Accents */
+  --accent-gold: #C4A265;
+  --accent-copper: #B87333;
+  --accent-olive: #5A5A3C;
+
+  /* Functional */
+  --border-subtle: rgba(245, 237, 224, 0.08);
+  --border-medium: rgba(245, 237, 224, 0.15);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --section-pad: 120px;
+  --section-pad-mobile: 80px;
+  --content-max: 1400px;
+  --gutter: 40px;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--text-primary);
+  background-color: var(--bg-deep);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+button {
+  cursor: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ============================================
+   PRELOADER
+   ============================================ */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-inner {
+  text-align: center;
+}
+
+.preloader-brand {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--text-tertiary);
+  margin-bottom: 40px;
+}
+
+.preloader-count {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.preloader-line {
+  width: 60px;
+  height: 1px;
+  background: var(--accent-gold);
+  margin: 40px auto 0;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--text-primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+/* ============================================
+   NAVIGATION — Vertical Left Edge
+   ============================================ */
+
+.nav-vertical {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 70px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  mix-blend-mode: difference;
+}
+
+.nav-brand {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.nav-brand-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  color: var(--text-primary);
+}
+
+.nav-scenes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.nav-scene.active,
+.nav-scene:hover {
+  opacity: 1;
+}
+
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-gold);
+}
+
+.nav-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-scene:hover .nav-label,
+.nav-scene.active .nav-label {
+  opacity: 1;
+}
+
+/* ============================================
+   SCENES — Shared
+   ============================================ */
+
+.scene {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--section-pad) var(--gutter);
+  padding-left: 110px;
+}
+
+.scene-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-gold);
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.scene-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  display: block;
+}
+
+/* ============================================
+   SCENE 01 — HERO
+   ============================================ */
+
+.scene-hero {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: url('/assets/images/Hero/Hero_01_Re-Authored_Brunette.jpg') center/cover no-repeat;
+  animation: heroBreathe 12s ease-in-out infinite;
+}
+
+@keyframes heroBreathe {
+  0%, 100% { background-size: 100% 100%; }
+  50% { background-size: 105% 105%; }
+}
+
+.scene-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(196, 162, 101, 0.08) 45%,
+    rgba(245, 237, 224, 0.15) 50%,
+    rgba(196, 162, 101, 0.08) 55%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: lightPass 6s ease-in-out infinite;
+}
+
+.scene-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(13, 10, 7, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+@keyframes lightPass {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-particles::before,
+.hero-particles::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(196, 162, 101, 0.6);
+  box-shadow:
+    20vw 80vh 0 1px rgba(196, 162, 101, 0.5),
+    35vw 90vh 0 0 rgba(245, 237, 224, 0.4),
+    50vw 85vh 0 1px rgba(196, 162, 101, 0.5),
+    65vw 95vh 0 0 rgba(245, 237, 224, 0.4),
+    80vw 88vh 0 1px rgba(196, 162, 101, 0.5),
+    15vw 92vh 0 0 rgba(245, 237, 224, 0.4),
+    45vw 87vh 0 1px rgba(196, 162, 101, 0.5),
+    72vw 93vh 0 0 rgba(245, 237, 224, 0.4),
+    88vw 82vh 0 1px rgba(196, 162, 101, 0.5),
+    28vw 96vh 0 0 rgba(245, 237, 224, 0.4);
+  animation: particleFloat 8s ease-in-out infinite;
+}
+
+.hero-particles::after {
+  width: 3px;
+  height: 3px;
+  animation-delay: -4s;
+  animation-duration: 10s;
+  box-shadow:
+    18vw 85vh 0 1px rgba(196, 162, 101, 0.4),
+    42vw 92vh 0 0 rgba(245, 237, 224, 0.35),
+    58vw 88vh 0 1px rgba(196, 162, 101, 0.45),
+    75vw 95vh 0 0 rgba(245, 237, 224, 0.4),
+    32vw 80vh 0 1px rgba(196, 162, 101, 0.35),
+    62vw 90vh 0 0 rgba(245, 237, 224, 0.4),
+    85vw 87vh 0 1px rgba(196, 162, 101, 0.4);
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-80vh) translateX(30px); opacity: 0; }
+}
+
+.hero-content {
+  position: absolute;
+  z-index: 2;
+  text-align: left;
+  padding: 0 var(--gutter);
+  padding-left: 110px;
+  bottom: 80px;
+  left: 0;
+}
+
+.hero-name {
+  margin-bottom: 40px;
+}
+
+.hero-name-line {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+}
+
+.hero-name-line:first-child {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--text-secondary);
+}
+
+.hero-name-line:last-child {
+  font-size: clamp(5rem, 15vw, 14rem);
+  color: var(--text-primary);
+}
+
+.hero-statement {
+  margin-bottom: 60px;
+}
+
+.hero-statement p {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+.hero-label {
+  margin-top: 80px;
+}
+
+.hero-label span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.hero-tagline {
+  margin-top: 16px;
+}
+
+.hero-tagline p {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+}
+
+.hero-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: var(--text-tertiary);
+  opacity: 0.4;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(0.5); opacity: 0.2; }
+}
+
+/* ============================================
+   SCENE 02 — PHILOSOPHY
+   ============================================ */
+
+.scene-philosophy {
+  background: var(--bg-deep);
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.philosophy-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.philosophy-manifesto {
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.manifesto-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+
+.manifesto-body p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.philosophy-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.pillar {
+  padding: 40px;
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.4s ease;
+}
+
+.pillar:hover {
+  border-color: var(--accent-gold);
+}
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.pillar h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.pillar p {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+/* ============================================
+   SCENE 03 — WORK GALLERY
+   ============================================ */
+
+.scene-work {
+  background: var(--bg-surface);
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.work-header {
+  max-width: var(--content-max);
+  margin: 0 auto 80px;
+}
+
+.work-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+/* Transformation Pairs — Side by Side */
+.transformation-grid {
+  max-width: var(--content-max);
+  margin: 0 auto 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.transformation-pair {
+  display: flex;
+  flex-direction: column;
+}
+
+.pair-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.pair-before,
+.pair-after {
+  position: relative;
+  overflow: hidden;
+}
+
+.pair-before img,
+.pair-after img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pair-before:hover img,
+.pair-after:hover img {
+  transform: scale(1.04);
+}
+
+.pair-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  background: rgba(13, 10, 7, 0.6);
+  padding: 6px 12px;
+}
+
+.pair-caption {
+  margin-top: 16px;
+}
+
+.pair-caption p {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+}
+
+/* Gallery Filmstrip */
+.gallery-filmstrip {
+  overflow: hidden;
+  margin: 0 calc(-1 * var(--gutter));
+}
+
+.filmstrip-track {
+  display: flex;
+  gap: 20px;
+  padding: 0 var(--gutter);
+  will-change: transform;
+}
+
+.filmstrip-item {
+  flex-shrink: 0;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.filmstrip-item img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.filmstrip-item:hover img {
+  transform: scale(1.05);
+}
+
+.filmstrip-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(13, 10, 7, 0.8), transparent);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* ============================================
+   SCENE 04 — PROCESS
+   ============================================ */
+
+.scene-process {
+  background: var(--bg-deep);
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.process-header {
+  max-width: var(--content-max);
+  margin: 0 auto 80px;
+}
+
+.process-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.formula-sequence {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.formula-pin {
+  min-height: 100vh;
+}
+
+.formula-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.formula-step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  opacity: 0.3;
+  transition: opacity 0.6s ease;
+}
+
+.formula-step.active {
+  opacity: 1;
+}
+
+.step-visual {
+  overflow: hidden;
+}
+
+.step-visual img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-gold);
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.step-content h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.step-content p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.process-cta {
+  max-width: var(--content-max);
+  margin: 120px auto 0;
+  text-align: center;
+}
+
+.process-cta p {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+    SCENE 03B — DETAIL / TEXTURE CROPS
+    ============================================ */
+
+.scene-detail {
+  background: var(--bg-deep);
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.detail-header {
+  max-width: var(--content-max);
+  margin: 0 auto 60px;
+}
+
+.detail-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.detail-grid {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.detail-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.detail-item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.detail-item:hover img {
+  transform: scale(1.08);
+}
+
+.detail-item--large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.detail-item--large img {
+  aspect-ratio: 1/1;
+}
+
+.detail-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(13, 10, 7, 0.85), transparent);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.detail-item:hover .detail-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+    INTERSTITIAL — ATMOSPHERE
+    ============================================ */
+
+.scene-atmosphere {
+  position: relative;
+  min-height: 70vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+.atmosphere-image {
+  position: absolute;
+  inset: 0;
+}
+
+.atmosphere-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.atmosphere-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 10, 7, 0.3) 0%,
+    rgba(13, 10, 7, 0.5) 50%,
+    rgba(13, 10, 7, 0.3) 100%
+  );
+}
+
+.scene-atmosphere--dark .atmosphere-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 10, 7, 0.5) 0%,
+    rgba(13, 10, 7, 0.7) 50%,
+    rgba(13, 10, 7, 0.5) 100%
+  );
+}
+
+.atmosphere-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  text-align: center;
+  max-width: 800px;
+  padding: 0 var(--gutter);
+  line-height: 1.3;
+}
+
+/* ============================================
+    SCENE 05 — PATHWAYS
+    ============================================ */
+
+.scene-pathways {
+  background: var(--bg-surface);
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.pathways-header {
+  max-width: var(--content-max);
+  margin: 0 auto 80px;
+}
+
+.pathways-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.pathways-grid {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.pathway-card {
+  padding: 50px 40px;
+  border: 1px solid var(--border-subtle);
+  transition: border-color 0.4s ease, background 0.4s ease;
+  position: relative;
+}
+
+.pathway-card:hover {
+  border-color: var(--accent-gold);
+  background: var(--bg-surface-2);
+}
+
+.pathway-icon {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 24px;
+}
+
+.pathway-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.pathway-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.pathway-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 4px 12px;
+}
+
+/* ============================================
+   SCENE 06 — TRUST
+   ============================================ */
+
+.scene-trust {
+  background: var(--bg-deep);
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.trust-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.trust-block {
+  padding: 40px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+.trust-block h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+}
+
+.trust-block p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   SCENE 07 — INVITATION
+   ============================================ */
+
+.scene-invitation {
+  background: var(--bg-surface);
+  padding-top: 160px;
+  padding-bottom: 0;
+  min-height: auto;
+}
+
+.invitation-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+.invitation-heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.invitation-sub {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 60px;
+}
+
+.invitation-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.btn-primary {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-gold);
+  color: var(--bg-deep);
+}
+
+.btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.invitation-closing {
+  margin-top: 80px;
+}
+
+.invitation-closing p {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 60px var(--gutter);
+  padding-left: 110px;
+}
+
+.footer-content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-brand {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-tertiary);
+}
+
+.footer-info p {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+
+.footer-legal p {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  text-align: right;
+}
+
+/* ============================================
+   REVEAL ANIMATION BASE
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE — Mobile
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --section-pad: var(--section-pad-mobile);
+    --gutter: 20px;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  .cursor-dot,
+  .cursor-follower {
+    display: none;
+  }
+
+  .nav-vertical {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 16px 20px;
+    mix-blend-mode: normal;
+    background: rgba(13, 10, 7, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-brand {
+    writing-mode: horizontal-tb;
+  }
+
+  .nav-brand-text {
+    font-size: 9px;
+  }
+
+  .nav-scenes {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .scene {
+    padding-left: var(--gutter);
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    padding-left: var(--gutter);
+  }
+
+  .footer {
+    padding-left: var(--gutter);
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-legal p {
+    text-align: left;
+  }
+
+  .formula-step {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .transformation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-item--large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .scene-atmosphere {
+    min-height: 50vh;
+  }
+
+  .invitation-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-line {
+    animation: none;
+  }
+}

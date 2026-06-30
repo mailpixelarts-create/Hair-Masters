@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════════════
+   THE COLOR FUTURIST — Animations & Transitions
+   Minimal, Elegant, Editorial
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── PRELOADER STATES ─── */
+@keyframes preloaderFade {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ─── SECTION TRANSITIONS ─── */
+@keyframes sectionFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section.is-in-view .section__header {
+  animation: headerSlide 0.8s var(--ease-out) forwards;
+}
+
+/* ─── EVIDENCE SLIDER ANIMATION ─── */
+@keyframes sliderPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(201, 169, 110, 0);
+  }
+}
+
+.evidence__slider-handle-circle {
+  animation: sliderPulse 2s ease-in-out infinite;
+}
+
+/* ─── MODAL STATES ─── */
+@keyframes modalContentReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal.is-open .modal__content {
+  animation: modalContentReveal 0.5s var(--ease-out) forwards;
+}
+
+@keyframes specLineReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modal.is-open .modal__spec {
+  animation: specLineReveal 0.4s var(--ease-out) backwards;
+}
+
+.modal.is-open .modal__spec:nth-child(1) { animation-delay: 0.1s; }
+.modal.is-open .modal__spec:nth-child(2) { animation-delay: 0.15s; }
+.modal.is-open .modal__spec:nth-child(3) { animation-delay: 0.2s; }
+.modal.is-open .modal__spec:nth-child(4) { animation-delay: 0.25s; }
+.modal.is-open .modal__spec:nth-child(5) { animation-delay: 0.3s; }
+.modal.is-open .modal__spec:nth-child(6) { animation-delay: 0.35s; }
+
+/* ─── REDUCED MOTION OVERRIDES ─── */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes preloaderFade {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .evidence__slider-handle-circle {
+    animation: none;
+  }
+
+  .lab__cta-button {
+    animation: none;
+  }
+
+  .preloader-counter {
+    animation: none;
+  }
+}

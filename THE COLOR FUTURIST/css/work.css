@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════════════════════════
+   THE COLOR FUTURIST — Work Page Styles
+   Filter Bar, Archive Grid, Mobile Adjustments
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── FILTER BAR ─── */
+.filter-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.filter-bar__item {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  padding: 1rem 2rem;
+  background: transparent;
+  cursor: none;
+  transition: all 0.5s var(--ease);
+  position: relative;
+}
+
+.filter-bar__item::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.5s var(--ease);
+}
+
+.filter-bar__item:hover {
+  color: var(--white);
+}
+
+.filter-bar__item:hover::after {
+  width: 100%;
+}
+
+.filter-bar__item.is-active {
+  color: var(--white);
+}
+
+.filter-bar__item.is-active::after {
+  width: 100%;
+}
+
+/* ─── GALLERY ITEM HIDDEN STATE ─── */
+.gallery__item.is-hidden {
+  display: none;
+}
+
+/* ─── ARCHIVE SECTION ─── */
+.section--archive {
+  min-height: auto;
+}
+
+.section--archive .section__content {
+  padding-bottom: clamp(4rem, 8vh, 8rem);
+}
+
+/* ─── NAV LINKS ─── */
+.mono-nav__item {
+  text-decoration: none;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .filter-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar { display: none; }
+
+  .filter-bar__item {
+    font-size: 0.55rem;
+    padding: 0.8rem 1.2rem;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
