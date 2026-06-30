@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Runway Architect</title>
+  <meta name="description" content="Industrial precision meets backstage artistry. Structural hair design with architectural methodology.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-grain"></div>
+      <div class="preloader-scanlines"></div>
+      <div class="preloader-content">
+        <div class="preloader-label">LOADING</div>
+        <div class="preloader-counter">
+          <span class="preloader-percent" id="preloader-percent">000</span>
+          <span class="preloader-sign">%</span>
+        </div>
+        <div class="preloader-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- FILM GRAIN OVERLAY -->
+  <div class="grain-overlay"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- FULLSCREEN NAV OVERLAY -->
+  <div class="nav-overlay" id="nav-overlay">
+    <div class="nav-overlay-bg"></div>
+    <div class="nav-overlay-content">
+      <div class="nav-overlay-header">
+        <span class="nav-overlay-brand">THE RUNWAY ARCHITECT</span>
+        <button class="nav-overlay-close" id="nav-close">&times;</button>
+      </div>
+      <nav class="nav-overlay-scenes">
+        <a href="#scene-01" class="nav-overlay-scene" data-scene="1">
+          <span class="nav-scene-num">01</span>
+          <span class="nav-scene-title">Prologue</span>
+          <span class="nav-scene-line"></span>
+        </a>
+        <a href="#scene-02" class="nav-overlay-scene" data-scene="2">
+          <span class="nav-scene-num">02</span>
+          <span class="nav-scene-title">The Brief</span>
+          <span class="nav-scene-line"></span>
+        </a>
+        <a href="#scene-03" class="nav-overlay-scene" data-scene="3">
+          <span class="nav-scene-num">03</span>
+          <span class="nav-scene-title">The Blueprint</span>
+          <span class="nav-scene-line"></span>
+        </a>
+        <a href="#scene-04" class="nav-overlay-scene" data-scene="4">
+          <span class="nav-scene-num">04</span>
+          <span class="nav-scene-title">The Portfolio</span>
+          <span class="nav-scene-line"></span>
+        </a>
+        <a href="#scene-05" class="nav-overlay-scene" data-scene="5">
+          <span class="nav-scene-num">05</span>
+          <span class="nav-scene-title">The Backstage</span>
+          <span class="nav-scene-line"></span>
+        </a>
+        <a href="#scene-06" class="nav-overlay-scene" data-scene="6">
+          <span class="nav-scene-num">06</span>
+          <span class="nav-scene-title">The Suite</span>
+          <span class="nav-scene-line"></span>
+        </a>
+        <a href="#scene-07" class="nav-overlay-scene" data-scene="7">
+          <span class="nav-scene-num">07</span>
+          <span class="nav-scene-title">The Call</span>
+          <span class="nav-scene-line"></span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HAMBURGER -->
+  <button class="hamburger" id="hamburger">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+  <!-- SCENE 01 — PROLOGUE -->
+  <section class="scene scene-prologue" id="scene-01">
+    <div class="prologue-bg">
+      <img src="images/runway-architect/hero/hero-01.jpg" alt="" loading="eager">
+    </div>
+    <div class="prologue-overlay"></div>
+    <div class="prologue-content">
+      <div class="prologue-label reveal">
+        <span class="scene-num">SCENE 01</span>
+        <span class="scene-divider">/</span>
+        <span class="scene-name">PROLOGUE</span>
+      </div>
+      <h1 class="prologue-title">
+        <span class="prologue-title-line" data-split>THE RUNWAY</span>
+        <span class="prologue-title-line prologue-title-accent" data-split>ARCHITECT</span>
+      </h1>
+      <p class="prologue-subtitle reveal">Industrial precision meets backstage artistry. Every strand, a structural decision.</p>
+      <div class="prologue-meta reveal">
+        <span class="meta-item">EST. 2019</span>
+        <span class="meta-divider">/</span>
+        <span class="meta-item">NEW YORK</span>
+        <span class="meta-divider">/</span>
+        <span class="meta-item">BACKSTAGE</span>
+      </div>
+      <div class="prologue-scroll reveal">
+        <span class="scroll-text">SCROLL TO ADVANCE</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 02 — THE BRIEF -->
+  <section class="scene scene-brief" id="scene-02">
+    <div class="brief-layout">
+      <div class="brief-text">
+        <div class="brief-label reveal">
+          <span class="scene-num">02</span>
+          <span class="scene-title">The Brief</span>
+        </div>
+        <h2 class="brief-heading reveal" data-split>Hair is not decoration. It is structure.</h2>
+        <div class="brief-body">
+          <p class="reveal">We do not style hair. We engineer it. Every consultation begins with bone structure mapping, fiber analysis, and movement study. The result is not a haircut — it is an architectural decision made visible.</p>
+          <p class="reveal">Backstage at Fashion Week, there is no room for approximation. Our techniques are refined through thousands of hours of structural practice. Each look is built to withstand灯光, movement, and time.</p>
+        </div>
+        <div class="brief-pillars reveal">
+          <div class="brief-pillar">
+            <span class="pillar-num">I</span>
+            <h3>Structural Integrity</h3>
+            <p>Hair as load-bearing architecture.</p>
+          </div>
+          <div class="brief-pillar">
+            <span class="pillar-num">II</span>
+            <h3>Industrial Methodology</h3>
+            <p>Blueprint before brush.</p>
+          </div>
+          <div class="brief-pillar">
+            <span class="pillar-num">III</span>
+            <h3>Camera-Proof Finish</h3>
+            <p>Built for flash, designed for movement.</p>
+          </div>
+        </div>
+      </div>
+      <div class="brief-image reveal">
+        <img src="images/runway-architect/atmosphere/atmosphere-01.jpg" alt="The brief — structural hair design" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 03 — THE BLUEPRINT -->
+  <section class="scene scene-blueprint" id="scene-03">
+    <div class="blueprint-content">
+      <div class="blueprint-label reveal">
+        <span class="scene-num">03</span>
+        <span class="scene-title">The Blueprint</span>
+      </div>
+      <h2 class="blueprint-heading reveal" data-split>The Construction</h2>
+      <div class="blueprint-steps">
+        <div class="blueprint-step reveal">
+          <div class="step-line"></div>
+          <span class="step-num">01</span>
+          <h3 class="step-title">ANALYSIS</h3>
+          <p class="step-text">Bone structure mapping, hair fiber assessment, movement pattern study. The foundation of every construction.</p>
+        </div>
+        <div class="blueprint-step reveal">
+          <div class="step-line"></div>
+          <span class="step-num">02</span>
+          <h3 class="step-title">BLUEPRINT</h3>
+          <p class="step-text">Technical drawings, sectioning diagrams, product specifications. The plan before the cut.</p>
+        </div>
+        <div class="blueprint-step reveal">
+          <div class="step-line"></div>
+          <span class="step-num">03</span>
+          <h3 class="step-title">EXECUTION</h3>
+          <p class="step-text">Precision cutting, structural building, architectural styling. The build.</p>
+        </div>
+        <div class="blueprint-step reveal">
+          <div class="step-line"></div>
+          <span class="step-num">04</span>
+          <h3 class="step-title">VERIFICATION</h3>
+          <p class="step-text">Under-stage lighting tests, movement durability, 360° verification. The quality gate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 04 — THE PORTFOLIO -->
+  <section class="scene scene-portfolio" id="scene-04">
+    <div class="portfolio-content">
+      <div class="portfolio-label reveal">
+        <span class="scene-num">04</span>
+        <span class="scene-title">The Portfolio</span>
+      </div>
+      <h2 class="portfolio-heading reveal" data-split>Selected Works</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item portfolio-item--tall reveal" data-category="editorial">
+          <img src="images/runway-architect/gallery/gallery-01.jpg" alt="Editorial work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">VOGUE ITALIA</span>
+            <span class="portfolio-item-year">2025</span>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="runway">
+          <img src="images/runway-architect/gallery/gallery-02.jpg" alt="Runway work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">BALMAIN SS26</span>
+            <span class="portfolio-item-year">2025</span>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="runway">
+          <img src="images/runway-architect/gallery/gallery-03.jpg" alt="Runway work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">BALENCIAGA FW</span>
+            <span class="portfolio-item-year">2024</span>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item--wide reveal" data-category="editorial">
+          <img src="images/runway-architect/gallery/gallery-04.jpg" alt="Editorial work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">OFF-WHITE TRIBUTE</span>
+            <span class="portfolio-item-year">2024</span>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="campaign">
+          <img src="images/runway-architect/gallery/gallery-05.jpg" alt="Campaign work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">ALYX STUDIO</span>
+            <span class="portfolio-item-year">2024</span>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="campaign">
+          <img src="images/runway-architect/gallery/gallery-06.jpg" alt="Campaign work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">ACNE STUDIOS</span>
+            <span class="portfolio-item-year">2023</span>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item--tall reveal" data-category="editorial">
+          <img src="images/runway-architect/gallery/gallery-07.jpg" alt="Editorial work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">HERMES FW</span>
+            <span class="portfolio-item-year">2023</span>
+          </div>
+        </div>
+        <div class="portfolio-item reveal" data-category="runway">
+          <img src="images/runway-architect/gallery/gallery-08.jpg" alt="Runway work" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <span class="portfolio-item-name">SAINT LAURENT</span>
+            <span class="portfolio-item-year">2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    </div>
+  </section>
+
+  <!-- SCENE 05 — THE BACKSTAGE -->
+  <section class="scene scene-backstage" id="scene-05">
+    <div class="backstage-content">
+      <div class="backstage-label reveal">
+        <span class="scene-num">05</span>
+        <span class="scene-title">The Backstage</span>
+      </div>
+      <h2 class="backstage-heading reveal" data-split>Behind the Construction</h2>
+      <div class="backstage-gallery">
+        <div class="backstage-item reveal">
+          <img src="images/runway-architect/process/process-01.jpg" alt="Sectioning and preparation" loading="lazy">
+          <span class="backstage-caption">Sectioning</span>
+        </div>
+        <div class="backstage-item reveal">
+          <img src="images/runway-architect/process/process-02.jpg" alt="Precision cutting" loading="lazy">
+          <span class="backstage-caption">The Cut</span>
+        </div>
+        <div class="backstage-item reveal">
+          <img src="images/runway-architect/process/process-03.jpg" alt="Structural building" loading="lazy">
+          <span class="backstage-caption">Building</span>
+        </div>
+        <div class="backstage-item reveal">
+          <img src="images/runway-architect/process/process-04.jpg" alt="Lighting test" loading="lazy">
+          <span class="backstage-caption">Under Light</span>
+        </div>
+        <div class="backstage-item reveal">
+          <img src="images/runway-architect/process/process-05.jpg" alt="Final verification" loading="lazy">
+          <span class="backstage-caption">Verification</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 06 — THE SUITE -->
+  <section class="scene scene-suite" id="scene-06">
+    <div class="suite-content">
+      <div class="suite-label reveal">
+        <span class="scene-num">06</span>
+        <span class="scene-title">The Suite</span>
+      </div>
+      <h2 class="suite-heading reveal" data-split>Client Standards</h2>
+      <div class="suite-grid">
+        <div class="suite-block reveal">
+          <h3>Who This Is For</h3>
+          <p>People who understand that hair is not an accessory — it is architecture. You want a look that is engineered, not improvised. Built to perform under pressure.</p>
+        </div>
+        <div class="suite-block reveal">
+          <h3>What to Expect</h3>
+          <p>A consultation that goes beyond style preferences. We discuss structure, movement, maintenance, and the life your hair needs to live. Every detail is planned.</p>
+        </div>
+        <div class="suite-block reveal">
+          <h3>The Booking Process</h3>
+          <p>Inquire with your vision. We schedule a structural consultation to assess feasibility and fit. Not every project is accepted — standards protect the work.</p>
+        </div>
+        <div class="suite-block reveal">
+          <h3>Timing & Prep</h3>
+          <p>Structural work requires precision time. Complex builds may take 3–5 hours. Arrive with clean, dry hair. Come ready to discuss the architecture you want.</p>
+        </div>
+      </div>
+      <div class="suite-quote reveal">
+        <blockquote>"Hair is the architecture of the face. Every strand is a structural decision."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 07 — THE CALL -->
+  <section class="scene scene-call" id="scene-07">
+    <div class="call-content">
+      <div class="call-label reveal">
+        <span class="scene-num">07</span>
+        <span class="scene-title">The Call</span>
+      </div>
+      <h2 class="call-heading reveal" data-split>Initiate Collaboration</h2>
+      <p class="call-sub reveal">Every construction begins with a conversation. Not a booking form.</p>
+      <div class="call-grid reveal">
+        <div class="call-block">
+          <h3>BOOKINGS</h3>
+          <a href="mailto:bookings@therunwayarchitect.com">bookings@therunwayarchitect.com</a>
+        </div>
+        <div class="call-block">
+          <h3>PRESS</h3>
+          <a href="mailto:press@therunwayarchitect.com">press@therunwayarchitect.com</a>
+        </div>
+        <div class="call-block">
+          <h3>STUDIO</h3>
+          <p>147 West 35th Street<br>New York, NY 10001</p>
+        </div>
+        <div class="call-block">
+          <h3>SOCIAL</h3>
+          <div class="call-socials">
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TIKTOK</a>
+            <a href="#">PINTEREST</a>
+          </div>
+        </div>
+      </div>
+      <div class="call-cta reveal">
+        <a href="mailto:bookings@therunwayarchitect.com" class="btn-primary">
+          <span>SCHEDULE CONSULTATION</span>
+          <span class="btn-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <span class="footer-brand">THE RUNWAY ARCHITECT</span>
+        <span class="footer-divider">/</span>
+        <span class="footer-tagline">Industrial Precision in Hair Design</span>
+        <span class="footer-copy">&copy; 2026 ALL RIGHTS RESERVED</span>
+      </div>
+    </footer>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/split-text.js"></script>
+  <script src="js/lenis-init.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
