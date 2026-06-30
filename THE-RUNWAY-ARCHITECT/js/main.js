@@ -145,12 +145,20 @@
       // 1. Preloader
       await PreloaderManager.init();
 
-      // 2. WebGL Hero
-      HeroManager.init();
-      HeroManager.animate();
+      // 2. WebGL Hero (try, but don't block on failure)
+      try {
+        HeroManager.init();
+        HeroManager.animate();
+      } catch (e) {
+        console.warn('WebGL hero init failed:', e);
+      }
 
       // 3. Smooth Scroll
-      LenisManager.init();
+      try {
+        LenisManager.init();
+      } catch (e) {
+        console.warn('Lenis init failed:', e);
+      }
 
       // 4. Cursor
       CursorManager.init();
@@ -178,10 +186,8 @@
       document.body.classList.remove('loading');
       document.body.classList.add('loaded');
 
-      // Fallback: still try to init hero and animations
+      // Fallback: still try to init animations
       try {
-        HeroManager.init();
-        HeroManager.animate();
         AnimationManager.init();
       } catch (e2) {
         console.error('Fallback init error:', e2);
