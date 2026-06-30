@@ -1,5 +1,55 @@
 # CHANGELOG
 
+## v3.3 — 2026-06-30
+
+### THE-RED-CARPET-DIRECTOR — 3 Creative Concepts Added
+
+Added 3 new creative sections to elevate the cinematic narrative and break the standard section-stacking pattern:
+
+**1. INTERSTITIAL — "The Director's Note"** (between Vision and Archive)
+Full-screen cinematic quote card with animated film-frame corners. Acts as a narrative pause — a moment of reflection before the portfolio reveal. Quote: "The camera does not lie. But it does forgive less than the human eye." Corners animate from zero-size on scroll. Aligns with SKILL.MD §XX "Scroll Choreography: Reveal → Pause → Accelerate."
+
+**2. BACKSTAGE PASS — "The Room Where It Happens"** (after Craft, before Details)
+Asymmetric 2-column grid using the 3 atmosphere images. Shows the environment: glam station, suite mirror, materials. Each item has a film-frame with clip-path reveal from bottom + staggered caption. Creates "insider access" narrative — visitors see the world *surrounding* the work, not just the work. Aligns with SKILL.MD §X "Fashion World Building: Rituals."
+
+**3. FIRST LOOK — "The Before Does Not Exist"** (after Details, before Suite)
+Interactive before/after transformation slider with draggable handle. Shows detail macro images side by side. Touch-enabled (mousedown/touchstart), with visual feedback on drag (handle scales, bronze glow). Reinforces the "director" identity — there is no "before," only vision and execution. Aligns with SKILL.MD §XXIV "Signature Interaction Rule."
+
+**Files modified:**
+| File | Change |
+|------|--------|
+| `THE-RED-CARPET-DIRECTOR/index.html` | Added 3 new sections: interstitial (film-frame quote card), backstage (atmosphere grid), firstlook (before/after slider) |
+| `THE-RED-CARPET-DIRECTOR/css/style.css` | Added CSS for interstitial (film corners, centered quote), backstage (asymmetric grid, meta captions), firstlook (slider, clip-path, handle, drag states) + responsive rules |
+| `THE-RED-CARPET-DIRECTOR/js/animations.js` | Added `initInterstitial()` (corner reveal + quote fade), `initBackstageGrid()` (clip-path frame reveal + meta stagger), `initFirstlook()` (drag-to-reveal slider with touch support) |
+| `CHANGELOG.md` | Updated to v3.3 |
+
+---
+
+## v3.2 — 2026-06-30
+
+### THE-RED-CARPET-DIRECTOR — SKILL.MD Alignment: Nav + Animations Rewrite
+
+Audited THE-RED-CARPET-DIRECTOR against FASHION-SOTD-GRANDMASTER.SKILL.md (Cinematic Glamour archetype). Fixed critical misalignments:
+
+**Nav: side-nav → bottom cinematic bar.** SKILL.MD specifies "Bottom-floating cinematic bar with gold underline, fade on scroll." Replaced the vertical film-reel side nav with a fixed bottom bar (bronze underline, backdrop-blur, fade-in on load, hides on scroll down).
+
+**animations.js: complete rewrite.** Old file referenced 8+ class names that don't exist in the new HTML (`.prologue-label`, `.prologue-title-line`, `.scene-interstitial`, `.vision-pillar`, `.suite-block`, `.backstage-item`, `.portfolio-grid`, `.portfolio-item`, `.suite-quote blockquote`). All selectors now match the actual HTML structure (`.hero-act`, `.hero-title-line`, `.archive-grid`, `.craft-step`, `.details-mosaic`, `.suite-col`, `.suite-quote`).
+
+**main.js: selector fixes.** `.portfolio-item` → `.archive-item, .filmstrip-item` for lightbox. `initSideNav()` → `initBottomNav()` matching new bottom-nav HTML.
+
+**cursor.js: selector update.** `.portfolio-item, .suite-block` → `.archive-item, .suite-col`.
+
+**Files modified:**
+| File | Change |
+|------|--------|
+| `THE-RED-CARPET-DIRECTOR/index.html` | Replaced side-nav HTML with bottom cinematic bar HTML |
+| `THE-RED-CARPET-DIRECTOR/css/style.css` | Replaced side-nav CSS with bottom bar CSS (fixed bottom, backdrop-blur, bronze underline, mobile-responsive) |
+| `THE-RED-CARPET-DIRECTOR/js/animations.js` | Complete rewrite — all selectors now match actual HTML classes |
+| `THE-RED-CARPET-DIRECTOR/js/main.js` | Replaced initSideNav with initBottomNav, fixed lightbox selectors |
+| `THE-RED-CARPET-DIRECTOR/js/cursor.js` | Updated hover selectors to .archive-item, .suite-col |
+
+---
+
 ## v3.1 — 2026-06-26
 
 ### COMPLETION — About + Work Pages for All 7 Rebuilt Worlds

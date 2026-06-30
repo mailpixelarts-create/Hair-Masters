@@ -3,356 +3,543 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE RED CARPET DIRECTOR — Cinematic Hair Artistry</title>
+  <title>The Red Carpet Director</title>
+  <meta name="description" content="Glamour direction under pressure. Editorial, red carpet, and backstage hair artistry.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
 
-  <!-- PRELOADER -->
-  <div id="preloader" class="preloader">
-    <div class="preloader__video-wrap">
-      <div class="preloader__video-fallback"></div>
-      <video class="preloader__video" autoplay muted loop playsinline>
-        <source src="https://cdn.coverr.co/videos/coverr-woman-getting-her-hair-done-3731/1080p.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="preloader__overlay"></div>
-    <div class="preloader__gate">
-      <div class="preloader__film-border preloader__film-border--top"></div>
-      <div class="preloader__content">
-        <span class="preloader__label">WORLD 08 PRESENTS</span>
-        <h1 class="preloader__title">THE RED CARPET<br>DIRECTOR</h1>
-        <p class="preloader__sub">Cinematic Hair Artistry</p>
-        <button class="preloader__enter" id="preloaderEnter">
-          <span class="preloader__enter-text">ENTER THE EXPERIENCE</span>
-          <span class="preloader__enter-line"></span>
-        </button>
+  <!-- PRELOADER — Cinematic Gate -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-grain"></div>
+      <div class="preloader-content">
+        <div class="preloader-film-strip">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="preloader-title">THE RED CARPET DIRECTOR</div>
+        <div class="preloader-counter">
+          <span class="preloader-percent" id="preloader-percent">000</span>
+          <span class="preloader-sign">%</span>
+        </div>
+        <div class="preloader-line"></div>
+        <div class="preloader-label">ENTER THE EXPERIENCE</div>
       </div>
-      <div class="preloader__film-border preloader__film-border--bottom"></div>
     </div>
   </div>
 
-  <!-- SPOTLIGHT OVERLAY -->
-  <div id="spotlight" class="spotlight"></div>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
 
-  <!-- GRAIN OVERLAY -->
-  <div class="film-grain"></div>
+  <!-- SPOTLIGHT CURSOR -->
+  <div class="spotlight" id="spotlight"></div>
 
-  <!-- BOTTOM NAV -->
-  <nav id="mainNav" class="nav-bar">
-    <div class="nav-bar__inner">
-      <button class="nav-bar__item active" data-target="scene-1">OPENING</button>
-      <button class="nav-bar__item" data-target="scene-2">THE VISION</button>
-      <button class="nav-bar__item" data-target="scene-3">TRANSFORM</button>
-      <button class="nav-bar__item" data-target="scene-4">GALLERY</button>
-      <button class="nav-bar__item" data-target="scene-5">THE CRAFT</button>
-      <button class="nav-bar__item" data-target="scene-6">PREMIERE</button>
-      <button class="nav-bar__item" data-target="scene-7">CREDITS</button>
+  <!-- FILM GRAIN -->
+  <div class="grain-overlay"></div>
+
+  <!-- SCROLL PROGRESS — Film Leader -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="scroll-progress-label" id="scroll-progress-label">ACT I</div>
+
+  <!-- BOTTOM NAV — Cinematic Bar -->
+  <nav class="bottom-nav" id="bottom-nav">
+    <div class="bottom-nav-inner">
+      <span class="bottom-nav-brand">RCD</span>
+      <div class="bottom-nav-items">
+        <a href="#scene-01" class="bottom-nav-item active" data-scene="1">OPENING</a>
+        <a href="#scene-02" class="bottom-nav-item" data-scene="2">VISION</a>
+        <a href="#scene-03" class="bottom-nav-item" data-scene="3">ARCHIVE</a>
+        <a href="#scene-04" class="bottom-nav-item" data-scene="4">CRAFT</a>
+        <a href="#scene-05" class="bottom-nav-item" data-scene="5">DETAILS</a>
+        <a href="#scene-06" class="bottom-nav-item" data-scene="6">SUITE</a>
+        <a href="#scene-07" class="bottom-nav-item" data-scene="7">CREDITS</a>
+      </div>
+      <a href="mailto:bookings@theredcarpetdirector.com" class="bottom-nav-cta">BOOK NOW</a>
     </div>
+    <div class="bottom-nav-underline" id="bottom-nav-underline"></div>
   </nav>
 
-  <!-- PARALLAX STAGE -->
-  <div id="parallaxContainer" class="parallax-container">
+  <!-- HAMBURGER (mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
 
-    <!-- SCENE 1: OPENING CREDITS -->
-    <section id="scene-1" class="scene scene--opening" data-speed="0.3">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&q=80" alt="" class="scene__bg-img">
+  <!-- MOBILE NAV -->
+  <div class="nav-overlay" id="nav-overlay">
+    <div class="nav-overlay-bg"></div>
+    <div class="nav-overlay-content">
+      <div class="nav-overlay-header">
+        <span class="nav-overlay-brand">RCD</span>
+        <button class="nav-overlay-close" id="nav-close">&times;</button>
       </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--centered">
-          <span class="scene__label">ACT I</span>
-          <h2 class="scene__title scene__title--hero">THE RED CARPET<br>DIRECTOR</h2>
-          <div class="scene__divider"></div>
-          <p class="scene__tagline">Where every strand tells a story of glamour</p>
-        </div>
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--fg">
-        <div class="scroll-cue">
-          <span class="scroll-cue__text">SCROLL TO BEGIN</span>
-          <div class="scroll-cue__line"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCENE 2: THE VISION -->
-    <section id="scene-2" class="scene scene--vision" data-speed="0.5">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80" alt="" class="scene__bg-img">
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--split">
-          <div class="scene__text-block">
-            <span class="scene__label">ACT II</span>
-            <h2 class="scene__title">THE VISION</h2>
-            <div class="scene__divider"></div>
-            <p class="scene__description">Every masterpiece begins with a singular vision. We don't just style hair — we architect transformations. The consultation is our pre-production: understanding your narrative, your silhouette, the role you're about to inhabit.</p>
-            <p class="scene__description">From boardrooms to ballrooms, from magazine covers to movie premieres — we direct the narrative of your image with cinematic precision.</p>
-          </div>
-          <div class="scene__image-block">
-            <div class="scene__film-frame">
-              <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80" alt="Hair consultation" class="scene__img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCENE 3: THE TRANSFORMATION -->
-    <section id="scene-3" class="scene scene--transform" data-speed="0.4">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1920&q=80" alt="" class="scene__bg-img">
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--centered">
-          <span class="scene__label">ACT III</span>
-          <h2 class="scene__title">THE TRANSFORMATION</h2>
-          <div class="scene__divider"></div>
-          <div class="scene__transform-grid">
-            <div class="scene__transform-card">
-              <div class="scene__film-frame scene__film-frame--small">
-                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80" alt="Before" class="scene__img">
-              </div>
-              <span class="scene__label scene__label--small">BEFORE</span>
-            </div>
-            <div class="scene__transform-arrow">
-              <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
-                <line x1="0" y1="12" x2="50" y2="12" stroke="#8B7355" stroke-width="1"/>
-                <polyline points="46,6 54,12 46,18" fill="none" stroke="#8B7355" stroke-width="1"/>
-              </svg>
-            </div>
-            <div class="scene__transform-card">
-              <div class="scene__film-frame scene__film-frame--small">
-                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="After" class="scene__img">
-              </div>
-              <span class="scene__label scene__label--small">AFTER</span>
-            </div>
-          </div>
-          <p class="scene__description scene__description--centered">From everyday elegance to red carpet radiance.<br>The director's cut of your best self.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCENE 4: THE GALLERY — FILMSTRIP -->
-    <section id="scene-4" class="scene scene--gallery" data-speed="0.6">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <div class="scene__bg-solid"></div>
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--gallery">
-          <span class="scene__label">ACT IV</span>
-          <h2 class="scene__title">THE GALLERY</h2>
-          <div class="scene__divider"></div>
-          <div class="filmstrip-wrap">
-            <div class="filmstrip" id="filmstrip">
-              <div class="filmstrip__track">
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&q=80" alt="Glamour style" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">GOLDEN HOUR</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&q=80" alt="Red carpet look" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">PREMIERE NIGHT</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&q=80" alt="Bridal style" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">AISLE LIGHTS</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&q=80" alt="Editorial look" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">EDITORIAL</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80" alt="Gala look" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">GALA</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&q=80" alt="Street style" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">STREET LUXE</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Classic look" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">CLASSIC NOIR</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Avant garde" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">AVANT-GARDE</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=80" alt="Runway" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">RUNWAY</span>
-                </div>
-                <div class="filmstrip__item">
-                  <div class="filmstrip__gate">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80" alt="Fashion" class="filmstrip__img" loading="lazy">
-                  </div>
-                  <span class="filmstrip__caption">COUTURE</span>
-                </div>
-              </div>
-            </div>
-            <div class="filmstrip__scroll-hint">
-              <span>DRAG OR SCROLL</span>
-              <svg width="40" height="12" viewBox="0 0 40 12"><line x1="0" y1="6" x2="32" y2="6" stroke="#8B7355" stroke-width="1"/><polyline points="28,2 34,6 28,10" fill="none" stroke="#8B7355" stroke-width="1"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCENE 5: THE CRAFT -->
-    <section id="scene-5" class="scene scene--craft" data-speed="0.35">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=1920&q=80" alt="" class="scene__bg-img">
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--split scene__content--reverse">
-          <div class="scene__image-block">
-            <div class="scene__film-frame">
-              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80" alt="The craft" class="scene__img">
-            </div>
-          </div>
-          <div class="scene__text-block">
-            <span class="scene__label">ACT V</span>
-            <h2 class="scene__title">THE CRAFT</h2>
-            <div class="scene__divider"></div>
-            <p class="scene__description">Behind every breathtaking moment is meticulous craft. Our directors wield scissors like cinematographers wield cameras — with intention, precision, and an unwavering eye for beauty.</p>
-            <div class="scene__craft-list">
-              <div class="scene__craft-item">
-                <span class="scene__craft-number">01</span>
-                <div>
-                  <h4 class="scene__craft-name">COLOR DIRECTION</h4>
-                  <p class="scene__craft-desc">Bespoke color palettes tailored to skin tone, lifestyle, and narrative</p>
-                </div>
-              </div>
-              <div class="scene__craft-item">
-                <span class="scene__craft-number">02</span>
-                <div>
-                  <h4 class="scene__craft-name">TEXTURE ARCHITECTURE</h4>
-                  <p class="scene__craft-desc">Precision cutting that sculptural volume and movement</p>
-                </div>
-              </div>
-              <div class="scene__craft-item">
-                <span class="scene__craft-number">03</span>
-                <div>
-                  <h4 class="scene__craft-name">RED CARPET STYLING</h4>
-                  <p class="scene__craft-desc">Editorial-grade finishing for camera-ready perfection</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCENE 6: THE PREMIERE -->
-    <section id="scene-6" class="scene scene--premiere" data-speed="0.45">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1920&q=80" alt="" class="scene__bg-img">
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--centered">
-          <span class="scene__label">ACT VI</span>
-          <h2 class="scene__title">THE PREMIERE</h2>
-          <div class="scene__divider"></div>
-          <div class="scene__premiere-showcase">
-            <div class="scene__premiere-item">
-              <div class="scene__film-frame scene__film-frame--portrait">
-                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80" alt="Client showcase" class="scene__img">
-              </div>
-              <span class="scene__premiere-name">VALENTINA R.</span>
-              <span class="scene__premiere-role">FILM PREMIERE</span>
-            </div>
-            <div class="scene__premiere-item">
-              <div class="scene__film-frame scene__film-frame--portrait">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80" alt="Client showcase" class="scene__img">
-              </div>
-              <span class="scene__premiere-name">SOPHIA K.</span>
-              <span class="scene__premiere-role">GALA EVENING</span>
-            </div>
-            <div class="scene__premiere-item">
-              <div class="scene__film-frame scene__film-frame--portrait">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Client showcase" class="scene__img">
-              </div>
-              <span class="scene__premiere-name">ELENA M.</span>
-              <span class="scene__premiere-role">AWARD CEREMONY</span>
-            </div>
-          </div>
-          <blockquote class="scene__quote">"The best style is the one that makes you feel like the star of your own film."</blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCENE 7: END CREDITS -->
-    <section id="scene-7" class="scene scene--credits" data-speed="0.3">
-      <div class="scene__parallax-layer scene__parallax-layer--bg">
-        <div class="scene__bg-gradient"></div>
-      </div>
-      <div class="scene__parallax-layer scene__parallax-layer--mid">
-        <div class="scene__content scene__content--centered scene__content--credits">
-          <span class="scene__label">END CREDITS</span>
-          <h2 class="scene__title scene__title--credits">YOUR SCENE<br>AWAITS</h2>
-          <div class="scene__divider"></div>
-          <p class="scene__description scene__description--centered">Book your consultation. Step into the spotlight.</p>
-          <div class="scene__credits-grid">
-            <div class="scene__credits-col">
-              <h4 class="scene__credits-heading">LOCATION</h4>
-              <p class="scene__credits-text">123 Premiere Boulevard<br>Los Angeles, CA 90028</p>
-            </div>
-            <div class="scene__credits-col">
-              <h4 class="scene__credits-heading">CONTACT</h4>
-              <p class="scene__credits-text">hello@theredcarpetdirector.com<br>+1 (323) 555-0147</p>
-            </div>
-            <div class="scene__credits-col">
-              <h4 class="scene__credits-heading">HOURS</h4>
-              <p class="scene__credits-text">Tuesday — Saturday<br>10:00 AM — 8:00 PM</p>
-            </div>
-          </div>
-          <a href="#" class="scene__cta">
-            <span class="scene__cta-text">BOOK YOUR PREMIERE</span>
-            <span class="scene__cta-line"></span>
-          </a>
-          <div class="scene__credits-footer">
-            <span class="scene__credits-small">WORLD 08 &copy; 2026 — ALL RIGHTS RESERVED</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
+      <nav class="nav-overlay-scenes">
+        <a href="#scene-01" class="nav-overlay-scene"><span class="nav-num">01</span><span class="nav-title">Opening</span></a>
+        <a href="#scene-02" class="nav-overlay-scene"><span class="nav-num">02</span><span class="nav-title">The Vision</span></a>
+        <a href="#scene-03" class="nav-overlay-scene"><span class="nav-num">03</span><span class="nav-title">Portfolio</span></a>
+        <a href="#scene-04" class="nav-overlay-scene"><span class="nav-num">04</span><span class="nav-title">The Craft</span></a>
+        <a href="#scene-05" class="nav-overlay-scene"><span class="nav-num">05</span><span class="nav-title">The Details</span></a>
+        <a href="#scene-06" class="nav-overlay-scene"><span class="nav-num">06</span><span class="nav-title">The Suite</span></a>
+        <a href="#scene-07" class="nav-overlay-scene"><span class="nav-num">07</span><span class="nav-title">Credits</span></a>
+      </nav>
+    </div>
   </div>
 
-  <!-- FULLSCREEN LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <button class="lightbox__close" id="lightboxClose">&times;</button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="">
-  </div>
+  <!-- ============================================
+       ACT I — OPENING (Hero)
+       ============================================ -->
+  <section class="scene scene-hero" id="scene-01">
+    <div class="hero-bg-image">
+      <img src="red_carpet_director/images/hero/hero_01_premiere_night_icon.jpg" alt="" loading="eager">
+    </div>
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="hero-spotlight-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-act reveal-clip">
+        <span class="act-label">ACT I</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">OPENING</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-line" data-split>THE RED CARPET</span>
+        <span class="hero-title-line hero-title-accent" data-split>DIRECTOR</span>
+      </h1>
+      <p class="hero-tagline reveal-clip">Glamour that survives the flash.</p>
+      <div class="hero-meta reveal-clip">
+        <span>ALEXANDRE VOLTAIRE</span>
+        <span class="meta-sep">///</span>
+        <span>NEW YORK CITY</span>
+        <span class="meta-sep">///</span>
+        <span>RED CARPET / EDITORIAL / BACKSTAGE</span>
+      </div>
+      <div class="hero-cta reveal-clip">
+        <a href="#scene-03" class="btn-ghost">
+          <span>VIEW THE ARCHIVE</span>
+          <span class="btn-line"></span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-frame-corner hero-frame-tl"></div>
+    <div class="hero-frame-corner hero-frame-tr"></div>
+    <div class="hero-frame-corner hero-frame-bl"></div>
+    <div class="hero-frame-corner hero-frame-br"></div>
+  </section>
+
+  <!-- ============================================
+       SCENE II — THE VISION
+       ============================================ -->
+  <section class="scene scene-vision" id="scene-02">
+    <div class="vision-split">
+      <div class="vision-text">
+        <div class="section-label reveal-clip">
+          <span class="act-label">ACT II</span>
+          <span class="act-divider">///</span>
+          <span class="act-name">THE VISION</span>
+        </div>
+        <h2 class="vision-heading" data-split>Every red carpet is a construction site.</h2>
+        <p class="vision-body reveal-up">We do not do "hair days." We do premiere moments. Every look is engineered for the exact light, the exact angle, the exact duration of a red carpet walk. The result must survive flashbulbs, wind, humidity, and time — and look effortless doing it.</p>
+        <p class="vision-body reveal-up">Alexandre Voltaire approaches hair as cinematic direction. The face is the stage. The hair is the performance. Every strand has a role, every silhouette has a script, every finish is a deliberate creative decision.</p>
+      </div>
+      <div class="vision-portrait reveal-clip">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/extra/extra_01_direct_gaze_power.jpg" alt="The Director" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <span class="film-caption">THE DIRECTOR / PORTRAIT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       INTERSTITIAL — THE DIRECTOR'S NOTE
+       ============================================ -->
+  <section class="scene scene-interstitial" id="interstitial-note">
+    <div class="interstitial-frame">
+      <div class="interstitial-corner interstitial-corner--tl"></div>
+      <div class="interstitial-corner interstitial-corner--tr"></div>
+      <div class="interstitial-corner interstitial-corner--bl"></div>
+      <div class="interstitial-corner interstitial-corner--br"></div>
+      <div class="interstitial-content">
+        <span class="interstitial-label reveal-clip">DIRECTOR'S NOTE</span>
+        <blockquote class="interstitial-quote reveal-clip">
+          "The camera does not lie. But it does forgive less than the human eye. Every strand must be camera-ready before the client even sees it."
+        </blockquote>
+        <span class="interstitial-attr reveal-up">— Maison Deveraux</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE III — THE ARCHIVE (Portfolio)
+       ============================================ -->
+  <section class="scene scene-archive" id="scene-03">
+    <div class="archive-header">
+      <div class="section-label reveal-clip">
+        <span class="act-label">ACT III</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">THE ARCHIVE</span>
+      </div>
+      <h2 class="archive-heading" data-split>Selected Works</h2>
+    </div>
+
+    <!-- Filmstrip -->
+    <div class="filmstrip-wrapper">
+      <div class="filmstrip-track" id="filmstrip-track">
+        <div class="filmstrip-item">
+          <div class="film-frame">
+            <img src="red_carpet_director/images/gallery/gallery_01_sleek_bun_authority.jpg" alt="Sleek Bun" loading="lazy">
+            <div class="film-frame-border"></div>
+            <div class="film-sprocket film-sprocket-tl"></div>
+            <div class="film-sprocket film-sprocket-tr"></div>
+            <div class="film-sprocket film-sprocket-bl"></div>
+            <div class="film-sprocket film-sprocket-br"></div>
+          </div>
+          <span class="film-caption">SLEEK BUN / EDITORIAL</span>
+        </div>
+        <div class="filmstrip-item">
+          <div class="film-frame">
+            <img src="red_carpet_director/images/gallery/gallery_02_side_part_wave_icon.jpg" alt="Side Part Wave" loading="lazy">
+            <div class="film-frame-border"></div>
+          </div>
+          <span class="film-caption">SIDE PART WAVE / RED CARPET</span>
+        </div>
+        <div class="filmstrip-item">
+          <div class="film-frame">
+            <img src="red_carpet_director/images/gallery/gallery_03_polished_ponytail.jpg" alt="Polished Ponytail" loading="lazy">
+            <div class="film-frame-border"></div>
+          </div>
+          <span class="film-caption">POLISHED PONYTAIL / CAMPAIGN</span>
+        </div>
+        <div class="filmstrip-item">
+          <div class="film-frame">
+            <img src="red_carpet_director/images/gallery/gallery_04_old_hollywood_profile.jpg" alt="Old Hollywood" loading="lazy">
+            <div class="film-frame-border"></div>
+          </div>
+          <span class="film-caption">OLD HOLLYWOOD / PREMIERE</span>
+        </div>
+        <div class="filmstrip-item">
+          <div class="film-frame">
+            <img src="red_carpet_director/images/gallery/gallery_05_black_tie_natural_glam.jpg" alt="Black Tie Natural" loading="lazy">
+            <div class="film-frame-border"></div>
+          </div>
+          <span class="film-caption">BLACK TIE NATURAL / GALA</span>
+        </div>
+        <div class="filmstrip-item">
+          <div class="film-frame">
+            <img src="red_carpet_director/images/gallery/gallery_06_back_view_chignon.jpg" alt="Chignon" loading="lazy">
+            <div class="film-frame-border"></div>
+          </div>
+          <span class="film-caption">CHIGNON / BACKSTAGE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="archive-grid">
+      <div class="archive-item archive-item--tall">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/gallery/gallery_07_short_hair_glam.jpg" alt="Short Hair Glam" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <span class="film-caption">SHORT HAIR GLAM</span>
+      </div>
+      <div class="archive-item">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/gallery/gallery_08_couture_seated.jpg" alt="Couture Seated" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <span class="film-caption">COUTURE SEATED</span>
+      </div>
+      <div class="archive-item">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/extra/extra_02_jewel_tone_centerpart.jpg" alt="Jewel Tone" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <span class="film-caption">JEWEL TONE CENTER</span>
+      </div>
+      <div class="archive-item archive-item--wide">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/hero/hero_02_couture_suite_portrait.jpg" alt="Couture Suite" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <span class="film-caption">COUTURE SUITE PORTRAIT</span>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <div class="lightbox-frame">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <div class="lightbox-frame-border"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE IV — THE CRAFT (Process)
+       ============================================ -->
+  <section class="scene scene-craft" id="scene-04">
+    <div class="craft-header">
+      <div class="section-label reveal-clip">
+        <span class="act-label">ACT IV</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">THE CRAFT</span>
+      </div>
+      <h2 class="craft-heading" data-split>The Direction</h2>
+    </div>
+    <div class="craft-sequence">
+      <div class="craft-step">
+        <div class="craft-visual">
+          <img src="red_carpet_director/images/process/process_01_brushing_wave.jpg" alt="Prep" loading="lazy">
+        </div>
+        <div class="craft-info">
+          <span class="craft-num">01</span>
+          <h3>PREP</h3>
+          <p>Canvas preparation. Texture analysis. Foundation building. The invisible architecture that makes glamour possible.</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <div class="craft-visual">
+          <img src="red_carpet_director/images/process/process_02_pinning_bun.jpg" alt="Sculpt" loading="lazy">
+        </div>
+        <div class="craft-info">
+          <span class="craft-num">02</span>
+          <h3>SCULPT</h3>
+          <p>Structural construction. Every pin placed with intention. Every section built to withstand movement, wind, and time.</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <div class="craft-visual">
+          <img src="red_carpet_director/images/process/process_03_polishing_hairline.jpg" alt="Refine" loading="lazy">
+        </div>
+        <div class="craft-info">
+          <span class="craft-num">03</span>
+          <h3>REFINE</h3>
+          <p>The details that separate good from iconic. Edge polishing. Flyaway control. Surface finishing.</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <div class="craft-visual">
+          <img src="red_carpet_director/images/process/process_04_mirror_check.jpg" alt="Verify" loading="lazy">
+        </div>
+        <div class="craft-info">
+          <span class="craft-num">04</span>
+          <h3>VERIFY</h3>
+          <p>360-degree review. Under-light testing. Movement durability. Nothing leaves without approval.</p>
+        </div>
+      </div>
+      <div class="craft-step">
+        <div class="craft-visual">
+          <img src="red_carpet_director/images/process/process_05_couture_final_adjustment.jpg" alt="Premiere" loading="lazy">
+        </div>
+        <div class="craft-info">
+          <span class="craft-num">05</span>
+          <h3>PREMIERE</h3>
+          <p>The final touch. The moment before the flash. When the director calls "action" — the hair is ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BACKSTAGE PASS — THE ENVIRONMENT
+       ============================================ -->
+  <section class="scene scene-backstage" id="scene-backstage">
+    <div class="backstage-header">
+      <div class="section-label reveal-clip">
+        <span class="act-label">BACKSTAGE</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">PASS</span>
+      </div>
+      <h2 class="backstage-heading" data-split>The Room Where It Happens</h2>
+      <p class="backstage-sub reveal-up">Before the flash. Before the carpet. This is where glamour is built.</p>
+    </div>
+    <div class="backstage-grid">
+      <div class="backstage-item backstage-item--wide reveal-clip">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/atmosphere/atmosphere_01_glam_station.jpg" alt="Glam station" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <div class="backstage-meta">
+          <span class="backstage-tag">STATION</span>
+          <span class="backstage-caption">The tools are laid out before the client arrives. Every pin, every comb, every product has a purpose.</span>
+        </div>
+      </div>
+      <div class="backstage-item reveal-clip">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/atmosphere/atmosphere_02_suite_mirror_garment.jpg" alt="Suite mirror" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <div class="backstage-meta">
+          <span class="backstage-tag">SUITE</span>
+          <span class="backstage-caption">The mirror is the first audience. If it does not perform here, it will not perform on the carpet.</span>
+        </div>
+      </div>
+      <div class="backstage-item reveal-clip">
+        <div class="film-frame">
+          <img src="red_carpet_director/images/atmosphere/atmosphere_03_satin_marble_metal.jpg" alt="Materials" loading="lazy">
+          <div class="film-frame-border"></div>
+        </div>
+        <div class="backstage-meta">
+          <span class="backstage-tag">MATERIALS</span>
+          <span class="backstage-caption">Satin. Marble. Metal. The textures of preparation. The palette of precision.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE V — THE DETAILS (Macro)
+       ============================================ -->
+  <section class="scene scene-details" id="scene-05">
+    <div class="details-header">
+      <div class="section-label reveal-clip">
+        <span class="act-label">ACT V</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">THE DETAILS</span>
+      </div>
+      <h2 class="details-heading" data-split>The Finish</h2>
+      <p class="details-intro reveal-up">Close-up. The details that survive the macro lens.</p>
+    </div>
+    <div class="details-mosaic">
+      <div class="details-item details-item--large">
+        <img src="red_carpet_director/images/detail/detail_01_wave_ridge_macro.jpg" alt="Wave ridge" loading="lazy">
+        <span class="details-label">WAVE RIDGE</span>
+      </div>
+      <div class="details-item">
+        <img src="red_carpet_director/images/detail/detail_02_hairline_parting.jpg" alt="Hairline" loading="lazy">
+        <span class="details-label">HAIRLINE</span>
+      </div>
+      <div class="details-item">
+        <img src="red_carpet_director/images/detail/detail_03_bun_base_wrap.jpg" alt="Bun base" loading="lazy">
+        <span class="details-label">BUN BASE</span>
+      </div>
+      <div class="details-item">
+        <img src="red_carpet_director/images/detail/detail_04_crown_gloss.jpg" alt="Crown gloss" loading="lazy">
+        <span class="details-label">CROWN GLOSS</span>
+      </div>
+      <div class="details-item details-item--large">
+        <img src="red_carpet_director/images/detail/detail_05_profile_silhouette_ear.jpg" alt="Profile" loading="lazy">
+        <span class="details-label">PROFILE</span>
+      </div>
+      <div class="details-item">
+        <img src="red_carpet_director/images/detail/detail_06_finish_edge_silhouette.jpg" alt="Edge" loading="lazy">
+        <span class="details-label">FINISH EDGE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE VI — THE SUITE (Client)
+       ============================================ -->
+  <section class="scene scene-suite" id="scene-06">
+    <div class="suite-header">
+      <div class="section-label reveal-clip">
+        <span class="act-label">ACT VI</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">THE SUITE</span>
+      </div>
+      <h2 class="suite-heading" data-split>The Premiere Experience</h2>
+    </div>
+    <div class="suite-columns">
+      <div class="suite-col reveal-up">
+        <span class="suite-num">I</span>
+        <h3>Who This Is For</h3>
+        <p>Public figures, editorial teams, and private clients who understand that hair is not a detail — it is the headline. You don't want a stylist. You want a director.</p>
+      </div>
+      <div class="suite-col reveal-up">
+        <span class="suite-num">II</span>
+        <h3>The Consultation</h3>
+        <p>We map the event, the venue, the lighting, the outfit, the camera angles. Then we design a look that performs under every condition.</p>
+      </div>
+      <div class="suite-col reveal-up">
+        <span class="suite-num">III</span>
+        <h3>The Booking</h3>
+        <p>Inquire with your event details. A retainer secures your premiere slot. Rush bookings available for urgent editorial and red carpet moments.</p>
+      </div>
+      <div class="suite-col reveal-up">
+        <span class="suite-num">IV</span>
+        <h3>On-Set Direction</h3>
+        <p>The director is available for on-set direction throughout your event. From the final mirror check to the last flash — the director stays on set.</p>
+      </div>
+    </div>
+    <blockquote class="suite-quote reveal-clip">
+      "Glamour is not what you do to hair. It is what hair does to light, to movement, to the moment a camera finds a face."
+    </blockquote>
+  </section>
+
+  <!-- ============================================
+       END — CREDITS (Contact)
+       ============================================ -->
+  <section class="scene scene-credits" id="scene-07">
+    <div class="credits-content">
+      <div class="section-label reveal-clip">
+        <span class="act-label">END</span>
+        <span class="act-divider">///</span>
+        <span class="act-name">CREDITS</span>
+      </div>
+      <h2 class="credits-heading" data-split>Send to<br>Production</h2>
+      <p class="credits-sub reveal-clip">Every premiere begins with a creative exchange.</p>
+      <div class="credits-grid reveal-up">
+        <div class="credits-block">
+          <h3>BOOKINGS</h3>
+          <a href="mailto:bookings@theredcarpetdirector.com">bookings@theredcarpetdirector.com</a>
+        </div>
+        <div class="credits-block">
+          <h3>PRESS</h3>
+          <a href="mailto:press@theredcarpetdirector.com">press@theredcarpetdirector.com</a>
+        </div>
+        <div class="credits-block">
+          <h3>STUDIO</h3>
+          <p>147 West 35th Street<br>New York, NY 10001</p>
+        </div>
+        <div class="credits-block">
+          <h3>SOCIAL</h3>
+          <div class="credits-socials">
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TIKTOK</a>
+          </div>
+        </div>
+      </div>
+      <div class="credits-cta reveal-clip">
+        <a href="mailto:bookings@theredcarpetdirector.com" class="btn-premiere">
+          <span>SCHEDULE DIRECTION</span>
+          <span class="btn-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <span class="footer-brand">THE RED CARPET DIRECTOR</span>
+        <span class="footer-sep">/</span>
+        <span class="footer-copy">&copy; Norman James</span>
+        <span class="footer-studio">made with love <span style="color:#e74c3c">&#10084;</span> by Empathy Studio</span>
+      </div>
+    </footer>
+  </section>
 
   <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="js/preloader.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/split-text.js"></script>
+  <script src="js/lenis-init.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
