@@ -137,33 +137,34 @@ const HeroManager = {
   `,
 
   init() {
-    const canvas = document.getElementById('hero-canvas');
+    var canvas = document.getElementById('hero-canvas');
     if (!canvas || typeof THREE === 'undefined') return;
 
-    this.clock = new THREE.Clock();
+    try {
+      this.clock = new THREE.Clock();
 
-    // Scene
-    this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0x050505, 0.008);
+      // Scene
+      this.scene = new THREE.Scene();
+      this.scene.fog = new THREE.FogExp2(0x050505, 0.008);
 
-    // Camera
-    this.camera = new THREE.PerspectiveCamera(
-      45,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    this.camera.position.set(0, 0, 5);
+      // Camera
+      this.camera = new THREE.PerspectiveCamera(
+        45,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      this.camera.position.set(0, 0, 5);
 
-    // Renderer
-    this.renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: false
-    });
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    this.renderer.setClearColor(0x050505);
+      // Renderer — alpha: true so it doesn't block the bg image
+      this.renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        antialias: true,
+        alpha: true
+      });
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      this.renderer.setClearColor(0x000000, 0);
 
     // Geometry — large plane for displacement
     const geometry = new THREE.PlaneGeometry(8, 6, 64, 64);
@@ -204,6 +205,10 @@ const HeroManager = {
     window.addEventListener('resize', () => this.onResize());
 
     this.isReady = true;
+    } catch (e) {
+      console.warn('WebGL hero failed:', e);
+      canvas.style.display = 'none';
+    }
   },
 
   animate() {

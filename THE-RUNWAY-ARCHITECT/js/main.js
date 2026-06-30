@@ -1,69 +1,60 @@
-/* ============================================
-   THE RUNWAY ARCHITECT — Main Orchestrator v2
-   ============================================ */
-
+/* THE RUNWAY ARCHITECT — Main Orchestrator */
 (function () {
   'use strict';
 
-  /* --- SCROLL-AWARE SIDE NAV --- */
+  function safe(fn, name) {
+    try { fn(); } catch (e) { console.warn(name + ':', e); }
+  }
+
   function initSideNav() {
-    const navItems = document.querySelectorAll('.side-nav-item');
-    const scenes = document.querySelectorAll('.scene');
+    var navItems = document.querySelectorAll('.side-nav-item');
+    var scenes = document.querySelectorAll('.scene');
     if (!navItems.length || !scenes.length) return;
 
-    // Track which scene is active via ScrollTrigger
-    scenes.forEach((scene, i) => {
+    scenes.forEach(function (scene, i) {
       ScrollTrigger.create({
         trigger: scene,
         start: 'top 50%',
         end: 'bottom 50%',
-        onEnter: () => setActive(i),
-        onEnterBack: () => setActive(i)
+        onEnter: function () { setActive(i); },
+        onEnterBack: function () { setActive(i); }
       });
     });
 
     function setActive(index) {
-      navItems.forEach((item, i) => {
+      navItems.forEach(function (item, i) {
         item.classList.toggle('active', i === index);
       });
     }
 
-    // Click to scroll
-    navItems.forEach(item => {
-      item.addEventListener('click', (e) => {
+    navItems.forEach(function (item) {
+      item.addEventListener('click', function (e) {
         e.preventDefault();
-        const href = item.getAttribute('href');
-        if (LenisManager.lenis) {
+        var href = item.getAttribute('href');
+        if (window.LenisManager && LenisManager.lenis) {
           LenisManager.scrollTo(href);
         } else {
-          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+          var el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
         }
       });
     });
   }
 
-  /* --- MOBILE HAMBURGER / NAV OVERLAY --- */
   function initMobileNav() {
-    const hamburger = document.getElementById('hamburger');
-    const overlay = document.getElementById('nav-overlay');
-    const closeBtn = document.getElementById('nav-close');
-    const sceneLinks = document.querySelectorAll('.nav-overlay-scene');
-
+    var hamburger = document.getElementById('hamburger');
+    var overlay = document.getElementById('nav-overlay');
+    var closeBtn = document.getElementById('nav-close');
+    var sceneLinks = document.querySelectorAll('.nav-overlay-scene');
     if (!hamburger || !overlay) return;
 
     function openNav() {
       hamburger.classList.add('is-active');
       overlay.classList.add('is-active');
       document.body.style.overflow = 'hidden';
-
-      gsap.from(sceneLinks, {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.06,
-        ease: 'power4.out',
-        delay: 0.2
-      });
+      if (typeof gsap !== 'undefined') {
+        gsap.from(sceneLinks, { y: 40, opacity: 0, duration: 0.6, stagger: 0.06, ease: 'power4.out', delay: 0.2 });
+      }
     }
 
     function closeNav() {
@@ -72,45 +63,42 @@
       document.body.style.overflow = '';
     }
 
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', function () {
       overlay.classList.contains('is-active') ? closeNav() : openNav();
     });
 
     if (closeBtn) closeBtn.addEventListener('click', closeNav);
 
-    sceneLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    sceneLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
         closeNav();
-        const href = link.getAttribute('href');
-        setTimeout(() => {
-          if (LenisManager.lenis) {
+        var href = link.getAttribute('href');
+        setTimeout(function () {
+          if (window.LenisManager && LenisManager.lenis) {
             LenisManager.scrollTo(href);
           } else {
-            document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+            var el = document.querySelector(href);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
           }
         }, 400);
       });
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay.classList.contains('is-active')) {
-        closeNav();
-      }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-active')) closeNav();
     });
   }
 
-  /* --- LIGHTBOX --- */
   function initLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxClose = document.getElementById('lightbox-close');
     if (!lightbox) return;
 
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
+    document.querySelectorAll('.portfolio-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var img = item.querySelector('img');
         if (img && lightboxImg) {
           lightboxImg.src = img.src;
           lightboxImg.alt = img.alt;
@@ -126,73 +114,55 @@
     }
 
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('is-active')) {
-        closeLightbox();
-      }
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-active')) closeLightbox();
     });
   }
 
-  /* --- BOOT SEQUENCE --- */
-  async function boot() {
-    try {
+  var inited = false;
+
+  function initAll() {
+    if (inited) return;
+    inited = true;
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
+    }
 
-      // 1. Preloader
-      await PreloaderManager.init();
+    safe(function () { HeroManager.init(); HeroManager.animate(); }, 'Hero');
+    safe(function () { LenisManager.init(); }, 'Lenis');
+    safe(function () { CursorManager.init(); }, 'Cursor');
+    safe(function () { SplitTextManager.init(); }, 'SplitText');
+    safe(function () { AnimationManager.init(); }, 'Animation');
+    safe(function () { initSideNav(); }, 'SideNav');
+    safe(function () { initMobileNav(); }, 'MobileNav');
+    safe(function () { initLightbox(); }, 'Lightbox');
 
-      // 2. WebGL Hero (try, but don't block on failure)
-      try {
-        HeroManager.init();
-        HeroManager.animate();
-      } catch (e) {
-        console.warn('WebGL hero init failed:', e);
-      }
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  }
 
-      // 3. Smooth Scroll
-      try {
-        LenisManager.init();
-      } catch (e) {
-        console.warn('Lenis init failed:', e);
-      }
+  // Listen for body.loaded class (set by preloader)
+  var observer = new MutationObserver(function (mutations) {
+    if (document.body.classList.contains('loaded')) {
+      observer.disconnect();
+      setTimeout(initAll, 100);
+    }
+  });
 
-      // 4. Cursor
-      CursorManager.init();
+  function boot() {
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
-      // 5. Split Text
-      SplitTextManager.init();
+    // Fallback: if loaded class never appears, init after 4s
+    setTimeout(function () {
+      if (!inited) initAll();
+    }, 4000);
 
-      // 6. All animations
-      AnimationManager.init();
-
-      // 7. Navigation
-      initSideNav();
-      initMobileNav();
-
-      // 8. Lightbox
-      initLightbox();
-
-      // 9. Final refresh
-      ScrollTrigger.refresh();
-
-    } catch (e) {
-      console.error('Boot error:', e);
-      const preloader = document.getElementById('preloader');
-      if (preloader) preloader.style.display = 'none';
+    // Last resort: force loaded class after 5s
+    setTimeout(function () {
       document.body.classList.remove('loading');
       document.body.classList.add('loaded');
-
-      // Fallback: still try to init animations
-      try {
-        AnimationManager.init();
-      } catch (e2) {
-        console.error('Fallback init error:', e2);
-      }
-    }
+    }, 5000);
   }
 
   if (document.readyState === 'loading') {
@@ -200,5 +170,4 @@
   } else {
     boot();
   }
-
 })();
