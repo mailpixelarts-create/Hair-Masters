@@ -1,12 +1,49 @@
 /* ============================================
-   THE RUNWAY ARCHITECT — Main Orchestrator
+   THE RUNWAY ARCHITECT — Main Orchestrator v2
    ============================================ */
 
 (function () {
   'use strict';
 
-  /* --- HAMBURGER / NAV OVERLAY --- */
-  function initNav() {
+  /* --- SCROLL-AWARE SIDE NAV --- */
+  function initSideNav() {
+    const navItems = document.querySelectorAll('.side-nav-item');
+    const scenes = document.querySelectorAll('.scene');
+    if (!navItems.length || !scenes.length) return;
+
+    // Track which scene is active via ScrollTrigger
+    scenes.forEach((scene, i) => {
+      ScrollTrigger.create({
+        trigger: scene,
+        start: 'top 50%',
+        end: 'bottom 50%',
+        onEnter: () => setActive(i),
+        onEnterBack: () => setActive(i)
+      });
+    });
+
+    function setActive(index) {
+      navItems.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+      });
+    }
+
+    // Click to scroll
+    navItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = item.getAttribute('href');
+        if (LenisManager.lenis) {
+          LenisManager.scrollTo(href);
+        } else {
+          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  /* --- MOBILE HAMBURGER / NAV OVERLAY --- */
+  function initMobileNav() {
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('nav-overlay');
     const closeBtn = document.getElementById('nav-close');
@@ -100,27 +137,55 @@
     });
   }
 
-  /* --- BOOT --- */
+  /* --- BOOT SEQUENCE --- */
   async function boot() {
     try {
       gsap.registerPlugin(ScrollTrigger);
 
+      // 1. Preloader
       await PreloaderManager.init();
 
+      // 2. WebGL Hero
+      HeroManager.init();
+      HeroManager.animate();
+
+      // 3. Smooth Scroll
       LenisManager.init();
+
+      // 4. Cursor
       CursorManager.init();
+
+      // 5. Split Text
       SplitTextManager.init();
+
+      // 6. All animations
       AnimationManager.init();
-      initNav();
+
+      // 7. Navigation
+      initSideNav();
+      initMobileNav();
+
+      // 8. Lightbox
       initLightbox();
 
+      // 9. Final refresh
       ScrollTrigger.refresh();
+
     } catch (e) {
       console.error('Boot error:', e);
       const preloader = document.getElementById('preloader');
       if (preloader) preloader.style.display = 'none';
       document.body.classList.remove('loading');
       document.body.classList.add('loaded');
+
+      // Fallback: still try to init hero and animations
+      try {
+        HeroManager.init();
+        HeroManager.animate();
+        AnimationManager.init();
+      } catch (e2) {
+        console.error('Fallback init error:', e2);
+      }
     }
   }
 

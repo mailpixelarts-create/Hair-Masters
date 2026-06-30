@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -38,10 +38,33 @@
   <!-- FILM GRAIN OVERLAY -->
   <div class="grain-overlay"></div>
 
+  <!-- CSS PARTICLES -->
+  <div class="particles" aria-hidden="true"></div>
+
   <!-- SCROLL PROGRESS -->
   <div class="scroll-progress" id="scroll-progress"></div>
 
-  <!-- FULLSCREEN NAV OVERLAY -->
+  <!-- VERTICAL SIDE NAV -->
+  <nav class="side-nav" id="side-nav">
+    <div class="side-nav-brand">TRA</div>
+    <div class="side-nav-items">
+      <a href="#scene-01" class="side-nav-item active" data-scene="1"><span class="side-nav-dot"></span><span class="side-nav-label">Prologue</span></a>
+      <a href="#scene-02" class="side-nav-item" data-scene="2"><span class="side-nav-dot"></span><span class="side-nav-label">The Brief</span></a>
+      <a href="#scene-03" class="side-nav-item" data-scene="3"><span class="side-nav-dot"></span><span class="side-nav-label">The Blueprint</span></a>
+      <a href="#scene-04" class="side-nav-item" data-scene="4"><span class="side-nav-dot"></span><span class="side-nav-label">Portfolio</span></a>
+      <a href="#scene-05" class="side-nav-item" data-scene="5"><span class="side-nav-dot"></span><span class="side-nav-label">Backstage</span></a>
+      <a href="#scene-06" class="side-nav-item" data-scene="6"><span class="side-nav-dot"></span><span class="side-nav-label">The Suite</span></a>
+      <a href="#scene-07" class="side-nav-item" data-scene="7"><span class="side-nav-dot"></span><span class="side-nav-label">The Call</span></a>
+    </div>
+  </nav>
+
+  <!-- HAMBURGER (mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+  <!-- MOBILE NAV OVERLAY -->
   <div class="nav-overlay" id="nav-overlay">
     <div class="nav-overlay-bg"></div>
     <div class="nav-overlay-content">
@@ -50,59 +73,26 @@
         <button class="nav-overlay-close" id="nav-close">&times;</button>
       </div>
       <nav class="nav-overlay-scenes">
-        <a href="#scene-01" class="nav-overlay-scene" data-scene="1">
-          <span class="nav-scene-num">01</span>
-          <span class="nav-scene-title">Prologue</span>
-          <span class="nav-scene-line"></span>
-        </a>
-        <a href="#scene-02" class="nav-overlay-scene" data-scene="2">
-          <span class="nav-scene-num">02</span>
-          <span class="nav-scene-title">The Brief</span>
-          <span class="nav-scene-line"></span>
-        </a>
-        <a href="#scene-03" class="nav-overlay-scene" data-scene="3">
-          <span class="nav-scene-num">03</span>
-          <span class="nav-scene-title">The Blueprint</span>
-          <span class="nav-scene-line"></span>
-        </a>
-        <a href="#scene-04" class="nav-overlay-scene" data-scene="4">
-          <span class="nav-scene-num">04</span>
-          <span class="nav-scene-title">The Portfolio</span>
-          <span class="nav-scene-line"></span>
-        </a>
-        <a href="#scene-05" class="nav-overlay-scene" data-scene="5">
-          <span class="nav-scene-num">05</span>
-          <span class="nav-scene-title">The Backstage</span>
-          <span class="nav-scene-line"></span>
-        </a>
-        <a href="#scene-06" class="nav-overlay-scene" data-scene="6">
-          <span class="nav-scene-num">06</span>
-          <span class="nav-scene-title">The Suite</span>
-          <span class="nav-scene-line"></span>
-        </a>
-        <a href="#scene-07" class="nav-overlay-scene" data-scene="7">
-          <span class="nav-scene-num">07</span>
-          <span class="nav-scene-title">The Call</span>
-          <span class="nav-scene-line"></span>
-        </a>
+        <a href="#scene-01" class="nav-overlay-scene" data-scene="1"><span class="nav-scene-num">01</span><span class="nav-scene-title">Prologue</span><span class="nav-scene-line"></span></a>
+        <a href="#scene-02" class="nav-overlay-scene" data-scene="2"><span class="nav-scene-num">02</span><span class="nav-scene-title">The Brief</span><span class="nav-scene-line"></span></a>
+        <a href="#scene-03" class="nav-overlay-scene" data-scene="3"><span class="nav-scene-num">03</span><span class="nav-scene-title">The Blueprint</span><span class="nav-scene-line"></span></a>
+        <a href="#scene-04" class="nav-overlay-scene" data-scene="4"><span class="nav-scene-num">04</span><span class="nav-scene-title">Portfolio</span><span class="nav-scene-line"></span></a>
+        <a href="#scene-05" class="nav-overlay-scene" data-scene="5"><span class="nav-scene-num">05</span><span class="nav-scene-title">Backstage</span><span class="nav-scene-line"></span></a>
+        <a href="#scene-06" class="nav-overlay-scene" data-scene="6"><span class="nav-scene-num">06</span><span class="nav-scene-title">The Suite</span><span class="nav-scene-line"></span></a>
+        <a href="#scene-07" class="nav-overlay-scene" data-scene="7"><span class="nav-scene-num">07</span><span class="nav-scene-title">The Call</span><span class="nav-scene-line"></span></a>
       </nav>
     </div>
   </div>
 
-  <!-- HAMBURGER -->
-  <button class="hamburger" id="hamburger">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </button>
-
-  <!-- SCENE 01 — PROLOGUE -->
+  <!-- ============================================
+       SCENE 01 — PROLOGUE (WebGL Hero)
+       ============================================ -->
   <section class="scene scene-prologue" id="scene-01">
-    <div class="prologue-bg">
-      <img src="images/runway-architect/hero/hero-01.jpg" alt="" loading="eager">
-    </div>
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="hero-light-pass"></div>
     <div class="prologue-overlay"></div>
     <div class="prologue-content">
-      <div class="prologue-label reveal">
+      <div class="prologue-label reveal-clip">
         <span class="scene-num">SCENE 01</span>
         <span class="scene-divider">/</span>
         <span class="scene-name">PROLOGUE</span>
@@ -111,159 +101,191 @@
         <span class="prologue-title-line" data-split>THE RUNWAY</span>
         <span class="prologue-title-line prologue-title-accent" data-split>ARCHITECT</span>
       </h1>
-      <p class="prologue-subtitle reveal">Industrial precision meets backstage artistry. Every strand, a structural decision.</p>
-      <div class="prologue-meta reveal">
+      <p class="prologue-subtitle reveal-clip">Industrial precision meets backstage artistry. Every strand, a structural decision.</p>
+      <div class="prologue-meta reveal-clip">
         <span class="meta-item">EST. 2019</span>
         <span class="meta-divider">/</span>
         <span class="meta-item">NEW YORK</span>
         <span class="meta-divider">/</span>
         <span class="meta-item">BACKSTAGE</span>
       </div>
-      <div class="prologue-scroll reveal">
+      <div class="prologue-scroll reveal-clip">
         <span class="scroll-text">SCROLL TO ADVANCE</span>
         <div class="scroll-line"></div>
       </div>
     </div>
   </section>
 
-  <!-- SCENE 02 — THE BRIEF -->
+  <!-- ============================================
+       INTERSTITIAL 01
+       ============================================ -->
+  <section class="scene-interstitial" aria-hidden="true">
+    <div class="interstitial-bg">
+      <img src="images/runway-architect/atmosphere/atmosphere-01.jpg" alt="" loading="lazy">
+    </div>
+    <div class="interstitial-overlay"></div>
+    <div class="interstitial-content">
+      <span class="interstitial-text" data-split>Precision is not a skill. It is a philosophy.</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE 02 — THE BRIEF
+       ============================================ -->
   <section class="scene scene-brief" id="scene-02">
     <div class="brief-layout">
       <div class="brief-text">
-        <div class="brief-label reveal">
+        <div class="brief-label reveal-clip">
           <span class="scene-num">02</span>
           <span class="scene-title">The Brief</span>
         </div>
-        <h2 class="brief-heading reveal" data-split>Hair is not decoration. It is structure.</h2>
+        <h2 class="brief-heading" data-split>Hair is not decoration. It is structure.</h2>
         <div class="brief-body">
-          <p class="reveal">We do not style hair. We engineer it. Every consultation begins with bone structure mapping, fiber analysis, and movement study. The result is not a haircut — it is an architectural decision made visible.</p>
-          <p class="reveal">Backstage at Fashion Week, there is no room for approximation. Our techniques are refined through thousands of hours of structural practice. Each look is built to withstand灯光, movement, and time.</p>
+          <p class="reveal-up">We do not style hair. We engineer it. Every consultation begins with bone structure mapping, fiber analysis, and movement study. The result is not a haircut — it is an architectural decision made visible.</p>
+          <p class="reveal-up">Backstage at Fashion Week, there is no room for approximation. Our techniques are refined through thousands of hours of structural practice. Each look is built to withstand light, movement, and time.</p>
         </div>
-        <div class="brief-pillars reveal">
-          <div class="brief-pillar">
+        <div class="brief-pillars">
+          <div class="brief-pillar reveal-up">
             <span class="pillar-num">I</span>
             <h3>Structural Integrity</h3>
             <p>Hair as load-bearing architecture.</p>
           </div>
-          <div class="brief-pillar">
+          <div class="brief-pillar reveal-up">
             <span class="pillar-num">II</span>
             <h3>Industrial Methodology</h3>
             <p>Blueprint before brush.</p>
           </div>
-          <div class="brief-pillar">
+          <div class="brief-pillar reveal-up">
             <span class="pillar-num">III</span>
             <h3>Camera-Proof Finish</h3>
             <p>Built for flash, designed for movement.</p>
           </div>
         </div>
       </div>
-      <div class="brief-image reveal">
-        <img src="images/runway-architect/atmosphere/atmosphere-01.jpg" alt="The brief — structural hair design" loading="lazy">
+      <div class="brief-image reveal-clip">
+        <img src="images/runway-architect/atmosphere/atmosphere-02.jpg" alt="Structural hair design" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- SCENE 03 — THE BLUEPRINT -->
+  <!-- ============================================
+       SCENE 03 — THE BLUEPRINT (Pinned Sequence)
+       ============================================ -->
   <section class="scene scene-blueprint" id="scene-03">
     <div class="blueprint-content">
-      <div class="blueprint-label reveal">
-        <span class="scene-num">03</span>
-        <span class="scene-title">The Blueprint</span>
+      <div class="blueprint-header">
+        <div class="blueprint-label reveal-clip">
+          <span class="scene-num">03</span>
+          <span class="scene-title">The Blueprint</span>
+        </div>
+        <h2 class="blueprint-heading" data-split>The Construction</h2>
       </div>
-      <h2 class="blueprint-heading reveal" data-split>The Construction</h2>
-      <div class="blueprint-steps">
-        <div class="blueprint-step reveal">
-          <div class="step-line"></div>
-          <span class="step-num">01</span>
-          <h3 class="step-title">ANALYSIS</h3>
-          <p class="step-text">Bone structure mapping, hair fiber assessment, movement pattern study. The foundation of every construction.</p>
+      <div class="formula-sequence" id="formula-sequence">
+        <div class="formula-step active" data-step="1">
+          <div class="formula-step-visual">
+            <img src="images/runway-architect/detail/detail-01.jpg" alt="Analysis phase" loading="lazy">
+          </div>
+          <div class="formula-step-info">
+            <span class="formula-step-num">01</span>
+            <h3>ANALYSIS</h3>
+            <p>Bone structure mapping, hair fiber assessment, movement pattern study. The foundation of every construction.</p>
+          </div>
         </div>
-        <div class="blueprint-step reveal">
-          <div class="step-line"></div>
-          <span class="step-num">02</span>
-          <h3 class="step-title">BLUEPRINT</h3>
-          <p class="step-text">Technical drawings, sectioning diagrams, product specifications. The plan before the cut.</p>
+        <div class="formula-step" data-step="2">
+          <div class="formula-step-visual">
+            <img src="images/runway-architect/detail/detail-02.jpg" alt="Blueprint phase" loading="lazy">
+          </div>
+          <div class="formula-step-info">
+            <span class="formula-step-num">02</span>
+            <h3>BLUEPRINT</h3>
+            <p>Technical drawings, sectioning diagrams, product specifications. The plan before the cut.</p>
+          </div>
         </div>
-        <div class="blueprint-step reveal">
-          <div class="step-line"></div>
-          <span class="step-num">03</span>
-          <h3 class="step-title">EXECUTION</h3>
-          <p class="step-text">Precision cutting, structural building, architectural styling. The build.</p>
+        <div class="formula-step" data-step="3">
+          <div class="formula-step-visual">
+            <img src="images/runway-architect/detail/detail-03.jpg" alt="Execution phase" loading="lazy">
+          </div>
+          <div class="formula-step-info">
+            <span class="formula-step-num">03</span>
+            <h3>EXECUTION</h3>
+            <p>Precision cutting, structural building, architectural styling. The build.</p>
+          </div>
         </div>
-        <div class="blueprint-step reveal">
-          <div class="step-line"></div>
-          <span class="step-num">04</span>
-          <h3 class="step-title">VERIFICATION</h3>
-          <p class="step-text">Under-stage lighting tests, movement durability, 360° verification. The quality gate.</p>
+        <div class="formula-step" data-step="4">
+          <div class="formula-step-visual">
+            <img src="images/runway-architect/detail/detail-04.jpg" alt="Verification phase" loading="lazy">
+          </div>
+          <div class="formula-step-info">
+            <span class="formula-step-num">04</span>
+            <h3>VERIFICATION</h3>
+            <p>Under-stage lighting tests, movement durability, 360-degree verification. The quality gate.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCENE 04 — THE PORTFOLIO -->
+  <!-- ============================================
+       INTERSTITIAL 02
+       ============================================ -->
+  <section class="scene-interstitial scene-interstitial--dark" aria-hidden="true">
+    <div class="interstitial-bg">
+      <img src="images/runway-architect/atmosphere/atmosphere-03.jpg" alt="" loading="lazy">
+    </div>
+    <div class="interstitial-overlay"></div>
+    <div class="interstitial-content">
+      <span class="interstitial-text" data-split>Every backstage moment is an architectural event.</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE 04 — THE PORTFOLIO (Filmstrip + Grid)
+       ============================================ -->
   <section class="scene scene-portfolio" id="scene-04">
     <div class="portfolio-content">
-      <div class="portfolio-label reveal">
+      <div class="portfolio-label reveal-clip">
         <span class="scene-num">04</span>
         <span class="scene-title">The Portfolio</span>
       </div>
-      <h2 class="portfolio-heading reveal" data-split>Selected Works</h2>
+      <h2 class="portfolio-heading" data-split>Selected Works</h2>
+
+      <!-- Horizontal Filmstrip -->
+      <div class="filmstrip-wrapper">
+        <div class="filmstrip-track" id="filmstrip-track">
+          <div class="filmstrip-item"><img src="images/runway-architect/gallery/gallery-01.jpg" alt="Vogue Italia" loading="lazy"><span class="filmstrip-caption">VOGUE ITALIA / 2025</span></div>
+          <div class="filmstrip-item"><img src="images/runway-architect/gallery/gallery-02.jpg" alt="Balmain SS26" loading="lazy"><span class="filmstrip-caption">BALMAIN SS26 / 2025</span></div>
+          <div class="filmstrip-item"><img src="images/runway-architect/gallery/gallery-03.jpg" alt="Balenciaga FW" loading="lazy"><span class="filmstrip-caption">BALENCIAGA FW / 2024</span></div>
+          <div class="filmstrip-item"><img src="images/runway-architect/gallery/gallery-04.jpg" alt="Off-White" loading="lazy"><span class="filmstrip-caption">OFF-WHITE TRIBUTE / 2024</span></div>
+          <div class="filmstrip-item"><img src="images/runway-architect/gallery/gallery-05.jpg" alt="Alyx Studio" loading="lazy"><span class="filmstrip-caption">ALYX STUDIO / 2024</span></div>
+          <div class="filmstrip-item"><img src="images/runway-architect/gallery/gallery-06.jpg" alt="Acne Studios" loading="lazy"><span class="filmstrip-caption">ACNE STUDIOS / 2023</span></div>
+        </div>
+      </div>
+
+      <!-- Masonry Grid -->
       <div class="portfolio-grid">
-        <div class="portfolio-item portfolio-item--tall reveal" data-category="editorial">
-          <img src="images/runway-architect/gallery/gallery-01.jpg" alt="Editorial work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">VOGUE ITALIA</span>
-            <span class="portfolio-item-year">2025</span>
-          </div>
+        <div class="portfolio-item portfolio-item--tall" data-category="editorial">
+          <img src="images/runway-architect/gallery/gallery-07.jpg" alt="Hermes FW" loading="lazy">
+          <div class="portfolio-item-overlay"><span class="portfolio-item-name">HERMES FW</span><span class="portfolio-item-year">2023</span></div>
         </div>
-        <div class="portfolio-item reveal" data-category="runway">
-          <img src="images/runway-architect/gallery/gallery-02.jpg" alt="Runway work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">BALMAIN SS26</span>
-            <span class="portfolio-item-year">2025</span>
-          </div>
+        <div class="portfolio-item" data-category="runway">
+          <img src="images/runway-architect/gallery/gallery-08.jpg" alt="Saint Laurent" loading="lazy">
+          <div class="portfolio-item-overlay"><span class="portfolio-item-name">SAINT LAURENT</span><span class="portfolio-item-year">2023</span></div>
         </div>
-        <div class="portfolio-item reveal" data-category="runway">
-          <img src="images/runway-architect/gallery/gallery-03.jpg" alt="Runway work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">BALENCIAGA FW</span>
-            <span class="portfolio-item-year">2024</span>
-          </div>
+        <div class="portfolio-item" data-category="campaign">
+          <img src="images/runway-architect/gallery/gallery-09.jpg" alt="Prada" loading="lazy">
+          <div class="portfolio-item-overlay"><span class="portfolio-item-name">PRADA SS24</span><span class="portfolio-item-year">2024</span></div>
         </div>
-        <div class="portfolio-item portfolio-item--wide reveal" data-category="editorial">
-          <img src="images/runway-architect/gallery/gallery-04.jpg" alt="Editorial work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">OFF-WHITE TRIBUTE</span>
-            <span class="portfolio-item-year">2024</span>
-          </div>
+        <div class="portfolio-item portfolio-item--wide" data-category="editorial">
+          <img src="images/runway-architect/gallery/gallery-10.jpg" alt="Dior" loading="lazy">
+          <div class="portfolio-item-overlay"><span class="portfolio-item-name">DIOR FW</span><span class="portfolio-item-year">2024</span></div>
         </div>
-        <div class="portfolio-item reveal" data-category="campaign">
-          <img src="images/runway-architect/gallery/gallery-05.jpg" alt="Campaign work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">ALYX STUDIO</span>
-            <span class="portfolio-item-year">2024</span>
-          </div>
+        <div class="portfolio-item" data-category="runway">
+          <img src="images/runway-architect/gallery/gallery-11.jpg" alt="Givenchy" loading="lazy">
+          <div class="portfolio-item-overlay"><span class="portfolio-item-name">GIVENCHY</span><span class="portfolio-item-year">2023</span></div>
         </div>
-        <div class="portfolio-item reveal" data-category="campaign">
-          <img src="images/runway-architect/gallery/gallery-06.jpg" alt="Campaign work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">ACNE STUDIOS</span>
-            <span class="portfolio-item-year">2023</span>
-          </div>
-        </div>
-        <div class="portfolio-item portfolio-item--tall reveal" data-category="editorial">
-          <img src="images/runway-architect/gallery/gallery-07.jpg" alt="Editorial work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">HERMES FW</span>
-            <span class="portfolio-item-year">2023</span>
-          </div>
-        </div>
-        <div class="portfolio-item reveal" data-category="runway">
-          <img src="images/runway-architect/gallery/gallery-08.jpg" alt="Runway work" loading="lazy">
-          <div class="portfolio-item-overlay">
-            <span class="portfolio-item-name">SAINT LAURENT</span>
-            <span class="portfolio-item-year">2023</span>
-          </div>
+        <div class="portfolio-item" data-category="campaign">
+          <img src="images/runway-architect/gallery/gallery-12.jpg" alt="Loewe" loading="lazy">
+          <div class="portfolio-item-overlay"><span class="portfolio-item-name">LOEWE</span><span class="portfolio-item-year">2024</span></div>
         </div>
       </div>
     </div>
@@ -275,81 +297,102 @@
     </div>
   </section>
 
-  <!-- SCENE 05 — THE BACKSTAGE -->
+  <!-- ============================================
+       SCENE 05 — THE BACKSTAGE (Horizontal Scroll Gallery)
+       ============================================ -->
   <section class="scene scene-backstage" id="scene-05">
     <div class="backstage-content">
-      <div class="backstage-label reveal">
-        <span class="scene-num">05</span>
-        <span class="scene-title">The Backstage</span>
+      <div class="backstage-header">
+        <div class="backstage-label reveal-clip">
+          <span class="scene-num">05</span>
+          <span class="scene-title">The Backstage</span>
+        </div>
+        <h2 class="backstage-heading" data-split>Behind the Construction</h2>
       </div>
-      <h2 class="backstage-heading reveal" data-split>Behind the Construction</h2>
       <div class="backstage-gallery">
-        <div class="backstage-item reveal">
-          <img src="images/runway-architect/process/process-01.jpg" alt="Sectioning and preparation" loading="lazy">
+        <div class="backstage-item">
+          <img src="images/runway-architect/process/process-01.jpg" alt="Sectioning" loading="lazy">
           <span class="backstage-caption">Sectioning</span>
         </div>
-        <div class="backstage-item reveal">
-          <img src="images/runway-architect/process/process-02.jpg" alt="Precision cutting" loading="lazy">
+        <div class="backstage-item">
+          <img src="images/runway-architect/process/process-02.jpg" alt="The Cut" loading="lazy">
           <span class="backstage-caption">The Cut</span>
         </div>
-        <div class="backstage-item reveal">
-          <img src="images/runway-architect/process/process-03.jpg" alt="Structural building" loading="lazy">
+        <div class="backstage-item">
+          <img src="images/runway-architect/process/process-03.jpg" alt="Building" loading="lazy">
           <span class="backstage-caption">Building</span>
         </div>
-        <div class="backstage-item reveal">
-          <img src="images/runway-architect/process/process-04.jpg" alt="Lighting test" loading="lazy">
+        <div class="backstage-item">
+          <img src="images/runway-architect/process/process-04.jpg" alt="Under Light" loading="lazy">
           <span class="backstage-caption">Under Light</span>
         </div>
-        <div class="backstage-item reveal">
-          <img src="images/runway-architect/process/process-05.jpg" alt="Final verification" loading="lazy">
+        <div class="backstage-item">
+          <img src="images/runway-architect/process/process-05.jpg" alt="Verification" loading="lazy">
           <span class="backstage-caption">Verification</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCENE 06 — THE SUITE -->
+  <!-- ============================================
+       INTERSTITIAL 03
+       ============================================ -->
+  <section class="scene-interstitial" aria-hidden="true">
+    <div class="interstitial-bg">
+      <img src="images/runway-architect/atmosphere/atmosphere-04.jpg" alt="" loading="lazy">
+    </div>
+    <div class="interstitial-overlay"></div>
+    <div class="interstitial-content">
+      <span class="interstitial-text" data-split>The architecture of beauty is built, not born.</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCENE 06 — THE SUITE
+       ============================================ -->
   <section class="scene scene-suite" id="scene-06">
     <div class="suite-content">
-      <div class="suite-label reveal">
+      <div class="suite-label reveal-clip">
         <span class="scene-num">06</span>
         <span class="scene-title">The Suite</span>
       </div>
-      <h2 class="suite-heading reveal" data-split>Client Standards</h2>
+      <h2 class="suite-heading" data-split>Client Standards</h2>
       <div class="suite-grid">
-        <div class="suite-block reveal">
+        <div class="suite-block reveal-up">
           <h3>Who This Is For</h3>
           <p>People who understand that hair is not an accessory — it is architecture. You want a look that is engineered, not improvised. Built to perform under pressure.</p>
         </div>
-        <div class="suite-block reveal">
+        <div class="suite-block reveal-up">
           <h3>What to Expect</h3>
           <p>A consultation that goes beyond style preferences. We discuss structure, movement, maintenance, and the life your hair needs to live. Every detail is planned.</p>
         </div>
-        <div class="suite-block reveal">
+        <div class="suite-block reveal-up">
           <h3>The Booking Process</h3>
           <p>Inquire with your vision. We schedule a structural consultation to assess feasibility and fit. Not every project is accepted — standards protect the work.</p>
         </div>
-        <div class="suite-block reveal">
+        <div class="suite-block reveal-up">
           <h3>Timing & Prep</h3>
           <p>Structural work requires precision time. Complex builds may take 3–5 hours. Arrive with clean, dry hair. Come ready to discuss the architecture you want.</p>
         </div>
       </div>
-      <div class="suite-quote reveal">
+      <div class="suite-quote reveal-clip">
         <blockquote>"Hair is the architecture of the face. Every strand is a structural decision."</blockquote>
       </div>
     </div>
   </section>
 
-  <!-- SCENE 07 — THE CALL -->
+  <!-- ============================================
+       SCENE 07 — THE CALL
+       ============================================ -->
   <section class="scene scene-call" id="scene-07">
     <div class="call-content">
-      <div class="call-label reveal">
+      <div class="call-label reveal-clip">
         <span class="scene-num">07</span>
         <span class="scene-title">The Call</span>
       </div>
-      <h2 class="call-heading reveal" data-split>Initiate Collaboration</h2>
-      <p class="call-sub reveal">Every construction begins with a conversation. Not a booking form.</p>
-      <div class="call-grid reveal">
+      <h2 class="call-heading" data-split>Initiate Collaboration</h2>
+      <p class="call-sub reveal-clip">Every construction begins with a conversation. Not a booking form.</p>
+      <div class="call-grid reveal-up">
         <div class="call-block">
           <h3>BOOKINGS</h3>
           <a href="mailto:bookings@therunwayarchitect.com">bookings@therunwayarchitect.com</a>
@@ -371,7 +414,7 @@
           </div>
         </div>
       </div>
-      <div class="call-cta reveal">
+      <div class="call-cta reveal-clip">
         <a href="mailto:bookings@therunwayarchitect.com" class="btn-primary">
           <span>SCHEDULE CONSULTATION</span>
           <span class="btn-arrow">&rarr;</span>
@@ -391,6 +434,7 @@
   </section>
 
   <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -400,6 +444,7 @@
   <script src="js/cursor.js"></script>
   <script src="js/split-text.js"></script>
   <script src="js/lenis-init.js"></script>
+  <script src="js/hero.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/main.js"></script>
 </body>

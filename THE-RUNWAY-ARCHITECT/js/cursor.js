@@ -1,5 +1,5 @@
 /* ============================================
-   THE RUNWAY ARCHITECT — Custom Cursor
+   THE RUNWAY ARCHITECT — Custom Cursor v2
    ============================================ */
 
 const CursorManager = {
@@ -29,17 +29,41 @@ const CursorManager = {
       this.yTo(e.clientY);
     });
 
-    document.querySelectorAll('a, button, .portfolio-item, .backstage-item').forEach(el => {
+    // Hover interactions — scale + mix-blend-mode difference
+    document.querySelectorAll('a, button, .portfolio-item, .filmstrip-item, .backstage-item, .suite-block').forEach(el => {
       el.addEventListener('mouseenter', () => {
-        gsap.to(this.follower, { scale: 2.5, duration: 0.3, ease: 'power2.out' });
-        gsap.to(this.dot, { scale: 0.5, duration: 0.3, ease: 'power2.out' });
+        gsap.to(this.follower, {
+          scale: 2.5,
+          mixBlendMode: 'difference',
+          borderColor: '#6B2D3E',
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+        gsap.to(this.dot, {
+          scale: 0.5,
+          background: '#6B2D3E',
+          duration: 0.3,
+          ease: 'power2.out'
+        });
       });
       el.addEventListener('mouseleave', () => {
-        gsap.to(this.follower, { scale: 1, duration: 0.3, ease: 'power2.out' });
-        gsap.to(this.dot, { scale: 1, duration: 0.3, ease: 'power2.out' });
+        gsap.to(this.follower, {
+          scale: 1,
+          mixBlendMode: 'difference',
+          borderColor: '#F5F0EB',
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+        gsap.to(this.dot, {
+          scale: 1,
+          background: '#F5F0EB',
+          duration: 0.3,
+          ease: 'power2.out'
+        });
       });
     });
 
+    // Hide cursor when leaving viewport
     document.addEventListener('mouseleave', () => {
       gsap.to([this.dot, this.follower], { opacity: 0, duration: 0.3 });
     });
@@ -48,6 +72,7 @@ const CursorManager = {
       gsap.to([this.dot, this.follower], { opacity: 1, duration: 0.3 });
     });
 
+    // Reveal cursor after preloader
     gsap.to([this.dot, this.follower], { opacity: 1, duration: 0.6, delay: 2.5 });
   }
 };
