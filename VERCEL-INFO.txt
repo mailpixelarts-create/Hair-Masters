@@ -1,0 +1,4 @@
+Vercel Project: hair-masters
+Team: pixelart-projects
+Production URL: https://hair-masters-nine.vercel.app
+Dashboard: https://vercel.com/pixelart-projects/hair-masters

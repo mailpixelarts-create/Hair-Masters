@@ -1,0 +1,3 @@
+GitHub Repository: https://github.com/mailpixelarts-create/Hair-Masters
+Remote URL: https://github.com/mailpixelarts-create/Hair-Masters.git
+Branch: master
